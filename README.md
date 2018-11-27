@@ -1,6 +1,7 @@
 # ENPM 808X - Software Development for Robotics- IntelliBot
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![Build Status](https://travis-ci.org/vijay4313/intelli_bot.svg?branch=master)](https://travis-ci.org/vijay4313/intelli_bot)
+[![Coverage Status](https://coveralls.io/repos/github/vijay4313/intelli_bot/badge.svg?branch=master)](https://coveralls.io/github/vijay4313/intelli_bot?branch=master)
 
 # Overview
  Acme Robotics Inc. aims to explore new realms in defense robotics by developing a
