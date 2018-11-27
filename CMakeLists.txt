@@ -201,6 +201,7 @@ if (CATKIN_ENABLE_TESTING)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
   add_rostest_gtest(
   ${PROJECT_NAME}_TEST
+  test/test1.launch
   test/main.cpp
   test/test.cpp
   )

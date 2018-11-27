@@ -55,6 +55,6 @@
  * 		         for command line remapping
  */
 int main(int argc, char **argv) {
-  ros::init(argc, argv, "intellibot");
+  ros::init(argc, argv, "intelli_bot");
   return 0;
 }
