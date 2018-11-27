@@ -1,6 +1,7 @@
 # We need a decent ubuntu dist
 sudo: required
-dist: trusty
+cache:
+  - apt
 
 # Modern cpp settings from
 #  http://genbattle.bitbucket.org/blog/2016/01/17/c++-travis-ci/
@@ -21,12 +22,6 @@ matrix:
       env: COMPILER=g++-5
 
 # Build all valid Ubuntu/ROS combinations available on Travis VMs.
-- name: "Trusty indigo"
-    dist: trusty
-    env: ROS_DISTRO=indigo
-  - name: "Trusty jade"
-    dist: trusty
-    env: ROS_DISTRO=jade
   - name: "Xenial kinetic"
     dist: xenial
     env: ROS_DISTRO=kinetic
@@ -91,14 +86,6 @@ before_script:
   - rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 
 script:
-  - export CXX=$COMPILER;
-  - mkdir build
-  - cd build
-  - cmake -DCOVERAGE=ON -DCMAKE_BUILD_TYPE=Debug ../
-  - make
-  - make code_coverage
-  - test/cpp-test
-
 # Compile and test (mark the build as failed if any step fails). If the
 # CATKIN_OPTIONS file exists, use it as an argument to catkin_make, for example
 # to blacklist certain packages.
