@@ -13,6 +13,21 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+option(ROS_CI_COVERALLS "Turn on coveralls support" OFF)
+option(ROS_CI_COVERALLS_UPLOAD "Upload the generated coveralls json" OFF)
+
+if($ENV{ROS_CI_COVERAGE})
+  set(CMAKE_BUILD_TYPE Debug)
+  set(ROS_CI_COVERALLS ON)
+  set(ROS_CI_COVERALLS_UPLOAD ON)
+endif()
+
+if(ROS_CI_COVERALLS)
+  include(Coveralls)
+  coveralls_turn_on_coverage()
+  message(STATUS "coveralls on")
+endif()
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -198,12 +213,6 @@ target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})
 
 if (CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)	
-
-  if(ENABLE_COVERAGE_TESTING)
-    include(CodeCoverage.cmake NO_POLICY_SCOPE)
-    APPEND_COVERAGE_COMPILER_FLAGS()
-  endif()
-
   add_rostest_gtest(
   ${PROJECT_NAME}_test
   test/test1.launch
@@ -214,12 +223,15 @@ if (CATKIN_ENABLE_TESTING)
   ${PROJECT_NAME}_test
   ${catkin_LIBRARIES}
   )
-  if(ENABLE_COVERAGE_TESTING)
-     add_code_coverage(
-       NAME intelli_bot_coverage
-       DEPENDS ${PROJECT_NAME}_test
-     )
-  endif()
+endif()
+
+if (ROS_CI_COVERALLS)
+  set(COV_FILES)
+  file(GLOB_RECURSE SRCS ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+  list(APPEND COV_FILES ${SRCS})
+  file(GLOB_RECURSE HDRS ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h)
+  list(APPEND COV_FILES ${HDRS})
+  coveralls_setup("${COV_FILES}" ${ROS_CI_COVERALLS_UPLOAD})
 endif()
 
 ## Add folders to be run by python nosetests
