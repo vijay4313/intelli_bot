@@ -13,6 +13,9 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
+# Coveralls support
 option(ROS_CI_COVERALLS "Turn on coveralls support" OFF)
 option(ROS_CI_COVERALLS_UPLOAD "Upload the generated coveralls json" OFF)
 
