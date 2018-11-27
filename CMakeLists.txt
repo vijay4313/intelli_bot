@@ -216,7 +216,7 @@ if (CATKIN_ENABLE_TESTING)
   )
   if(ENABLE_COVERAGE_TESTING)
      add_code_coverage(
-       NAME ${PROJECT_NAME}_coverage
+       NAME intelli_bot_coverage
        DEPENDS ${PROJECT_NAME}_test
      )
   endif()

@@ -83,7 +83,6 @@ script:
   - catkin_make $( [ -f $CATKIN_OPTIONS ] && cat $CATKIN_OPTIONS )
   # Run the tests, ensuring the path is set correctly.
   - source devel/setup.bash
-  - catkin_make run_tests && catkin_test_results
   - catkin_make DENABLE_COVERAGE_TESTING=ON -DCMAKE_BUILD_TYPE=Debug intelli_bot_coverage
 
 notification:
