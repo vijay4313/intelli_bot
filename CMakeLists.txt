@@ -197,8 +197,7 @@ target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})
 # endif()
 
 if (CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
-  find_package(code_coverage REQUIRED)
+  find_package(rostest REQUIRED)	
 
   if(ENABLE_COVERAGE_TESTING)
     include(CodeCoverage)
@@ -212,7 +211,7 @@ if (CATKIN_ENABLE_TESTING)
   test/test.cpp
   )
   target_link_libraries(
-  ${PROJECT_NAME}_TEST
+  ${PROJECT_NAME}_test
   ${catkin_LIBRARIES}
   )
   if(ENABLE_COVERAGE_TESTING)
