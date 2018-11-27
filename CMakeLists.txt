@@ -200,7 +200,7 @@ if (CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)	
 
   if(ENABLE_COVERAGE_TESTING)
-    include(CodeCoverage)
+    include(CodeCoverage.cmake NO_POLICY_SCOPE)
     APPEND_COVERAGE_COMPILER_FLAGS()
   endif()
 
