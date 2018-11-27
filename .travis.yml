@@ -13,7 +13,7 @@ env:
   global:
     - VERBOSE_OUTPUT=true
   matrix:
-    - ROS_CI_COVERAGE=true USE_DEB=true ROS_DISTRO="kinetic" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu AFTER_SCRIPT='source /root/catkin_ws/devel/setup.bash && cd /root/catkin_ws/build/intelli_bot && make coveralls && coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"'
+    - ROS_CI_COVERAGE=true USE_DEB=true ROS_DISTRO="kinetic" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu AFTER_SCRIPT='source /root/catkin_ws/devel/setup.bash && cd /root/catkin_ws/build/intelli_bot && make coveralls'
     #- USE_DEB=true  ROS_DISTRO="kinetic"   ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
 matrix:
   allow_failures:
@@ -23,7 +23,7 @@ install:
 
 before_script:
   - echo ROS_CI_COVERAGE >> .ci_config/industrial_ci/src/docker.env
-  - echo COVERALLS_REPO_TOKEN >> .ci_config/industrial_ci/src/docker.env
+#  - echo COVERALLS_REPO_TOKEN >> .ci_config/industrial_ci/src/docker.env
   - echo TRAVIS_JOB_ID >> .ci_config/industrial_ci/src/docker.env
   
 script: 
