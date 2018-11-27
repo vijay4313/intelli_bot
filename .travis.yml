@@ -80,10 +80,13 @@ before_script:
 script:
   - source /opt/ros/$ROS_DISTRO/setup.bash
   - cd ~/catkin_ws
-  - catkin_make $( [ -f $CATKIN_OPTIONS ] && cat $CATKIN_OPTIONS )
+  - catkin_make DENABLE_COVERAGE_TESTING=ON -DCMAKE_BUILD_TYPE=Debug $( [ -f $CATKIN_OPTIONS ] && cat $CATKIN_OPTIONS )
   # Run the tests, ensuring the path is set correctly.
   - source devel/setup.bash
-  - catkin_make DENABLE_COVERAGE_TESTING=ON -DCMAKE_BUILD_TYPE=Debug intelli_bot_coverage
+  - catkin_make intelli_bot_coverage
 
-notification:
-email: never
+after_success:
+  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
+
+notifications:
+email: false
