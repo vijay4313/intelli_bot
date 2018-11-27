@@ -10,18 +10,6 @@ cache:
 language: cpp
 matrix:
   include:
-  - os: linux
-    compiler: gcc
-    addons:
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-          - george-edison55-precise-backports
-        packages:
-          - g++-5
-          - cmake
-          - cmake-data
-    env: COMPILER=g++-5
   - name: "Xenial kinetic"
     dist: xenial
     env: ROS_DISTRO=kinetic
