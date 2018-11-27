@@ -22,8 +22,8 @@ matrix:
       env: COMPILER=g++-5
 
 # Build all valid Ubuntu/ROS combinations available on Travis VMs.
-  - name: "Xenial kinetic"
-    dist: xenial
+#  - name: "Xenial kinetic"
+#    dist: xenial
     env: ROS_DISTRO=kinetic
 
 # Configuration variables. All variables are global now, but this can be used to
