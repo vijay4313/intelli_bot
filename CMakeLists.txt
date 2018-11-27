@@ -198,9 +198,15 @@ target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})
 
 if (CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
+  find_package(code_coverage REQUIRED)
+
+  if(ENABLE_COVERAGE_TESTING)
+    include(CodeCoverage)
+    APPEND_COVERAGE_COMPILER_FLAGS()
+  endif()
+
   add_rostest_gtest(
-  ${PROJECT_NAME}_TEST
+  ${PROJECT_NAME}_test
   test/test1.launch
   test/main.cpp
   test/test.cpp
@@ -209,6 +215,12 @@ if (CATKIN_ENABLE_TESTING)
   ${PROJECT_NAME}_TEST
   ${catkin_LIBRARIES}
   )
+  if(ENABLE_COVERAGE_TESTING)
+     add_code_coverage(
+       NAME ${PROJECT_NAME}_coverage
+       DEPENDS ${PROJECT_NAME}_test
+     )
+  endif()
 endif()
 
 ## Add folders to be run by python nosetests

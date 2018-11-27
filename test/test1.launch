@@ -1,4 +1,4 @@
 <launch>
   <node pkg="intelli_bot" name="intelli_bot" type="intelli_bot_node"/>
-  <test pkg="intelli_bot" test-name="intelli_bot_test" type="intelli_bot_TEST"/>
+  <test pkg="intelli_bot" test-name="intelli_bot_test" type="intelli_bot_test"/>
 </launch>
