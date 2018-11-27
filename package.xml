@@ -2,7 +2,7 @@
 <package format="2">
   <name>intelli_bot</name>
   <version>1.0.0</version>
-  <description>The intelli_bot package</description>
+  <description>ROS based intelligence gathering drone simulation on Gazebo</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -20,14 +20,14 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/intelli_bot</url> -->
+  <url type="website">https://github.com/vijay4313/intelli_bot/blob/master/README.md</url>
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
   <!-- Authors do not have to be maintainers, but could be -->
   <!-- Example: -->
-  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
-
+  <author email="vnarayan@terpmail.umd.edu">Venkatraman</author>
+  <author email="amrish1222@gmail.com">Amrish</author>
 
   <!-- The *depend tags are used to specify dependencies -->
   <!-- Dependencies can be catkin packages or system dependencies -->
@@ -53,6 +53,8 @@
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
+  <build_depend>rostest</build_depend>
+  <build_depend>lcov</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
