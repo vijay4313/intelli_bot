@@ -35,18 +35,18 @@
 #include "../include/PathPlanning.h"
 #include <vector>
 /**
- * @brief constructor for AStarAlgorithm class
+ * @brief constructor for PathPlanning class
  * @param  none
  * @return none
  */
 PathPlanning::PathPlanning() {
   heightPt = 0;
-  covArea = 0;
-  generatedPath = 0;
+  covArea = {};
+  generatedPath = {};
 }
 
 /**
- * @brief destructor for AStarAlgorithm class
+ * @brief destructor for PathPlanning class
  * @param  none
  * @return none
  */
@@ -81,6 +81,6 @@ void PathPlanning::generatePath() {
  */
 
 std::vector<PathPlanning::point3d> PathPlanning::getPath() {
-  std::vector<PathPlanning::point3d> vec = 0;
+  std::vector<PathPlanning::point3d> vec;
   return vec;
 }
