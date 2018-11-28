@@ -33,54 +33,41 @@
  */
 
 #include "../include/ObjectDetector.h"
-#include <vector>
-/**
- * @brief constructor for ObjectDetector class
- * @param  none
- * @return none
- */
-PathPlanning::PathPlanning() {
-  heightPt = 0;
-  covArea = 0;
-  generatedPath = 0;
-}
 
-/**
- * @brief destructor for ObjectDetector class
- * @param  none
- * @return none
- */
-PathPlanning::~PathPlanning() {
+  /**
+   * @brief Constructor
+   * @param none
+   * @return none
+   */
+  ObjectDetector::ObjectDetector() {}
 
-}
+  /**
+   * @brief Destructor
+   * @param none
+   * @return none
+   */
+  ObjectDetector::~ObjectDetector() {}
 
-/**
- * @brief sets the height
- * @param  none
- * @return none
- */
+  /**
+   * @brief subscribe to image topic
+   * @param  none
+   * @return none
+   */
+  void ObjectDetector::subscribeImg() {}
 
-void PathPlanning::setHt() {
+  /**
+   * @brief routine to train
+   * the ObjectDetector object
+   * @param  none
+   * @return none
+   */
+  void ObjectDetector::trainDetector(){}
 
-}
-
-/**
- * @brief generates the required path
- * @param  none
- * @return none
- */
-
-void PathPlanning::generatePath() {
-
-}
-
-/**
- * @brief outputs the path
- * @param  none
- * @return Path in vector<point3d>
- */
-
-std::vector<PathPlanning::point3d> PathPlanning::getPath() {
-  std::vector<PathPlanning::point3d> vec = 0;
-  return vec;
-}
+  /**
+   * @brief routine to predict human
+   * required Topic
+   * publishing to the required topic
+   * @param  none
+   * @return none
+   */
+  ObjectDetector::predictedHuman ObjectDetector::predictHuman() {}
