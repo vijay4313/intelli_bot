@@ -3,18 +3,18 @@
 [![Build Status](https://travis-ci.org/vijay4313/intelli_bot.svg?branch=master)](https://travis-ci.org/vijay4313/intelli_bot)
 [![Coverage Status](https://coveralls.io/repos/github/vijay4313/intelli_bot/badge.svg?branch=master)](https://coveralls.io/github/vijay4313/intelli_bot?branch=master)
 
-# Overview
+## Overview
  Acme Robotics Inc. aims to explore new realms in defense robotics by developing a
 quadrotor drone capable for exploring an unknown user-defined land patch and
 collect intelligence (number of hostages & terrorists) all the while developing a map
 of the explored area. The scope of this project is to develop the end-to-end software
 package for the above-mentioned drone operation.
 
-# Authors
+## Authors
  - Venkatraman Narayanan
  - Amrish Baskaran
 
-# Dependencies
+## Dependencies
 - ROS Kinetic
 
    Installation instructions can be found [here](http://wiki.ros.org/kinetic/Installation)
@@ -50,19 +50,19 @@ The spreadsheet for the Product log, iteration backlog, work log and sprint deta
 Notes from the sprint review sessions can be found in the link-[Sprint review Doc](https://docs.google.com/document/d/1bJjVpGoex2Z11x2BASVN002mspXWGj8SX9v-RlrVU2g/edit)
 
 To Do
-# Presentation
+### Presentation
 
-# Dependencies Installation
+### Dependencies Installation
 
-# Setup
+### Setup
 
-# Demo Instructions
+### Demo Instructions
 
-# Running Instructions
+### Running Instructions
 
-# Instructions for Running Tests
+### Instructions for Running Tests
 
-# Known issues and Bugs
+### Known issues and Bugs
 
-# Documentation- API and Other Packages
+### Documentation- API and Other Packages
 
