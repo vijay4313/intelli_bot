@@ -62,7 +62,7 @@
    * @return none
    */
   SLAM::mapObject SLAM::publishMap(){
-      SLAM::mapobject map;
+      SLAM::mapObject map;
       return(map);
   }
 

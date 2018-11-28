@@ -32,8 +32,8 @@
  *  @brief  Control header file
  */
 
-#ifndef INTELLI_BOT_INCLUDE_CONTROL_H_
-#define INTELLI_BOT_INCLUDE_CONTROL_H_
+#ifndef INTELLI_BOT_INCLUDE_SLAM_H_
+#define INTELLI_BOT_INCLUDE_SLAM_H_
 
 #include <ros/ros.h>
 
@@ -84,6 +84,9 @@ class SLAM {
    */
   void computeSLAM();
 
+  private:
+  mapObject mapObj;
+
 };
 
-#endif /* INTELLI_BOT_INCLUDE_CONTROL_H_ */
+#endif /* INTELLI_BOT_INCLUDE_SLAM_H_ */
