@@ -25,14 +25,13 @@
 
 /**
  *
- *  @file    talker.cpp
- *  @author  Venkatraman Narayanan (vijay4313)
+ *  @file    main.cpp
+ *  @author  Venkatraman Narayanan
+ *  @author  Amrish Baskaran
  *  @copyright	MIT
  *  @date    11/27/2018
  *
- *  @brief	A simple ROS routine
- *
- *  @section DESCRIPTION
+ *  @brief intellibot main routine 
  *
  */
 
