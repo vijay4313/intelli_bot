@@ -19,11 +19,18 @@ matrix:
   allow_failures:
     #- env: USE_DEB=true  ROS_DISTRO="kinetic"   ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
 install:
-  - pip install python-opencv
-  - sudo apt-get update
+  - sudo apt-get install python-dev python-numpy
   - git clone --depth 1 https://github.com/ros-industrial/industrial_ci.git .ci_config
 
 before_script:
+  - git clone https://github.com/Itseez/opencv.git
+  - cd opencv
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make -j8
+  - sudo make -j8 install
+  - cd ../..
   - echo ROS_CI_COVERAGE >> .ci_config/industrial_ci/src/docker.env
   - echo COVERALLS_REPO_TOKEN >> .ci_config/industrial_ci/src/docker.env
   - echo TRAVIS_JOB_ID >> .ci_config/industrial_ci/src/docker.env
