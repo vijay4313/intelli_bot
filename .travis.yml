@@ -32,6 +32,8 @@ after_script:
   - cd /root/catkin_ws/src
   - git clone https://github.com/angelsantamaria/tum_simulator.git
   - git clone https://github.com/AutonomyLab/ardrone_autonomy.git -b indigo-devel
+  - cd ..
+  - catkin_make install
 
 #  - source ./travis.sh  # Enable this when you have a package-local script 
 
