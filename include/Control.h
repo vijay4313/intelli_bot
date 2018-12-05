@@ -61,7 +61,7 @@ class Control {
    *         PathPlanning routine
    * @return none
    */
-  void setPathPts(std::vector<PathPlanning::point3d> path);
+  void setPathPts(int &width, int &breadth);
 
   /**
    * @brief Generates the velocity and pose for
