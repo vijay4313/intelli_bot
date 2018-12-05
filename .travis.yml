@@ -21,17 +21,18 @@ matrix:
 install:
   - git clone --depth 1 https://github.com/ros-industrial/industrial_ci.git .ci_config
 
-
 before_script:
   - echo ROS_CI_COVERAGE >> .ci_config/industrial_ci/src/docker.env
   - echo COVERALLS_REPO_TOKEN >> .ci_config/industrial_ci/src/docker.env
   - echo TRAVIS_JOB_ID >> .ci_config/industrial_ci/src/docker.env
-  - cd /root/catkin_ws/src
-  - git clone https://github.com/angelsantamaria/tum_simulator.git
-  - git clone https://github.com/AutonomyLab/ardrone_autonomy.git -b indigo-devel
   
 script: 
   - source .ci_config/travis.sh
+after_script:
+  - cd /root/catkin_ws/src
+  - git clone https://github.com/angelsantamaria/tum_simulator.git
+  - git clone https://github.com/AutonomyLab/ardrone_autonomy.git -b indigo-devel
+
 #  - source ./travis.sh  # Enable this when you have a package-local script 
 
 #  vim: set et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : 
