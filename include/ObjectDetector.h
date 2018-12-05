@@ -37,13 +37,31 @@
 
 #include <ros/ros.h>
 
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/opencv.hpp>
+#include "opencv2/objdetect/objdetect.hpp"
+
+// to facilitate the processing of the images in ROS
+#include <image_transport/image_transport.h> // for publishing and subscribing to images in ROS
+#include <cv_bridge/cv_bridge.h> // to convert between ROS and OpenCV Image formats
+#include <sensor_msgs/image_encodings.h>
+
+#include <intelli_bot/Pedestrians.h>
+#include <intelli_bot/bbox.h>
+
+
 class ObjectDetector {
  public:
-  
-  struct predictedHuman {
-    int id;
-    std::vector<double> bBox;
-  };
+
+  ros::NodeHandle nh_;
+  image_transport::ImageTransport it_;
+  image_transport::Subscriber im_sub_;
+  image_transport::Publisher im_pub_;
+
+  ros::Publisher pedestrians_pub_;
+
+  cv::HOGDescriptor hog_;
 
   /**
    * @brief Constructor
@@ -60,28 +78,12 @@ class ObjectDetector {
   virtual ~ObjectDetector();
 
   /**
-   * @brief subscribe to image topic
-   * @param  none
-   * @return none
-   */
-  void subscribeImg();
-
-  /**
    * @brief routine to train
    * the ObjectDetector object
    * @param  none
    * @return none
    */
-  void trainDetector();
-
-  /**
-   * @brief routine to predict human
-   * required Topic
-   * publishing to the required topic
-   * @param  none
-   * @return none
-   */
-  predictedHuman predictHuman();
+  void personDetector(const sensor_msgs::ImageConstPtr& msg);
 
 };
 

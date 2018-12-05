@@ -36,7 +36,7 @@
  */
 
 #include "ros/ros.h"
-
+#include "../include/ObjectDetector.h"
 
 /*
  * @brief The main routine that generates
@@ -47,6 +47,8 @@
  * 		         for command line remapping
  */
 int main(int argc, char **argv) {
-  ros::init(argc, argv, "intelli_bot");
+  ros::init(argc, argv, "object_detector");
+  ObjectDetector objDet;
+  ros::spin();
   return 0;
 }

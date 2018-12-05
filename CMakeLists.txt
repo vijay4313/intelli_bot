@@ -29,10 +29,15 @@ project(intelli_bot)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+find_package(OpenCV REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
+  cv_bridge
+  image_transport
+  message_generation
 )
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -54,7 +59,7 @@ if(ROS_CI_COVERALLS)
 endif()
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -93,6 +98,13 @@ endif()
 #   Message2.msg
 # )
 
+add_message_files(
+ FILES
+ Pedestrians.msg
+ bbox.msg
+)
+
+
 ## Generate services in the 'srv' folder
 # add_service_files(
 #   FILES
@@ -112,6 +124,13 @@ endif()
 #   DEPENDENCIES
 #   std_msgs
 # )
+
+
+generate_messages(
+ DEPENDENCIES
+ std_msgs
+ geometry_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -142,11 +161,15 @@ endif()
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
+#catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES intelli_bot
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
+#)
+
+catkin_package(
+  CATKIN_DEPENDS message_runtime
 )
 
 ###########
@@ -158,6 +181,11 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+)
+
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -174,7 +202,8 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(${PROJECT_NAME} src/main.cpp src/ObjectDetector.cpp src/SLAM.cpp src/PathPlanning.cpp src/Control.cpp)
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBS})
+add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_generate_messages_cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
