@@ -15,33 +15,19 @@ package for the above-mentioned drone operation.
  - Amrish Baskaran
 
 ## Dependencies
-- ROS Kinetic
-
-   Installation instructions can be found [here](http://wiki.ros.org/kinetic/Installation)
-   
-- Catkin
-
-   Information and installation instructions of Catkin can be found [here](http://wiki.ros.org/catkin)
- 
- - Gtest
- 
-   Information on usage and installation of gtest can be found [here](http://wiki.ros.org/gtest)
-    
- - Rostest
- 
-   Information on usage of rostest can be found [here](http://wiki.ros.org/rostest)
-   
- - Travis CI
-
- - Coveralls
-
- - OpenCV
-
-   Information on Open Source Computer Vision Library can be found [here](https://opencv.org/license.html) 
- 
- - Rviz
-
- - Gazebo 7.0.0
+- [ROS Kinetic](http://wiki.ros.org/kinetic/Installation)
+- [Catkin](http://wiki.ros.org/catkin)
+- [Gtest](http://wiki.ros.org/gtest)
+- [Rostest](http://wiki.ros.org/rostest)
+- Travis CI [Documentation](https://docs.travis-ci.com/user/for-beginners/)
+- Coveralls [Documentation](https://docs.coveralls.io/about-coveralls)
+- [OpenCV](https://opencv.org/license.html) 
+- [Rviz](http://wiki.ros.org/rviz)
+- [Gazebo 7.0.0](http://gazebosim.org/)
+- [tum_Simulator](http://wiki.ros.org/tum_simulator)
+- [ardrone_autonomy](https://ardrone-autonomy.readthedocs.io/en/latest/)
+- [LSD SLAM](https://vision.in.tum.de/research/vslam/lsdslam)
+- [industrial_ci](https://github.com/ros-industrial/industrial_ci)
 
 # Development Process
 This module will be developed using the Solo Iterative Process(SIP), Test Driven Development and agile development in a 3 week sprint method.
@@ -49,10 +35,15 @@ The spreadsheet for the Product log, iteration backlog, work log and sprint deta
 
 Notes from the sprint review sessions can be found in the link-[Sprint review Doc](https://docs.google.com/document/d/1bJjVpGoex2Z11x2BASVN002mspXWGj8SX9v-RlrVU2g/edit)
 
+### Dependencies Installation
+- [ROS Kinetic](http://wiki.ros.org/kinetic/Installation)
+- [Catkin](http://wiki.ros.org/catkin)
+- [OpenCV](https://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html)
+- [tum_Simulator and ardrone_autonomy](http://wiki.ros.org/tum_simulator)
+- [LSD SLAM](https://github.com/kevin-george/lsd_slam/wiki/LSD-SLAM-with-ROS-and-Ubuntu-16.04)
+
 To Do
 ### Presentation
-
-### Dependencies Installation
 
 ### Setup
 
