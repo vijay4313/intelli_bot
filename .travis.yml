@@ -19,7 +19,10 @@ matrix:
   allow_failures:
     #- env: USE_DEB=true  ROS_DISTRO="kinetic"   ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
 install:
+  - sudo apt-get install ros-kinetic-ardone-autonomy
   - git clone --depth 1 https://github.com/ros-industrial/industrial_ci.git .ci_config
+  - cd /root/catkin_ws/src
+  - git clone https://github.com/angelsantamaria/tum_simulator.git
 
 before_script:
   - echo ROS_CI_COVERAGE >> .ci_config/industrial_ci/src/docker.env
