@@ -43,6 +43,50 @@ Notes from the sprint review sessions can be found in the link-[Sprint review Do
 - [LSD SLAM](https://github.com/kevin-george/lsd_slam/wiki/LSD-SLAM-with-ROS-and-Ubuntu-16.04)
 
 To Do
+
+### Preliminary Results
+##### To implement prototyped human detection:
+
+```
+cd ~/catkin_ws/src
+git clone --recursive https://github.com/vijay4313/intelli_bot.git
+// With other dependencies (tum_simulator, ardrone_autonomy) built into catkin_ws....
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+roslaunch cvg_sim_gazebo ardrone_testworld.launch
+```
+
+In a new terminal
+```
+source devel/setup.bash
+rosrun intelli_bot intelli_bot
+```
+It opens a window with detections, like:
+![human_detection_example](https://github.com/vijay4313/intelli_bot/blob/master/results/human_detection.png)
+
+##### To implement prototyped LSD SLAM:
+```
+cd ~/catkin_ws/src
+git clone --recursive https://github.com/vijay4313/lsd_slam.git
+// With other dependencies (tum_simulator, ardrone_autonomy, intelli_bot) built into catkin_ws....
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+roslaunch cvg_sim_gazebo ardrone_testworld.launch
+```
+In a new terminal:
+```
+source devel/setup.bash
+rosrun lsd_slam_core live_slam /image:=/ardrone/front/image_raw _calib:=/{catkin_ws}/src/intelli_bot/include/OpenCV_example_calib.cfg
+```
+Open a new terminal and start the SLAM viewer
+```
+source devel/setup.bash
+rosrun lsd_slam_viewer viewer
+```
+It opens a window with point cloud map, like:
+![slam_map](https://github.com/vijay4313/intelli_bot/blob/master/results/map.png)
 ### Presentation
 
 ### Setup
