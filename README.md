@@ -3,39 +3,57 @@
 [![Build Status](https://travis-ci.org/vijay4313/intelli_bot.svg?branch=master)](https://travis-ci.org/vijay4313/intelli_bot)
 [![Coverage Status](https://coveralls.io/repos/github/vijay4313/intelli_bot/badge.svg?branch=master)](https://coveralls.io/github/vijay4313/intelli_bot?branch=master)
 
-# Overview
+## Overview
  Acme Robotics Inc. aims to explore new realms in defense robotics by developing a
 quadrotor drone capable for exploring an unknown user-defined land patch and
 collect intelligence (number of hostages & terrorists) all the while developing a map
 of the explored area. The scope of this project is to develop the end-to-end software
 package for the above-mentioned drone operation.
 
-# Dependencies
-- ROS Kinetic
+## Authors
+ - Venkatraman Narayanan
+ - Amrish Baskaran
 
-   Installation instructions can be found [here](http://wiki.ros.org/kinetic/Installation)
-   
-- Catkin
-
-   Information and installation instructions of Catkin can be found [here](http://wiki.ros.org/catkin)
- 
- - Gtest
- 
-   Information on usage and installation of gtest can be found [here](http://wiki.ros.org/gtest)
-    
- - Rostest
- 
-   Information on usage of rostest can be found [here](http://wiki.ros.org/rostest)
-   
- - Travis CI
-
- - Coveralls
-
- - OpenCV
-
-   Information on Open Source Computer Vision Library can be found [here](https://opencv.org/license.html) 
+## Dependencies
+- [ROS Kinetic](http://wiki.ros.org/kinetic/Installation)
+- [Catkin](http://wiki.ros.org/catkin)
+- [Gtest](http://wiki.ros.org/gtest)
+- [Rostest](http://wiki.ros.org/rostest)
+- Travis CI [Documentation](https://docs.travis-ci.com/user/for-beginners/)
+- Coveralls [Documentation](https://docs.coveralls.io/about-coveralls)
+- [OpenCV](https://opencv.org/license.html) 
+- [Rviz](http://wiki.ros.org/rviz)
+- [Gazebo 7.0.0](http://gazebosim.org/)
+- [tum_Simulator](http://wiki.ros.org/tum_simulator)
+- [ardrone_autonomy](https://ardrone-autonomy.readthedocs.io/en/latest/)
+- [LSD SLAM](https://vision.in.tum.de/research/vslam/lsdslam)
+- [industrial_ci](https://github.com/ros-industrial/industrial_ci)
 
 # Development Process
 This module will be developed using the Solo Iterative Process(SIP), Test Driven Development and agile development in a 3 week sprint method.
 The spreadsheet for the Product log, iteration backlog, work log and sprint details can be found in this link-[Agile Development Spreadsheet](https://docs.google.com/spreadsheets/d/1cRZ1Yc6He_yjTwrT3RzN5OtVLop9_kAH2wNIdsGixpU/edit#gid=383324177)
+
 Notes from the sprint review sessions can be found in the link-[Sprint review Doc](https://docs.google.com/document/d/1bJjVpGoex2Z11x2BASVN002mspXWGj8SX9v-RlrVU2g/edit)
+
+### Dependencies Installation
+- [ROS Kinetic](http://wiki.ros.org/kinetic/Installation)
+- [Catkin](http://wiki.ros.org/catkin)
+- [OpenCV](https://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html)
+- [tum_Simulator and ardrone_autonomy](http://wiki.ros.org/tum_simulator)
+- [LSD SLAM](https://github.com/kevin-george/lsd_slam/wiki/LSD-SLAM-with-ROS-and-Ubuntu-16.04)
+
+To Do
+### Presentation
+
+### Setup
+
+### Demo Instructions
+
+### Running Instructions
+
+### Instructions for Running Tests
+
+### Known issues and Bugs
+
+### Documentation- API and Other Packages
+
