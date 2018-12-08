@@ -1,0 +1,2 @@
+- git: {local-name: ardrone_autonomy, uri: 'https://github.com/AutonomyLab/ardrone_autonomy.git', version: indigo-devel	}
+- git: {local-name: tum_simulator, uri: 'https://github.com/angelsantamaria/tum_simulator.git', version: }
