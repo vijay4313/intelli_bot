@@ -13,8 +13,7 @@ env:
   global:
     - VERBOSE_OUTPUT=true
   matrix:
-    - COVERALLS_REPO_TOKEN="9E7mHUiU8AKT0MXy8Q0XJJoWTc7OOJ0ix" ROS_CI_COVERAGE=true USE_DEB=true ROS_DISTRO="kinetic" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu AFTER_SCRIPT='source /root/catkin_ws/devel/setup.bash && cd /root/catkin_ws/build/intelli_bot && make coveralls'
-    - ROS_DISTRO="kinetic"   UPSTREAM_WORKSPACE=file  ROSINSTALL_FILENAME=.rosinstall 
+    - COVERALLS_REPO_TOKEN="9E7mHUiU8AKT0MXy8Q0XJJoWTc7OOJ0ix" ROS_CI_COVERAGE=true USE_DEB=true ROS_DISTRO="kinetic" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu AFTER_SCRIPT='source /root/catkin_ws/devel/setup.bash && cd /root/catkin_ws/build/intelli_bot && make coveralls'  UPSTREAM_WORKSPACE=file  ROSINSTALL_FILENAME=.rosinstall 
     #- USE_DEB=true  ROS_DISTRO="kinetic"   ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
 matrix:
   allow_failures:
@@ -29,12 +28,6 @@ before_script:
   
 script: 
   - source .ci_config/travis.sh
-after_script:
-  - cd /root/catkin_ws/src
-  - git clone https://github.com/angelsantamaria/tum_simulator.git
-  - git clone https://github.com/AutonomyLab/ardrone_autonomy.git -b indigo-devel
-  - cd ..
-  - catkin_make install
 
 #  - source ./travis.sh  # Enable this when you have a package-local script 
 
