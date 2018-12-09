@@ -60,6 +60,7 @@ class ObjectDetector {
   image_transport::Publisher im_pub_;
 
   ros::Publisher pedestrians_pub_;
+  intelli_bot::Pedestrians pedestrians_msg;
 
   cv::HOGDescriptor hog_;
 

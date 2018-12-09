@@ -25,7 +25,7 @@
 
 /**
  *
- *  @file    talker.cpp
+ *  @file    test.cpp
  *  @author  Venkatraman Narayanan (vijay4313)
  *  @copyright	MIT
  *  @date    11/27/2018
@@ -40,7 +40,6 @@
 
 #include <ros/ros.h>
 #include <gtest/gtest.h>
-#include "ros/service_client.h"
 
 
 TEST(testDummy, dummy) {

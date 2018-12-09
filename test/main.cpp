@@ -42,7 +42,7 @@
 #include <ros/ros.h>
 
 int main(int argc, char** argv) {
-  ros::init(argc, argv, "talkerTest");
+  ros::init(argc, argv, "intelli_bot_test");
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }

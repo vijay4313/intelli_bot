@@ -272,10 +272,18 @@ if (CATKIN_ENABLE_TESTING)
   test/test1.launch
   test/main.cpp
   test/test.cpp
+  test/objectDetectorTest.cpp
+  src/ObjectDetector.cpp
   )
   target_link_libraries(
   ${PROJECT_NAME}_test
   ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+  )
+  add_dependencies(
+    intelli_bot
+    intelli_bot_test
+    ${catkin_EXPORTED_TARGETS}
   )
 endif()
 
