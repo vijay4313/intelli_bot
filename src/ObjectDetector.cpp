@@ -65,7 +65,7 @@ ObjectDetector::ObjectDetector()
  * @return none
  */
 ObjectDetector::~ObjectDetector() {
-  cv::destroyWindow(OPENCV_WINDOW);
+ // cv::destroyWindow(OPENCV_WINDOW);
 }
 
 /**
