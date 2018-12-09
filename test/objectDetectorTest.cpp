@@ -39,18 +39,16 @@
 
 
 TEST(TestNodeObjectDetect, executionTest){
-	ObjectDetector detector;
-	double x = detector.pedestrians_msg.pedestrians[1].center.x;
-	double y = detector.pedestrians_msg.pedestrians[1].center.y;
-	double z = detector.pedestrians_msg.pedestrians[1].center.z;
-	int width = detector.pedestrians_msg.pedestrians[1].width;
-	int height = detector.pedestrians_msg.pedestrians[1].height;
-	EXPECT_NEAR(185, x, 10.0);
-	EXPECT_NEAR(-105,y, 10.0);
-	EXPECT_NEAR(0, z, 10.0);
-	EXPECT_NEAR(138, width, 10.0);
-	EXPECT_NEAR(275, height, 10.0);
-
+	ros::WallDuration(0.5).sleep();
+		ObjectDetector detector;
+		ros::spinOnce();
+		double x = detector.pedestrians_msg.pedestrians[0].center.x;
+		double y = detector.pedestrians_msg.pedestrians[0].center.y;
+		int width = detector.pedestrians_msg.pedestrians[0].width;
+		int height = detector.pedestrians_msg.pedestrians[0].height;
+		EXPECT_NEAR(185, x, 20.0);
+		EXPECT_NEAR(-72,y, 20.0);
+		EXPECT_NEAR(130, width, 20.0);
+		EXPECT_NEAR(265, height, 20.0);
  }
-
 
