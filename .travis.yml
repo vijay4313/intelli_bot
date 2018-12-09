@@ -11,7 +11,7 @@ notifications:
 #      - jane@doe
 env:
   global:
-    - VERBOSE_OUTPUT=true
+    - VERBOSE_OUTPUT=false
   matrix:
     - COVERALLS_REPO_TOKEN="9E7mHUiU8AKT0MXy8Q0XJJoWTc7OOJ0ix" ROS_CI_COVERAGE=true ROS_DISTRO="kinetic" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu AFTER_SCRIPT='source /root/catkin_ws/devel/setup.bash && cd /root/catkin_ws/build/intelli_bot && make coveralls'  UPSTREAM_WORKSPACE=file ROSINSTALL_FILENAME=extern_depends.rosinstall 
     #- USE_DEB=true  ROS_DISTRO="kinetic"   ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
