@@ -55,7 +55,7 @@ ObjectDetector::ObjectDetector()
   pedestrians_pub_ = nh_.advertise < intelli_bot::Pedestrians
       > ("/person_detection/pedestrians", 1000);
 
-  cv::namedWindow(OPENCV_WINDOW);
+  //cv::namedWindow(OPENCV_WINDOW);
 
 }
 
@@ -113,8 +113,8 @@ void ObjectDetector::personDetector(const sensor_msgs::ImageConstPtr& msg) {
   }
   pedestrians_pub_.publish(pedestrians_msg);
   sensor_msgs::ImagePtr out_msg = cv_bridge::CvImage(cv_ptr->header, "bgr8", im_bgr).toImageMsg();
-  cv::imshow(OPENCV_WINDOW, im_bgr);
-  cv::waitKey(3);
+  //cv::imshow(OPENCV_WINDOW, im_bgr);
+  //cv::waitKey(3);
   im_pub_.publish(out_msg);
 
 }
