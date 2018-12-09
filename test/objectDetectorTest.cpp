@@ -21,27 +21,36 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */
-
-/**
  *
- *  @file    test.cpp
- *  @author  Venkatraman Narayanan (vijay4313)
+ *  @file    objectDetectorTest.cpp
+ *  @author  Amrish Baskaran(amrish1222)
  *  @copyright	MIT
- *  @date    11/27/2018
- *
- *  @brief	ROS package test routine for
- *  intellibot package
- *
+ *  @date    12/8/2018
+ *  @brief	objectDetector class test
  *  @section DESCRIPTION
- *	A simple testing routine for the ROS package
+ *	A simple testing routine handler
+ *  for the ROS package
  *
  */
 
+#include "../include/ObjectDetector.h"
 #include <ros/ros.h>
 #include <gtest/gtest.h>
 
 
-TEST(testDummy, dummy) {
-  EXPECT_EQ(1, 1);
-}
+TEST(TestNodeObjectDetect, executionTest){
+	ObjectDetector detector;
+	double x = detector.pedestrians_msg.pedestrians[1].center.x;
+	double y = detector.pedestrians_msg.pedestrians[1].center.y;
+	double z = detector.pedestrians_msg.pedestrians[1].center.z;
+	int width = detector.pedestrians_msg.pedestrians[1].width;
+	int height = detector.pedestrians_msg.pedestrians[1].height;
+	EXPECT_NEAR(185, x, 10.0);
+	EXPECT_NEAR(-105,y, 10.0);
+	EXPECT_NEAR(0, z, 10.0);
+	EXPECT_NEAR(138, width, 10.0);
+	EXPECT_NEAR(275, height, 10.0);
+
+ }
+
+

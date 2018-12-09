@@ -1,4 +1,9 @@
 <launch>
-  <node pkg="intelli_bot" name="intelli_bot" type="intelli_bot"/>
+   <node 
+   pkg="rosbag" 
+   type="play" 
+   name="player"  
+   args="--clock -l $(find intelli_bot)/results/ImageDetectionTopic.bag"
+   />
   <test pkg="intelli_bot" test-name="intelli_bot_test" type="intelli_bot_test"/>
 </launch>
