@@ -41,6 +41,7 @@
 TEST(TestNodeObjectDetect, executionTest){
 	ros::WallDuration(2.0).sleep();
 		ObjectDetector detector;
+		ros::WallDuration(2.0).sleep();
 		ros::spinOnce();
 		double x = detector.pedestrians_msg.pedestrians[0].center.x;
 		double y = detector.pedestrians_msg.pedestrians[0].center.y;
