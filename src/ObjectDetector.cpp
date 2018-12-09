@@ -45,8 +45,10 @@ ObjectDetector::ObjectDetector()
 
   hog_.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
 
+  // subscribe to required topic image_raw
   im_sub_ = it_.subscribe("/ardrone/front/image_raw", 1,
                           &ObjectDetector::personDetector, this);
+  // advertise to topic
   im_pub_ = it_.advertise("/camera_person_tracker/output_video", 1);
 
   // Publish detected pedestrians.
@@ -94,7 +96,7 @@ void ObjectDetector::personDetector(const sensor_msgs::ImageConstPtr& msg) {
 
   // Publish message of location and confident of detected pedestrians.
   // Draw detections from HOG to the screen.
-  intelli_bot::Pedestrians pedestrians_msg;
+
   for (unsigned i = 0; i < detected_pedestrian.size(); i++) {
     // Draw on screen.
     cv::rectangle(im_bgr, detected_pedestrian[i], cv::Scalar(255));
