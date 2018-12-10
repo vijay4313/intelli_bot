@@ -34,13 +34,23 @@
 #include <gtest/gtest.h>
 #include <geometry_msgs/Pose.h>
 
+/**
+ * @brief Test for Path generation using the
+ *        PathPlanning class
+ */
 TEST(pathPlanningTest, pathGenerationTest) {
+  // Creaating instance of PathPlanning class
   PathPlanning pp;
   double length = 100;
   double breadth = 200.0;
+  // setting the cover area with
+  // the length and breadth
   pp.setCovArea(length, breadth);
+  // generating the path
   pp.generatePath();
+  // retrieving the path for testing
   auto generatedPath = pp.getPath();
+  // Tests
   EXPECT_EQ(generatedPath[0].position.z, 2.5);
   EXPECT_EQ(generatedPath[1].position.x, -length);
   EXPECT_EQ(generatedPath[3].position.y, breadth);

@@ -26,29 +26,34 @@
  *  @author  Amrish Baskaran(amrish1222)
  *  @copyright	MIT
  *  @date    12/8/2018
- *  @brief	objectDetector class test
- *  @section DESCRIPTION
- *	A simple testing routine handler
- *  for the ROS package
+ *  @brief	Routine to test ObjectDetector Class
  */
 
 #include "../include/ObjectDetector.h"
 #include <ros/ros.h>
 #include <gtest/gtest.h>
 
-
+/**
+ * @brief Testing function for checking the execution
+ *        of the ObjectDetector class
+ */
 TEST(TestNodeObjectDetect, executionTest){
+  // waiting for the rosbag to initiate
 	ros::WallDuration(2.0).sleep();
-		ObjectDetector detector;
-		ros::WallDuration(2.0).sleep();
-		ros::spinOnce();
-		double x = detector.pedestrians_msg.pedestrians[0].center.x;
-		double y = detector.pedestrians_msg.pedestrians[0].center.y;
-		int width = detector.pedestrians_msg.pedestrians[0].width;
-		int height = detector.pedestrians_msg.pedestrians[0].height;
-		EXPECT_NEAR(185, x, 20.0);
-		EXPECT_NEAR(-72,y, 20.0);
-		EXPECT_NEAR(130, width, 20.0);
-		EXPECT_NEAR(265, height, 20.0);
+  // creating the ObjectDetector object
+  ObjectDetector detector;
+  // waiting for the subscriber and publisher initialization
+  ros::WallDuration(2.0).sleep();
+  ros::spinOnce();
+  // retrieve the info on the located pedestrian
+  double x = detector.pedestrians_msg.pedestrians[0].center.x;
+  double y = detector.pedestrians_msg.pedestrians[0].center.y;
+  int width = detector.pedestrians_msg.pedestrians[0].width;
+  int height = detector.pedestrians_msg.pedestrians[0].height;
+  // Testing
+  EXPECT_NEAR(185, x, 20.0);
+  EXPECT_NEAR(-72, y, 20.0);
+  EXPECT_NEAR(130, width, 20.0);
+  EXPECT_NEAR(265, height, 20.0);
  }
 
