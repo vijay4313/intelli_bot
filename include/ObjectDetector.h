@@ -58,10 +58,8 @@ class ObjectDetector {
   image_transport::ImageTransport it_;
   image_transport::Subscriber im_sub_;
   image_transport::Publisher im_pub_;
-
   ros::Publisher pedestrians_pub_;
   intelli_bot::Pedestrians pedestrians_msg;
-
   cv::HOGDescriptor hog_;
 
   /**
@@ -85,7 +83,6 @@ class ObjectDetector {
    * @return none
    */
   void personDetector(const sensor_msgs::ImageConstPtr& msg);
-
 };
 
 #endif /* INTELLI_BOT_INCLUDE_OBJECTDETECTOR_H_ */

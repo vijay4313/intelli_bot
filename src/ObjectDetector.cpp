@@ -21,9 +21,6 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */
-
-/**
  *
  *  @file    ObjectDetector.cpp
  *  @Author  Venkatraman Narayanan (vijay4313)
@@ -35,7 +32,12 @@
 #include "../include/ObjectDetector.h"
 #include <iostream>
 #include "ros/ros.h"
-static const std::string OPENCV_WINDOW = "Image window";
+
+/**
+ * @brief OpenCV window to see the output of Objec Detector class
+ */
+//static const std::string OPENCV_WINDOW = "Image window";
+
 /**
  * @brief Constructor
  * @param none
@@ -43,9 +45,7 @@ static const std::string OPENCV_WINDOW = "Image window";
  */
 ObjectDetector::ObjectDetector()
     : it_(nh_) {
-
   hog_.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
-
   // subscribe to required topic image_raw
   im_sub_ = it_.subscribe("/ardrone/front/image_raw", 1,
                           &ObjectDetector::personDetector, this);
@@ -55,9 +55,8 @@ ObjectDetector::ObjectDetector()
   // Publish detected pedestrians.
   pedestrians_pub_ = nh_.advertise < intelli_bot::Pedestrians
       > ("/person_detection/pedestrians", 1000);
-
+  // window to display camera view with bbox around pedestrian
   // cv::namedWindow(OPENCV_WINDOW);
-
 }
 
 /**
@@ -70,9 +69,12 @@ ObjectDetector::~ObjectDetector() {
 }
 
 /**
- * @brief routine to train
- * the ObjectDetector object
- * @param  none
+ * @brief  callback function for detecting
+ * the human
+ * @brief  Uses image and determines the position
+ * and bounding box of the humans and publishes it
+ * to the required topic
+ * @param  Image used from the subscribed topic
  * @return none
  */
 void ObjectDetector::personDetector(const sensor_msgs::ImageConstPtr& msg) {
@@ -83,25 +85,22 @@ void ObjectDetector::personDetector(const sensor_msgs::ImageConstPtr& msg) {
     ROS_ERROR("cv_bridge exception: %s", e.what());
     return;
   }
+  // converting to grey scale
   cv::Mat im_bgr = cv_ptr->image;
-
   cv::Mat im_gray;
-
   cv::cvtColor(im_bgr, im_gray, CV_BGR2GRAY);
+  //  histogram equalization
   cv::equalizeHist(im_gray, im_gray);
-
   // HOG pedestrian detector
   std::vector < cv::Rect > detected_pedestrian;
+  // Detection of Pedestrian done here
   hog_.detectMultiScale(im_gray, detected_pedestrian, 0.0, cv::Size(4, 4),
                         cv::Size(0, 0), 1.05, 4);
-
   // Publish message of location and confident of detected pedestrians.
   // Draw detections from HOG to the screen.
-
   for (unsigned i = 0; i < detected_pedestrian.size(); i++) {
     // Draw on screen.
     cv::rectangle(im_bgr, detected_pedestrian[i], cv::Scalar(255));
-
     // Add to published message.
     intelli_bot::bbox pedestrian;
     pedestrian.center.x = detected_pedestrian[i].x
@@ -110,14 +109,16 @@ void ObjectDetector::personDetector(const sensor_msgs::ImageConstPtr& msg) {
         - detected_pedestrian[i].height / 2;
     pedestrian.width = detected_pedestrian[i].width;
     pedestrian.height = detected_pedestrian[i].height;
+    // Adding the msg to the vector
     pedestrians_msg.pedestrians.push_back(pedestrian);
   }
+
+  // Publishing the data to the /person_detection/pedestrians topic
   pedestrians_pub_.publish(pedestrians_msg);
   sensor_msgs::ImagePtr out_msg = cv_bridge::CvImage(cv_ptr->header, "bgr8", im_bgr).toImageMsg();
+  // Displaying image with bbox around the pedestrian
   // cv::imshow(OPENCV_WINDOW, im_bgr);
   // cv::waitKey(3);
-  ROS_INFO_STREAM("Hello i can sent data out");
   im_pub_.publish(out_msg);
-
 }
 
