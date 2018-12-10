@@ -30,7 +30,6 @@
  *  @section DESCRIPTION
  *	A simple testing routine handler
  *  for the ROS package
- *
  */
 
 #include "../include/ObjectDetector.h"

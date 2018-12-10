@@ -33,7 +33,8 @@
  */
 
 #include "../include/ObjectDetector.h"
-
+#include <iostream>
+#include "ros/ros.h"
 static const std::string OPENCV_WINDOW = "Image window";
 /**
  * @brief Constructor
@@ -115,6 +116,7 @@ void ObjectDetector::personDetector(const sensor_msgs::ImageConstPtr& msg) {
   sensor_msgs::ImagePtr out_msg = cv_bridge::CvImage(cv_ptr->header, "bgr8", im_bgr).toImageMsg();
   cv::imshow(OPENCV_WINDOW, im_bgr);
   cv::waitKey(3);
+  ROS_INFO_STREAM("Hello i can sent data out");
   im_pub_.publish(out_msg);
 
 }
