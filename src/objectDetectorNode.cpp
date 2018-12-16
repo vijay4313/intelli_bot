@@ -21,33 +21,29 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */
-
-/**
  *
- *  @file    main.cpp
+ *  @file    objectDetectorNode.cpp
  *  @author  Venkatraman Narayanan
  *  @author  Amrish Baskaran
  *  @copyright	MIT
  *  @date    11/27/2018
- *
- *  @brief intellibot main routine 
- *
+ *  @brief objectDetectorNode routine
  */
-
 #include "ros/ros.h"
 #include "../include/ObjectDetector.h"
 
 /*
- * @brief The main routine that generates
- * 		     ROS instance
+ * @brief Main function for the objectDetectorNode
+ * routine
  * @param argc - default ROS argument
- * 				 for command line remapping
- * 		  argv - default ROS argument
- * 		         for command line remapping
+ * for command line remapping
+ * 		    argv - default ROS argument
+ * for command line remapping
  */
 int main(int argc, char **argv) {
+  // Initializing node
   ros::init(argc, argv, "object_detector");
+  // Instance of ObjectDectector class
   ObjectDetector objDet;
   ros::spin();
   return 0;

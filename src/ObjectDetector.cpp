@@ -33,8 +33,23 @@
  */
 
 #include "../include/ObjectDetector.h"
+#include <ros/ros.h>
+#include <image_transport/image_transport.h>
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.h>
+#include <intelli_bot/Pedestrians.h>
+#include <intelli_bot/bbox.h>
+#include "../include/ImageProcessor.h"
+#include "sophus/sim3.hpp"
+#include "geometry_msgs/Twist.h"
+#include "visualization_msgs/Marker.h"
+#include "lsd_slam_viewer/keyframeMsg.h"
+#include <tf/transform_listener.h>
+#include <tf/transform_broadcaster.h>
+#include <tf/tf.h>
+#include "geometry_msgs/Point.h"
 
-static const std::string OPENCV_WINDOW = "Image window";
+// static const std::string OPENCV_WINDOW = "Image window";
 /**
  * @brief Constructor
  * @param none
@@ -43,17 +58,22 @@ static const std::string OPENCV_WINDOW = "Image window";
 ObjectDetector::ObjectDetector()
     : it_(nh_) {
 
-  hog_.setSVMDetector(cv::HOGDescriptor::getDefaultPeopleDetector());
-
   // subscribe to required topic image_raw
-  im_sub_ = it_.subscribe("/ardrone/front/image_raw", 1,
-                          &ObjectDetector::personDetector, this);
+  imSub_ = it_.subscribe("/ardrone/front/image_raw", 1,
+                         &ObjectDetector::personDetector, this);
   // advertise to topic
-  im_pub_ = it_.advertise("/camera_person_tracker/output_video", 1);
+  imPub_ = it_.advertise("/camera_person_tracker/output_video", 1);
+
+  // subscribe to camera pose topic from LSD SLAM
+  lsdSub = nh_.subscribe("/lsd_slam/liveframes", 20, &ObjectDetector::camPoseCB,
+                         this);
 
   // Publish detected pedestrians.
-  pedestrians_pub_ = nh_.advertise < intelli_bot::Pedestrians
+  pedPub_ = nh_.advertise < intelli_bot::Pedestrians
       > ("/person_detection/pedestrians", 1000);
+
+  pedMarkerPub = nh_.advertise < visualization_msgs::Marker
+      > ("/humanMarker", 10);
 
   //cv::namedWindow(OPENCV_WINDOW);
 
@@ -64,7 +84,7 @@ ObjectDetector::ObjectDetector()
  * @param none
  * @return none
  */
-ObjectDetector::~ObjectDetector() {
+ObjectDetector::~ObjectDetector() 
  // cv::destroyWindow(OPENCV_WINDOW);
 }
 
@@ -75,47 +95,123 @@ ObjectDetector::~ObjectDetector() {
  * @return none
  */
 void ObjectDetector::personDetector(const sensor_msgs::ImageConstPtr& msg) {
-  cv_bridge::CvImagePtr cv_ptr;
   try {
-    cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+    cvPtr_ = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
   } catch (cv_bridge::Exception& e) {
     ROS_ERROR("cv_bridge exception: %s", e.what());
     return;
   }
-  cv::Mat im_bgr = cv_ptr->image;
+  cv::Mat imBGR = cvPtr_->image;
+  pedMsg = imgPr.bBoxDetects(imBGR);
+  cv::Mat bBoxImg = imgPr.getDetImg();
+  outMsg_ = cv_bridge::CvImage(cvPtr_->header, "bgr8", bBoxImg).toImageMsg();
+  get3dMarker();
+  pedPub_.publish(pedMsg);
+  imPub_.publish(outMsg_);
 
-  cv::Mat im_gray;
+}
 
-  cv::cvtColor(im_bgr, im_gray, CV_BGR2GRAY);
-  cv::equalizeHist(im_gray, im_gray);
+intelli_bot::Pedestrians ObjectDetector::getPedMsg() {
+  return (pedMsg);
+}
 
-  // HOG pedestrian detector
-  std::vector < cv::Rect > detected_pedestrian;
-  hog_.detectMultiScale(im_gray, detected_pedestrian, 0.0, cv::Size(4, 4),
-                        cv::Size(0, 0), 1.05, 4);
+void ObjectDetector::camPoseCB(const lsd_slam_viewer::keyframeMsgConstPtr msg) {
+  memcpy(camToWorld.data(), msg->camToWorld.data(), 7 * sizeof(double));
+  fx = msg->fx;
+  fy = msg->fy;
+  cx = msg->cx;
+  cy = msg->cy;
+  id = msg->id;
+  height = msg->height;
+  width = msg->width;
+}
 
-  // Publish message of location and confident of detected pedestrians.
-  // Draw detections from HOG to the screen.
+void ObjectDetector::get3dMarker() {
+  Sophus::Matrix4f m = camToWorld.matrix();
+  auto scale = camToWorld.scale();
+  fxi = 1 / fx;
+  fyi = 1 / fy;
+  cxi = -cx / fx;
+  cyi = -cy / fy;
 
-  for (unsigned i = 0; i < detected_pedestrian.size(); i++) {
-    // Draw on screen.
-    cv::rectangle(im_bgr, detected_pedestrian[i], cv::Scalar(255));
+  visualization_msgs::Marker points;
+  points.header.frame_id = "/nav";
+  points.header.stamp = ros::Time::now();
+  points.ns = "intelli_bot";
+  points.action = visualization_msgs::Marker::ADD;
+  points.pose.orientation.w = 1.0;
+  points.id = id;
+  points.type = visualization_msgs::Marker::POINTS;
+  points.scale.x = 1;
+  points.scale.y = 1;
+  points.scale.z = 0.1;
 
-    // Add to published message.
-    intelli_bot::bbox pedestrian;
-    pedestrian.center.x = detected_pedestrian[i].x
-        - detected_pedestrian[i].width / 2;
-    pedestrian.center.y = detected_pedestrian[i].y
-        - detected_pedestrian[i].height / 2;
-    pedestrian.width = detected_pedestrian[i].width;
-    pedestrian.height = detected_pedestrian[i].height;
-    pedestrians_msg.pedestrians.push_back(pedestrian);
+  // Points are green
+  points.color.g = 1.0;
+  points.color.a = 1.0;
+
+  for (unsigned i = 0; i < pedMsg.pedestrians.size(); i++) {
+    int x = pedMsg.pedestrians[i].center.x;
+    int y = pedMsg.pedestrians[i].center.y;
+    Sophus::Vector3f pt = camToWorld
+        * Sophus::Vector3f((x * fxi + cxi), (y * fyi + cyi), 1);
+    geometry_msgs::Point gPt;
+    gPt.x = pt[0];
+    gPt.y = pt[1];
+    gPt.z = pt[2];
+    auto transPt = transformCam2World(gPt);
+
+    points.points.push_back(transPt);
   }
+  pedMarkerPub.publish(points);
+}
+
+geometry_msgs::Point ObjectDetector::transformCam2World(
+    geometry_msgs::Point &gPt) {
+
+  try {
+    tfListener_.waitForTransform("/nav", "/ardrone_base_frontcam", ros::Time::now(),
+                                 ros::Duration(10.0));
+    tfListener_.lookupTransform("/nav", "/ardrone_base_frontcam", ros::Time(0),
+                                nav2BasTF);
+  } catch (tf::TransformException ex) {
+    ROS_ERROR("%s", ex.what());
+    ros::Duration(1.0).sleep();
+  }
+
+  tf::Matrix3x3 m(nav2BasTF.getRotation());
+
+  float r11 = m.getColumn(0).getX();
+  float r21 = m.getColumn(0).getY();
+  float r31 = m.getColumn(0).getZ();
+
+  float r12 = m.getColumn(1).getX();
+  float r22 = m.getColumn(1).getY();
+  float r32 = m.getColumn(1).getZ();
+
+  float r13 = m.getColumn(2).getX();
+  float r23 = m.getColumn(2).getY();
+  float r33 = m.getColumn(2).getZ();
+
+  float Tx = nav2BasTF.getOrigin().x();
+  float Ty = nav2BasTF.getOrigin().y();
+  float Tz = nav2BasTF.getOrigin().z();
+
+  float wX = r11 * gPt.x + r12 * gPt.y + r13 * gPt.z + Tx;
+  float wY = r21 * gPt.x + r22 * gPt.y + r23 * gPt.z + Ty;
+  float wZ = r31 * gPt.z + r32 * gPt.y + r33 * gPt.z + Tz;
+
+  geometry_msgs::Point transPt;
+
+  transPt.x = wX;
+  transPt.y = wY;
+  transPt.z = wZ;
+
+  return (transPt);
   pedestrians_pub_.publish(pedestrians_msg);
   sensor_msgs::ImagePtr out_msg = cv_bridge::CvImage(cv_ptr->header, "bgr8", im_bgr).toImageMsg();
   //cv::imshow(OPENCV_WINDOW, im_bgr);
   //cv::waitKey(3);
   im_pub_.publish(out_msg);
-
 }
 

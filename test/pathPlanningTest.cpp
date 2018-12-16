@@ -21,25 +21,41 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
+ *
+ *  @file    pathPlanningTest.cpp
+ *  @author  Amrish Baskaran(amrish1222)
+ *  @copyright  MIT
+ *  @date    12/10/2018
+ *  @brief  PathPlanning class test
  */
+
+#include "../include/PathPlanning.h"
+#include <ros/ros.h>
+#include <gtest/gtest.h>
+#include <geometry_msgs/Pose.h>
 
 /**
- *
- *  @file    controllerNode.cpp
- *  @Author  Venkatraman Narayanan (vijay4313)
- *  @Author Amrish Baskaran (amrish1222)
- *  @copyright  MIT
- *  @brief  Control Node generator
+ * @brief Test for Path generation using the
+ *        PathPlanning class
  */
-
-#include "ros/ros.h"
-#include "../include/Control.h"
-
-
-int main(int argc, char **argv) {
-
-  ros::init(argc, argv, "controllerNode");
-  Control ctrl;
-  ros::spin();
-  return 0;
+TEST(pathPlanningTest, pathGenerationTest) {
+  // Creaating instance of PathPlanning class
+  PathPlanning pp;
+  double length = 100;
+  double breadth = 200.0;
+  // setting the cover area with
+  // the length and breadth
+  pp.setCovArea(length, breadth);
+  // generating the path
+  pp.generatePath();
+  // retrieving the path for testing
+  auto generatedPath = pp.getPath();
+  // Tests
+  EXPECT_EQ(generatedPath[0].position.z, 2.5);
+  EXPECT_EQ(generatedPath[1].position.x, -length);
+  EXPECT_EQ(generatedPath[3].position.y, breadth);
+  EXPECT_NEAR(generatedPath[0].orientation.x, 0, 0.01);
+  EXPECT_NEAR(generatedPath[1].orientation.y, 0, 0.01);
+  EXPECT_NEAR(generatedPath[2].orientation.z, 0.707, 0.01);
+  EXPECT_NEAR(generatedPath[3].orientation.w, 1, 0.01);
 }
