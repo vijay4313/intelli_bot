@@ -3,6 +3,13 @@ dist: trusty
 language: generic 
 compiler:
   - gcc
+addons:
+  apt:
+    packages:
+     - libsuitesparse-dev
+     - libqglviewer-dev-qt4
+     - ros-kinetic-libg2o
+     - ros-kinetic-opencv3 
 notifications:
   email:
     on_success: always
