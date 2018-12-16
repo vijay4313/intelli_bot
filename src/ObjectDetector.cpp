@@ -39,14 +39,14 @@
 #include <sensor_msgs/image_encodings.h>
 #include <intelli_bot/Pedestrians.h>
 #include <intelli_bot/bbox.h>
+#include <tf/transform_broadcaster.h>
+#include <tf/tf.h>
+#include <tf/transform_listener.h>
 #include "../include/ImageProcessor.h"
 #include "../include/Sophus/sophus/sim3.hpp"
 #include "geometry_msgs/Twist.h"
 #include "visualization_msgs/Marker.h"
 #include "intelli_bot/keyframeMsg.h"
-#include <tf/transform_listener.h>
-#include <tf/transform_broadcaster.h>
-#include <tf/tf.h>
 #include "geometry_msgs/Point.h"
 
 // static const std::string OPENCV_WINDOW = "Image window";
@@ -75,7 +75,7 @@ ObjectDetector::ObjectDetector()
   pedMarkerPub = nh_.advertise < visualization_msgs::Marker
       > ("/humanMarker", 10);
 
-  //cv::namedWindow(OPENCV_WINDOW);
+  // cv::namedWindow(OPENCV_WINDOW);
 }
 
 /**
@@ -200,8 +200,8 @@ geometry_msgs::Point ObjectDetector::transformCam2World(
     geometry_msgs::Point &gPt) {
   // wait for transform
   try {
-    tfListener_.waitForTransform("/nav", "/ardrone_base_frontcam", ros::Time::now(),
-                                 ros::Duration(10.0));
+    tfListener_.waitForTransform("/nav", "/ardrone_base_frontcam",
+                                 ros::Time::now(), ros::Duration(10.0));
     // look up transform at required time.
     tfListener_.lookupTransform("/nav", "/ardrone_base_frontcam", ros::Time(0),
                                 nav2BasTF);

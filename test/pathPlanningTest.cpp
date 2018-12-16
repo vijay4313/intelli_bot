@@ -29,10 +29,10 @@
  *  @brief  PathPlanning class test
  */
 
-#include "../include/PathPlanning.h"
 #include <ros/ros.h>
 #include <gtest/gtest.h>
 #include <geometry_msgs/Pose.h>
+#include "../include/PathPlanning.h"
 
 /**
  * @brief Test for Path generation using the

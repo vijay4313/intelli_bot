@@ -31,9 +31,9 @@
  */
 
 #include "../include/PathPlanning.h"
+#include <geometry_msgs/Pose.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <vector>
-#include <geometry_msgs/Pose.h>
 
 /**
  * @brief Constructor
@@ -70,7 +70,7 @@ void PathPlanning::generatePath() {
   p0.position.y = 0.0;
   p0.position.z = _height;
   getQuat.setRPY(0.0, 0.0, -PI);
-  //Normalizing the quaternion
+  // Normalizing the quaternion
   getQuat.normalize();
   p0.orientation.x = getQuat[0];
   p0.orientation.y = getQuat[1];

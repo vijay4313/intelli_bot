@@ -33,7 +33,6 @@
  *
  */
 
-#include "../include/ObjectDetector.h"
 #include <ros/ros.h>
 #include <gtest/gtest.h>
 #include <image_transport/image_transport.h>
@@ -41,18 +40,19 @@
 #include <sensor_msgs/image_encodings.h>
 #include <intelli_bot/Pedestrians.h>
 #include <intelli_bot/bbox.h>
+#include <tf/transform_listener.h>
+#include <tf/transform_broadcaster.h>
+#include <tf/tf.h>
+#include "../include/ObjectDetector.h"
 #include "../include/ImageProcessor.h"
 #include "../include/Sophus/sophus/sim3.hpp"
 #include "geometry_msgs/Twist.h"
 #include "visualization_msgs/Marker.h"
 #include "intelli_bot/keyframeMsg.h"
-#include <tf/transform_listener.h>
-#include <tf/transform_broadcaster.h>
-#include <tf/tf.h>
 #include "geometry_msgs/Point.h"
 
 class point3D {
-public:
+ public:
   void point3dCB(const visualization_msgs::Marker points) {
     markrPtsX = points.points[0].x;
     markrPtsY = points.points[0].y;
@@ -69,12 +69,12 @@ TEST(TestNodeObjectDetect, detectionImageTest) {
 
   tf::TransformBroadcaster br;
   tf::Transform transform;
-  transform.setOrigin( tf::Vector3(0.0, 0.0, 0.0) );
+  transform.setOrigin(tf::Vector3(0.0, 0.0, 0.0));
   tf::Quaternion q;
   q.setRPY(0, 0, 0);
   transform.setRotation(q);
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "/nav", "/ardrone_base_frontcam"));
-
+  br.sendTransform(tf::StampedTransform(transform,
+          ros::Time::now(), "/nav", "/ardrone_base_frontcam"));
   ros::WallDuration(2.0).sleep();
   ros::spinOnce();
   double x = detector.getPedMsg().pedestrians[0].center.x;
@@ -82,7 +82,7 @@ TEST(TestNodeObjectDetect, detectionImageTest) {
   int width = detector.getPedMsg().pedestrians[0].width;
   int height = detector.getPedMsg().pedestrians[0].height;
   EXPECT_NEAR(185, x, 20.0);
-  EXPECT_NEAR(-72,y, 20.0);
+  EXPECT_NEAR(-72, y, 20.0);
   EXPECT_NEAR(130, width, 20.0);
   EXPECT_NEAR(265, height, 20.0);
 }
@@ -95,17 +95,17 @@ TEST(TestNodeObjectDetect, detection3DPointTest) {
 
   tf::TransformBroadcaster br;
   tf::Transform transform;
-  transform.setOrigin( tf::Vector3(0.0, 0.0, 0.0) );
+  transform.setOrigin(tf::Vector3(0.0, 0.0, 0.0));
   tf::Quaternion q;
   q.setRPY(0, 0, 0);
   transform.setRotation(q);
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "/nav", "/ardrone_base_frontcam"));
-
+  br.sendTransform(tf::StampedTransform(transform,
+          ros::Time::now(), "/nav", "/ardrone_base_frontcam"));
   ros::WallDuration(2.0).sleep();
-  ros::Subscriber pointSub = nh.subscribe("/humanMarker", 20, &point3D::point3dCB,
-      &ptCBHandle);
+  ros::Subscriber pointSub = nh.subscribe("/humanMarker", 20,
+      &point3D::point3dCB, &ptCBHandle);
   ros::spinOnce();
   EXPECT_NEAR(0, ptCBHandle.markrPtsX, 5.0);
-  EXPECT_NEAR(-68,ptCBHandle.markrPtsY, 5.0);
+  EXPECT_NEAR(-68, ptCBHandle.markrPtsY, 5.0);
   EXPECT_NEAR(0, ptCBHandle.markrPtsZ, 5.0);
 }

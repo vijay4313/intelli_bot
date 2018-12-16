@@ -33,17 +33,17 @@
  */
 
 #include <ros/ros.h>
+#include <tf/tf.h>
+#include <math.h>
+#include <cmath>
 #include "../include/Control.h"
 #include "../include/PathPlanning.h"
 #include "geometry_msgs/Twist.h"
 #include "geometry_msgs/Point.h"
 #include "geometry_msgs/Pose.h"
-#include <tf/tf.h>
 #include "nav_msgs/Odometry.h"
 #include "std_msgs/Empty.h"
 #include "../include/PID.h"
-#include <cmath>
-#include <math.h>
 
 /**
  * @brief Constructor for Control Class
@@ -57,7 +57,7 @@ Control::Control() {
   path.generatePath();
   // Getting the Path
   travPath = path.getPath();
-  ROS_INFO_STREAM("path: "<<travPath[0]);
+  ROS_INFO_STREAM("path: " << travPath[0]);
 
   // Publisher to cmd_vel topic
   conVel = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
@@ -87,7 +87,7 @@ Control::Control() {
   dt = 0.0;
 
   // setting the previous time variable
-  seconds_prev = (double) ros::Time::now().toSec();
+  seconds_prev = static_cast<double>(ros::Time::now().toSec());
   // Computing a step to publish velocity
   computeStep();
 }
@@ -135,7 +135,6 @@ int Control::getTargetPos() {
  * @return none
  */
 void Control::computeStep() {
-
   double distToTarget;
   //  getting the target point with index in path
   auto currTargetPtr = getTargetPos();
@@ -229,7 +228,7 @@ void Control::computeStep() {
   double YawDiffVal = 0.15;
 
   // Angle between orientation of drone and target vector
-  ROS_INFO_STREAM("AbsDiff: "<<AbsDiff);
+  ROS_INFO_STREAM("AbsDiff: " << AbsDiff);
 
   // Calculating the error for yaw using trignometry
   if (AbsDiff < 1.50) {
@@ -248,9 +247,9 @@ void Control::computeStep() {
   // using calculated difference as set point for PID
   setPtYaw = YawDiffVal;
   // Displaying error in rotation
-  ROS_INFO_STREAM("Rotation Error: "<<setPtYaw);
+  ROS_INFO_STREAM("Rotation Error: " << setPtYaw);
   // time from previous iteration
-  auto seconds = (double) ros::Time::now().toSec();
+  auto seconds = static_cast<double>(ros::Time::now().toSec());
   // time after previous iteration
   dt = seconds - seconds_prev;
   seconds_prev = seconds;
@@ -280,7 +279,8 @@ void Control::computeStep() {
     conVel.publish(cmdVel);
   }
   ROS_INFO_STREAM(
-      "CmdVel(x,z,yaw): " << cmdVel.linear.x <<"," << cmdVel.linear.z <<"," << cmdVel.angular.z);
+      "CmdVel(x,z,yaw): " << cmdVel.linear.x << "," << cmdVel.linear.z << ","
+          << cmdVel.angular.z);
   ROS_INFO_STREAM("Time " << dt);
   ros::WallDuration(0.01).sleep();
 }
@@ -299,7 +299,7 @@ geometry_msgs::Point Control::quat2RPY(geometry_msgs::Pose &quat) {
   double roll, pitch, yaw;
   // getting to RPY
   m.getRPY(roll, pitch, yaw);
-  //Setting to required variable
+  // Setting to required variable
   rpy.x = roll;
   rpy.y = pitch;
   rpy.z = yaw;

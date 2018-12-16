@@ -32,10 +32,10 @@
  *  @brief  Routine to test Control Class
  */
 
-#include "../include/PID.h"
-#include <iostream>
 #include <ros/ros.h>
 #include <gtest/gtest.h>
+#include <iostream>
+#include "../include/PID.h"
 
 /**
  * @brief Test routine for Setting and

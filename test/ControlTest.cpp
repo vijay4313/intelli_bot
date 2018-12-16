@@ -33,19 +33,18 @@
  */
 
 #include <ros/ros.h>
+#include <tf/tf.h>
+#include <math.h>
+#include <gtest/gtest.h>
+#include <cmath>
 #include "../include/Control.h"
 #include "../include/PathPlanning.h"
 #include "geometry_msgs/Twist.h"
 #include "geometry_msgs/Point.h"
 #include "geometry_msgs/Pose.h"
-#include <tf/tf.h>
 #include "nav_msgs/Odometry.h"
 #include "std_msgs/Empty.h"
 #include "../include/PID.h"
-#include <cmath>
-#include <math.h>
-#include <ros/ros.h>
-#include <gtest/gtest.h>
 
 /**
  * @brief Control test class to check
