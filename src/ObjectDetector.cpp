@@ -84,8 +84,8 @@ ObjectDetector::ObjectDetector()
  * @param none
  * @return none
  */
-ObjectDetector::~ObjectDetector() {
-  // cv::destroyWindow(OPENCV_WINDOW);
+ObjectDetector::~ObjectDetector() 
+ // cv::destroyWindow(OPENCV_WINDOW);
 }
 
 /**
@@ -208,6 +208,10 @@ geometry_msgs::Point ObjectDetector::transformCam2World(
   transPt.z = wZ;
 
   return (transPt);
-
+  pedestrians_pub_.publish(pedestrians_msg);
+  sensor_msgs::ImagePtr out_msg = cv_bridge::CvImage(cv_ptr->header, "bgr8", im_bgr).toImageMsg();
+  //cv::imshow(OPENCV_WINDOW, im_bgr);
+  //cv::waitKey(3);
+  im_pub_.publish(out_msg);
 }
 
