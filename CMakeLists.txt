@@ -205,7 +205,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(objectDetector src/objectDetectorNode.cpp src/ObjectDetector.cpp)
+add_executable(objectDetector src/objectDetectorNode.cpp src/ObjectDetector.cpp src/ImageProcessor.cpp)
 target_link_libraries(objectDetector ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(objectDetector objectDetector_generate_messages_cpp)
 
@@ -288,8 +288,9 @@ if (CATKIN_ENABLE_TESTING)
   test/objectDetectorTest.cpp
   test/ControlTest.cpp
   test/PidTest.cpp
+  test/ImageProcessor_test.cpp
   src/ObjectDetector.cpp
-  #src/ImageProcessor.cpp
+  src/ImageProcessor.cpp
   src/PathPlanning.cpp
   src/Control.cpp
   src/PID.cpp
