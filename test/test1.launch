@@ -5,5 +5,11 @@
    name="player"  
    args="--clock -l $(find intelli_bot)/results/ImageDetectionTopic.bag"
    />
-  <test pkg="intelli_bot" test-name="intelli_bot_test" type="intelli_bot_test"/>
+   <node 
+   pkg="rosbag" 
+   type="play" 
+   name="player2"  
+   args="--clock -l $(find intelli_bot)/results/ControlNodeTest.bag"
+   />
+  <test pkg="intelli_bot" test-name="intelli_bot_test" type="intelli_bot_test" time-limit="100.0"/>
 </launch>
