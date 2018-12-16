@@ -115,7 +115,7 @@ intelli_bot::Pedestrians ObjectDetector::getPedMsg() {
   return (pedMsg);
 }
 
-void ObjectDetector::camPoseCB(const lsd_slam_viewer::keyframeMsgConstPtr msg) {
+void ObjectDetector::camPoseCB(const intelli_bot::keyframeMsgConstPtr msg) {
   memcpy(camToWorld.data(), msg->camToWorld.data(), 7 * sizeof(double));
   fx = msg->fx;
   fy = msg->fy;

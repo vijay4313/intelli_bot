@@ -190,6 +190,7 @@ include_directories(
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  ${PROJECT_SOURCE_DIR}/include/Sophus
 )
 
 ## Declare a C++ library
@@ -284,7 +285,6 @@ if (CATKIN_ENABLE_TESTING)
   ${PROJECT_NAME}_test
   test/test1.launch
   test/main.cpp
-  test/test.cpp
   test/objectDetectorTest.cpp
   test/ControlTest.cpp
   test/PidTest.cpp

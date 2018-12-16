@@ -102,7 +102,7 @@ class ObjectDetector {
 
   void get3dMarker();
 
-  void camPoseCB(const lsd_slam_viewer::keyframeMsgConstPtr msg);
+  void camPoseCB(const intelli_bot::keyframeMsgConstPtr msg);
 
   geometry_msgs::Point transformCam2World(geometry_msgs::Point &gPt);
 
