@@ -1,0 +1,17 @@
+Command:
+cpplint $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./build/" -e "^./vendor/" -e "^./docs/" -e "^./results" -e "^./include/Sophus/")
+
+Result:
+Done processing ./src/PathPlanning.cpp
+Done processing ./src/ObjectDetector.cpp
+Done processing ./src/PID.cpp
+Done processing ./src/ImageProcessor.cpp
+Done processing ./src/Control.cpp
+Done processing ./src/controllerNode.cpp
+Done processing ./src/objectDetectorNode.cpp
+Done processing ./test/objectDetectorTest.cpp
+Done processing ./test/pathPlanningTest.cpp
+Done processing ./test/ControlTest.cpp
+Done processing ./test/PidTest.cpp
+Done processing ./test/ImageProcessor_test.cpp
+Done processing ./test/main.cpp
