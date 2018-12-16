@@ -1,4 +1,7 @@
 - git: {local-name: ardrone_autonomy, uri: 'https://github.com/AutonomyLab/ardrone_autonomy.git', version: indigo-devel}
 - git: {local-name: tum_simulator, uri: 'https://github.com/angelsantamaria/tum_simulator.git', version: kinetic}
 - git: {local-name: cv_bridge, uri: 'https://github.com/ros-perception/vision_opencv.git', version: kinetic}
+- git: {local-name: sensor_msgs, uri: 'https://github.com/ros/common_msgs.git', version: indigo-devel}
+- git: {local-name: image_transport, uri: 'https://github.com/ros-perception/image_common.git', version: hydro-devel}
+- git: {local-name: message_generation, uri: 'https://github.com/ros/message_generation.git', version: kinetic-devel}
 - git: {local-name: lsd_slam, uri: 'https://github.com/vijay4313/lsd_slam.git', version: master}
