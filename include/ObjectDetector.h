@@ -74,7 +74,6 @@ class ObjectDetector {
   int id;
   int height, width;
 
-
  public:
   /**
    * @brief Constructor
@@ -91,21 +90,40 @@ class ObjectDetector {
   virtual ~ObjectDetector();
 
   /**
-   * @brief routine to train
-   * the ObjectDetector object
-   * @param  none
+   * @brief Detects the person
+   * @param  Image from sensor
    * @return none
    */
   void personDetector(const sensor_msgs::ImageConstPtr& msg);
 
+  /**
+   * @brief gets the pedestrian location
+   * @param  none
+   * @return return the pedestrian message
+   */
   intelli_bot::Pedestrians getPedMsg();
 
+  /**
+   * @brief get the 3d marker
+   * @param  none
+   * @return none
+   */
   void get3dMarker();
 
+  /**
+   * @brief Camera pose from topic
+   * @param keyframeMsg
+   * @return none
+   */
   void camPoseCB(const intelli_bot::keyframeMsgConstPtr msg);
 
+  /**
+   * @brief Transform pose to world
+   * from cam
+   * @param  message from topic
+   * @return pose wrt to world
+   */
   geometry_msgs::Point transformCam2World(geometry_msgs::Point &gPt);
-
 };
 
 #endif /* INTELLI_BOT_INCLUDE_OBJECTDETECTOR_H_ */
