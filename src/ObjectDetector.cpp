@@ -43,7 +43,7 @@
 #include "sophus/sim3.hpp"
 #include "geometry_msgs/Twist.h"
 #include "visualization_msgs/Marker.h"
-#include "lsd_slam_viewer/keyframeMsg.h"
+#include "intelli_bot/keyframeMsg.h"
 #include <tf/transform_listener.h>
 #include <tf/transform_broadcaster.h>
 #include <tf/tf.h>

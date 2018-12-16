@@ -39,6 +39,8 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   message_generation
   geometry_msgs
+  pcl_ros
+  pcl_conversions
 )
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -103,6 +105,7 @@ add_message_files(
  FILES
  Pedestrians.msg
  bbox.msg
+ keyframeMsg.msg
 )
 
 
