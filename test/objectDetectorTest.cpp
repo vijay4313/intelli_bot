@@ -53,6 +53,12 @@
 
 class point3D {
  public:
+  /**
+   * @brief callback function for checking marker
+   * placement
+   * @param Marker points message
+   * @return None
+   */
   void point3dCB(const visualization_msgs::Marker points) {
     markrPtsX = points.points[0].x;
     markrPtsY = points.points[0].y;
@@ -63,6 +69,10 @@ class point3D {
   double markrPtsZ;
 };
 
+/**
+ * @brief Test for human location using
+ *  image detection
+ */
 TEST(TestNodeObjectDetect, detectionImageTest) {
   ros::WallDuration(2.0).sleep();
   ObjectDetector detector;
@@ -87,6 +97,10 @@ TEST(TestNodeObjectDetect, detectionImageTest) {
   EXPECT_NEAR(265, height, 20.0);
 }
 
+/**
+ * @brief test for checking 3D point location of
+ * marker
+ */
 TEST(TestNodeObjectDetect, detection3DPointTest) {
   ros::NodeHandle nh;
   point3D ptCBHandle;

@@ -45,6 +45,10 @@
 #include "ros/ros.h"
 #include "../include/ImageProcessor.h"
 
+/**
+ * @brief testing whether human detected at correct location
+ * from image
+ */
 TEST(ImageProcessorTest, pedMsgTest) {
   ImageProcessor imgProc;
   // Read the file
@@ -58,6 +62,10 @@ TEST(ImageProcessorTest, pedMsgTest) {
   EXPECT_NEAR(504, pedMsg.pedestrians[0].height, 20);
 }
 
+/**
+ * @brief Checking if bounding box is place correctly on
+ * a static image of a human
+ */
 TEST(ImageProcessorTest, getImgTest) {
   std::string fileName = ros::package::getPath("intelli_bot") +
   "/results/ImageProcTestImg.jpg";
