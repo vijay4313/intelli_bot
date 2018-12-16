@@ -20,7 +20,6 @@ matrix:
     #- env: USE_DEB=true  ROS_DISTRO="kinetic"   ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
 install:
   - git clone --depth 1 https://github.com/ros-industrial/industrial_ci.git .ci_config
-  - git clone --recursive https://github.com/vijay4313/lsd_slam.git
 
 before_script:
   - echo ROS_CI_COVERAGE >> .ci_config/industrial_ci/src/docker.env
@@ -28,6 +27,8 @@ before_script:
   - echo TRAVIS_JOB_ID >> .ci_config/industrial_ci/src/docker.env
   
 script: 
+  - cd /root/catkin_ws/src
+  - git clone --recursive https://github.com/vijay4313/lsd_slam.git
   - source .ci_config/travis.sh
 
 #  - source ./travis.sh  # Enable this when you have a package-local script 
