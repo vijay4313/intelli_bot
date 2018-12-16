@@ -39,9 +39,6 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   message_generation
   geometry_msgs
-  pcl_ros
-  pcl_conversions
-  pcl_msgs
 )
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
