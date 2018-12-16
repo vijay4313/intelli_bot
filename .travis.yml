@@ -9,6 +9,10 @@ addons:
       - libopencv-dev
       - libqt4-dev
       - libsqlite3-dev
+      - libsuitesparse-dev
+      - libqglviewer-dev-qt4
+      - ros-kinetic-libg2o
+      - ros-kinetic-opencv3
 notifications:
   email:
     on_success: always
