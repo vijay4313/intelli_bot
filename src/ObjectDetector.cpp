@@ -40,7 +40,7 @@
 #include <intelli_bot/Pedestrians.h>
 #include <intelli_bot/bbox.h>
 #include "../include/ImageProcessor.h"
-#include "sophus/sim3.hpp"
+#include "../include/Sophus/sophus/sim3.hpp"
 #include "geometry_msgs/Twist.h"
 #include "visualization_msgs/Marker.h"
 #include "intelli_bot/keyframeMsg.h"
