@@ -36,32 +36,46 @@
 #define INTELLI_BOT_INCLUDE_OBJECTDETECTOR_H_
 
 #include <ros/ros.h>
-
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/opencv.hpp>
-#include "opencv2/objdetect/objdetect.hpp"
-
-// to facilitate the processing of the images in ROS
-#include <image_transport/image_transport.h> // for publishing and subscribing to images in ROS
-#include <cv_bridge/cv_bridge.h> // to convert between ROS and OpenCV Image formats
+#include <image_transport/image_transport.h>
+#include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
-
 #include <intelli_bot/Pedestrians.h>
 #include <intelli_bot/bbox.h>
+#include "../include/ImageProcessor.h"
+#include "sophus/sim3.hpp"
+#include "geometry_msgs/Twist.h"
+#include "visualization_msgs/Marker.h"
+#include "lsd_slam_viewer/keyframeMsg.h"
+#include <tf/transform_listener.h>
+#include <tf/transform_broadcaster.h>
+#include <tf/tf.h>
+#include "geometry_msgs/Point.h"
 
 
 class ObjectDetector {
- public:
-
+ private:
   ros::NodeHandle nh_;
   image_transport::ImageTransport it_;
-  image_transport::Subscriber im_sub_;
-  image_transport::Publisher im_pub_;
-  ros::Publisher pedestrians_pub_;
-  intelli_bot::Pedestrians pedestrians_msg;
-  cv::HOGDescriptor hog_;
+  image_transport::Subscriber imSub_;
+  image_transport::Publisher imPub_;
+  ros::Subscriber lsdSub;
+  ros::Publisher pedPub_;
+  ros::Publisher pedMarkerPub;
+  ImageProcessor imgPr;
+  sensor_msgs::ImagePtr outMsg_;
+  cv_bridge::CvImagePtr cvPtr_;
+  cv::Mat imBGR;
+  intelli_bot::Pedestrians pedMsg;
+  Sophus::Sim3f camToWorld;
+  float fx,fy,cx,cy;
+  float fxi,fyi,cxi,cyi;
+  tf::TransformListener tfListener_;
+  tf::StampedTransform nav2BasTF;
+  int id;
+  int height, width;
 
+
+ public:
   /**
    * @brief Constructor
    * @param none
@@ -83,6 +97,15 @@ class ObjectDetector {
    * @return none
    */
   void personDetector(const sensor_msgs::ImageConstPtr& msg);
+
+  intelli_bot::Pedestrians getPedMsg();
+
+  void get3dMarker();
+
+  void camPoseCB(const lsd_slam_viewer::keyframeMsgConstPtr msg);
+
+  geometry_msgs::Point transformCam2World(geometry_msgs::Point &gPt);
+
 };
 
 #endif /* INTELLI_BOT_INCLUDE_OBJECTDETECTOR_H_ */
