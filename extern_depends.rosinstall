@@ -4,4 +4,6 @@
 - git: {local-name: sensor_msgs, uri: 'https://github.com/ros/common_msgs.git', version: indigo-devel}
 - git: {local-name: image_transport, uri: 'https://github.com/ros-perception/image_common.git', version: hydro-devel}
 - git: {local-name: message_generation, uri: 'https://github.com/ros/message_generation.git', version: kinetic-devel}
+- git: {local-name: genlisp, uri: 'https://github.com/ros/genlisp.git', version: groovy-devel}
+- git: {local-name: dynamic_reconfigure, uri: 'https://github.com/ros/dynamic_reconfigure.git', version: melodic-devel}
 - git: {local-name: lsd_slam, uri: 'https://github.com/vijay4313/lsd_slam.git', version: master}
