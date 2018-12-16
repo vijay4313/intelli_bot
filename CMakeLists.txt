@@ -39,6 +39,9 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   message_generation
   geometry_msgs
+  pcl_ros
+  pcl_conversions
+  pcl_msgs
 )
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
@@ -202,9 +205,18 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME} src/objectDetectorNode.cpp src/ObjectDetector.cpp src/SLAM.cpp src/PathPlanning.cpp src/Control.cpp)
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBS})
-add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_generate_messages_cpp)
+add_executable(objectDetector src/objectDetectorNode.cpp src/ObjectDetector.cpp)
+target_link_libraries(objectDetector ${catkin_LIBRARIES} ${OpenCV_LIBS})
+add_dependencies(objectDetector objectDetector_generate_messages_cpp)
+
+add_executable(controller src/controllerNode.cpp src/PathPlanning.cpp src/Control.cpp src/PID.cpp)
+target_link_libraries(controller ${catkin_LIBRARIES})
+add_dependencies(controller controller_generate_messages_cpp)
+
+#add_executable(SLAM src/SLAMNode.cpp src/SLAM.cpp)
+#target_link_libraries(SLAM ${catkin_LIBRARIES})
+#add_dependencies(SLAM controller_generate_messages_cpp)
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -274,9 +286,13 @@ if (CATKIN_ENABLE_TESTING)
   test/main.cpp
   test/test.cpp
   test/objectDetectorTest.cpp
-  test/pathPlanningTest.cpp
+  test/ControlTest.cpp
+  test/PidTest.cpp
   src/ObjectDetector.cpp
+  #src/ImageProcessor.cpp
   src/PathPlanning.cpp
+  src/Control.cpp
+  src/PID.cpp
   )
   target_link_libraries(
   ${PROJECT_NAME}_test
@@ -284,7 +300,8 @@ if (CATKIN_ENABLE_TESTING)
   ${OpenCV_LIBS}
   )
   add_dependencies(
-    intelli_bot
+    objectDetector
+    controller
     intelli_bot_test
     ${catkin_EXPORTED_TARGETS}
   )
