@@ -53,10 +53,12 @@ Notes from the sprint review sessions can be found in the link-[Sprint review Do
 
 
 ## Demo of Installation and running
- Demo video for the installation and execution of the provided package can be found [here]().
+ Demo video for the installation and execution of the provided package can be seen below-
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tS7hv_bSMsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Presentation Slides
- The corresponding slides for the demo can be found [here]().
+ The corresponding slides for the demo can be found [here](https://docs.google.com/presentation/d/13MoS4AskVX5kfeVUKJib4nGYUCThcdXsdTdWZPlvL6I/edit).
 
 ## Dependencies
 - [ROS Kinetic](http://wiki.ros.org/kinetic/Installation)
@@ -129,6 +131,25 @@ source devel/setup.bash
 roslaunch intelli_bot intelli_bot_demo.launch
 ```
 
+## Options for running the demo launch file
+- Recording rosbag with launch file. It is turned off by default
+```
+roslaunch intelli_bot intelli_bot_demo.launch record:= true
+```
+The intelli_bot_bag.bag file is saved in the results directory
+
+- To change the world environment 
+```
+roslaunch intelli_bot intelli_bot_demo.launch world_name:= <Location of World.world file>
+```
+
+## Useful Hotkeys
+- ```r```: Reset, will clear all displayed data.
+
+- ```w```: Print the number of points / currently displayed points / keyframes / constraints to the console.
+
+- ```p```: Write currently displayed points as point cloud to file lsd_slam_viewer/pc.ply, which can be opened e.g. in meshlab. Use in combination with sparsityFactor to reduce the number of points.
+
 ## Overview of Environment and process
  The simulation is achieved using Gazebo simulator.The demo consists of an environment with buildings and people(not friendly) scaterred around. The drone will take off from a known position and traverse through the area following a rectangular path. During this it will detect the Human objects, draw a bounding box around them, publish the image for viewing and record their position that will be displayed as blocks in rviz. This is accomplished using the onboard monocular camera of resolution 640 x 480. It also uses a Monocular SLAM package called LSD SLAM to map the area and display a point cloud in a viewer to the user.
 
@@ -156,9 +177,22 @@ roslaunch intelli_bot demo.launch record:=1 seconds:=20
 Navigate to the results folder
 and run the following command-
 ```
-rosbag play intelli_botRec.bag
+rosbag play intelli_bot_bag.bag
+```
+
+## Doxygen Documentation
+The doxygen documentation can be generated manually using the following commands
+- Installation
+```
+sudo apt-get install doxygen
+sudo apt-get install doxygen-gui
+```
+- Open Doxywizard and follow the instructions to generate the required files
+```
+doxywizard
 ```
 
 ### Known issues and Bugs
-
+- Occasional tracking loss due to sudden translation or rotational motion
+- Usage of 3rd party non-ROS packages in project directories leading to reduction in coveralls percentage. Inclusion in project directory was necessary to avoid travis build errors.
 
