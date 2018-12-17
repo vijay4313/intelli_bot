@@ -11,5 +11,11 @@
    name="player2"  
    args="--clock -l $(find intelli_bot)/results/ControlNodeTest.bag"
    />
+   <node 
+   pkg="rosbag" 
+   type="play" 
+   name="player3"  
+   args="--clock -l $(find intelli_bot)/results/liveFrames.bag"
+   />
   <test pkg="intelli_bot" test-name="intelli_bot_test" type="intelli_bot_test" time-limit="100.0"/>
 </launch>
