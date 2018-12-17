@@ -54,8 +54,7 @@ Notes from the sprint review sessions can be found in the link-[Sprint review Do
 
 ## Demo of Installation and running
  Demo video for the installation and execution of the provided package can be seen below-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tS7hv_bSMsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![presentation_video](https://img.youtube.com/vi/tS7hv_bSMsw/0.jpg)](https://youtu.be/tS7hv_bSMsw)
 
 ## Presentation Slides
  The corresponding slides for the demo can be found [here](https://docs.google.com/presentation/d/13MoS4AskVX5kfeVUKJib4nGYUCThcdXsdTdWZPlvL6I/edit).
