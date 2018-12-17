@@ -25,7 +25,7 @@
 
 /**
  *
- *  @file    ControlTest.cpp
+ *  @file    PIDTest.cpp
  *  @Author  Venkatraman Narayanan (vijay4313)
  *  @Author  Amrish Baskaran (amrish1222)
  *  @copyright  MIT

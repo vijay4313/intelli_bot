@@ -25,8 +25,9 @@
 
 /**
  *
- *  @file    talker.cpp
+ *  @file    main.cpp
  *  @author  Venkatraman Narayanan (vijay4313)
+ *  @author  Amrish Baskaran (amrish1222)
  *  @copyright	MIT
  *  @date    11/13/2018
  *
