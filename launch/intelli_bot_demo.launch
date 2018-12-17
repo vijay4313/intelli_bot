@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world_name" default="$(find intelli_bot)/worlds/test_LowAltitude.world"/>
+  <arg name="record" default = "false"/>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+  <!-- Spawn simulated quadrotor uav -->
+  <include file="$(find cvg_sim_gazebo)/launch/spawn_quadrotor.launch" >
+    <arg name="model" value="$(find cvg_sim_gazebo)/urdf/quadrotor_sensors.urdf.xacro"/> 
+  </include>
+
+    <!-- Start the LSD SLAM core nodes -->
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="15" />
+    <arg name="pkg" value="intelli_bot" />
+    <arg name="file" value="lsdSlam_core.launch" />
+  </include>
+
+  <!-- Start the LSD SLAM, viewer and ObjectDetector nodes -->
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="20" />
+    <arg name="pkg" value="intelli_bot" />
+    <arg name="file" value="lsdSlam_ObjDet.launch"/>
+    <arg name="node_name" value="lsd_slam_viewer" />
+  </include>
+
+  <!-- Start Rviz -->
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="22" />
+    <arg name="pkg" value="intelli_bot" />
+    <arg name="file" value="rviz_launch.launch" />
+  </include>
+
+  <!-- Start the drone controller -->
+  <include file="$(find timed_roslaunch)/launch/timed_roslaunch.launch">
+    <arg name="time" value="25" />
+    <arg name="pkg" value="intelli_bot" />
+    <arg name="file" value="controller_launch.launch" />
+  </include>
+
+  <node pkg="rosbag" type="record" name="rosbag_intelli_bot" args="record -o /$(find intelli_bot)/results/intelli_bot_bag.bag" if="$(arg record)"/>
+
+</launch>

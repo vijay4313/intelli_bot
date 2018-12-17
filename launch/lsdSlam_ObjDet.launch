@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Start the LSD SLAM viewer node -->
+	<node pkg = "lsd_slam_viewer" type = "viewer" name = "viewer"/>
+	<!-- Start the object detector node -->
+	<node pkg = "intelli_bot" type = "objectDetector" name = "human_detector"/>
+</launch>

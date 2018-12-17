@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Start the drone controller node -->
+  <node pkg = "intelli_bot" type = "controller" name = "drone_controller"/>
+</launch>

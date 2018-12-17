@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Start the LSD SLAM and viewer nodes -->
+  <node pkg="lsd_slam_core" type="live_slam" name="LSD_SLAM" args="/image:=/ardrone/front/image_raw _calib:=$(find intelli_bot)/utils/OpenCV_example_calib.cfg"/>
+</launch>
