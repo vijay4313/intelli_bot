@@ -1,0 +1,191 @@
+\href{https://opensource.org/licenses/MIT}{\tt } \href{https://travis-ci.org/vijay4313/intelli_bot}{\tt } \href{https://coveralls.io/github/vijay4313/intelli_bot?branch=master}{\tt }
+
+\subsection*{Overview}
+
+Acme Robotics Inc. aims to explore new realms in defense robotics by developing a quadrotor drone capable for exploring an unknown user-\/defined land patch and collect intelligence (number of hostages \& terrorists) all the while developing a map of the explored area. The scope of this project is to develop the end-\/to-\/end software package for the above-\/mentioned drone operation.
+
+\subsection*{Authors}
+
+
+\begin{DoxyItemize}
+\item Venkatraman Narayanan Currently pursuing Masters in Robotics at the University of Maryland. Interests include Motion Planning, Machine Learning, drones, S\+L\+AM algorithms and deep learning.
+\item Amrish Baskaran Robotics enthusiast interested in automation and control. Has 2 years experience in hobby C\+NC manufacturing and control software programming. Has an Undergrad degree in Mechanical Engineering from V\+IT University, India currently pursuing his Master\textquotesingle{}s degree in Robotics at University of Maryland College Park.
+\end{DoxyItemize}
+
+\subsection*{License}
+
+License file can be found \href{https://github.com/vijay4313/intelli_bot/blob/master/LICENSE}{\tt here} 
+\begin{DoxyCode}
+1 MIT License
+2 
+3 Copyright (c) 2018 Venkatraman Narayanan, Amrish Baskaran
+4 
+5 Permission is hereby granted, free of charge, to any person obtaining a copy
+6 of this software and associated documentation files (the "Software"), to deal
+7 in the Software without restriction, including without limitation the rights
+8 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+9 copies of the Software, and to permit persons to whom the Software is
+10 furnished to do so, subject to the following conditions:
+11 
+12 The above copyright notice and this permission notice shall be included in all
+13 copies or substantial portions of the Software.
+14 
+15 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+16 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+17 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+18 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+19 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+20 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+21 SOFTWARE.
+\end{DoxyCode}
+
+
+\subsection*{Development Process}
+
+This module will be developed using the Solo Iterative Process(\+S\+I\+P), Test Driven Development and agile development in a 3 week sprint method. The spreadsheet for the Product log, iteration backlog, work log and sprint details can be found in this link-\/\href{https://docs.google.com/spreadsheets/d/1cRZ1Yc6He_yjTwrT3RzN5OtVLop9_kAH2wNIdsGixpU/edit#gid=383324177}{\tt Agile Development Spreadsheet}
+
+Notes from the sprint review sessions can be found in the link-\/\href{https://docs.google.com/document/d/1bJjVpGoex2Z11x2BASVN002mspXWGj8SX9v-RlrVU2g/edit}{\tt Sprint review Doc}
+
+\subsection*{Demo of Installation and running}
+
+Demo video for the installation and execution of the provided package can be found \mbox{[}here\mbox{]}().
+
+\subsection*{Presentation Slides}
+
+The corresponding slides for the demo can be found \mbox{[}here\mbox{]}().
+
+\subsection*{Dependencies}
+
+
+\begin{DoxyItemize}
+\item \href{http://wiki.ros.org/kinetic/Installation}{\tt R\+OS Kinetic}
+\item Ubuntu 16.\+04
+\item \href{http://wiki.ros.org/catkin}{\tt Catkin}
+\item \href{http://wiki.ros.org/gtest}{\tt Gtest}
+\item \href{http://wiki.ros.org/rostest}{\tt Rostest}
+\item Travis CI \href{https://docs.travis-ci.com/user/for-beginners/}{\tt Documentation}
+\item Coveralls \href{https://docs.coveralls.io/about-coveralls}{\tt Documentation}
+\item \href{http://wiki.ros.org/tf}{\tt tf}
+\item \href{http://wiki.ros.org/rosbag}{\tt Rosbag}
+\item \href{https://opencv.org/license.html}{\tt Open\+CV}
+\item \href{http://wiki.ros.org/rviz}{\tt Rviz}
+\item \href{http://gazebosim.org/}{\tt Gazebo 7.\+0.\+0}
+\item \href{http://wiki.ros.org/tum_simulator}{\tt tum\+\_\+\+Simulator}
+\item \href{https://ardrone-autonomy.readthedocs.io/en/latest/}{\tt ardrone\+\_\+autonomy}
+\item \href{https://vision.in.tum.de/research/vslam/lsdslam}{\tt L\+SD S\+L\+AM}
+\item \href{https://github.com/ros-industrial/industrial_ci}{\tt industrial\+\_\+ci}
+\end{DoxyItemize}
+
+\subsubsection*{Dependencies Installation}
+
+
+\begin{DoxyItemize}
+\item \href{http://wiki.ros.org/kinetic/Installation}{\tt R\+OS Kinetic}
+\item \href{http://wiki.ros.org/catkin}{\tt Catkin}
+\item \href{https://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html}{\tt Open\+CV}
+\item \href{http://wiki.ros.org/tum_simulator}{\tt tum\+\_\+\+Simulator and ardrone\+\_\+autonomy}
+\item L\+SD S\+L\+AM 
+\begin{DoxyCode}
+1 sudo apt install libsuitesparse-dev libqglviewer-dev-qt4 ros-kinetic-libg2o  ros-kinetic-opencv3
+2 sudo ln -s /usr/lib/x86\_64-linux-gnu/libQGLViewer-qt4.so /usr/lib/x86\_64-linux-gnu/libQGLViewer.so
+\end{DoxyCode}
+ Go to Catkin workspace and clone the lsd slam repository 
+\begin{DoxyCode}
+1 roscd
+2 git clone https://github.com/vijay4313/lsd\_slam.git
+3 cd ..
+4 catkin\_make
+\end{DoxyCode}
+
+\item \href{http://wiki.ros.org/timed_roslaunch}{\tt timed\+\_\+roslaunch}
+\end{DoxyItemize}
+
+\section*{intelli\+\_\+bot package Installation}
+
+\subsection*{Build Instructions}
+
+If Catkin worspace is not available or needs to be created-\/ 
+\begin{DoxyCode}
+1 mkdir -p ~/catkin\_ws/src
+2 cd ~/catkin\_ws/
+3 catkin\_make install
+4 source devel/setup.bash
+\end{DoxyCode}
+ After creating the catkin workspace move to the src/ folder. 
+\begin{DoxyCode}
+1 cd src/
+2 git clone --recursive https://github.com/vijay4313/intelli\_bot.git
+3 cd ..
+4 catkin\_make
+5 source devel/setup.bash
+\end{DoxyCode}
+
+
+\subsection*{Running tests-\/}
+
+Go to Catkin Workspace 
+\begin{DoxyCode}
+1 cd ~/catkin\_ws/
+2 catkin\_make run\_tests intelli\_bot\_test
+\end{DoxyCode}
+
+
+\subsection*{Demo Instructions}
+
+The demo can be run using the commandline instructions bellow 
+\begin{DoxyCode}
+1 cd <path\_to\_catkin\_workspace>
+2 source devel/setup.bash
+3 roslaunch intelli\_bot intelli\_bot\_demo.launch
+\end{DoxyCode}
+
+
+\subsection*{Options for running the demo launch file}
+
+
+\begin{DoxyItemize}
+\item Recording rosbag with launch file. It is turned off by default 
+\begin{DoxyCode}
+1 roslaunch intelli\_bot intelli\_bot\_demo.launch record:= true
+\end{DoxyCode}
+ The intelli\+\_\+bot\+\_\+bag.\+bag file is saved in the results directory
+\item To change the world environment 
+\begin{DoxyCode}
+1 roslaunch intelli\_bot intelli\_bot\_demo.launch world\_name:= <Location of World.world file>
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+\subsection*{Overview of Environment and process}
+
+The simulation is achieved using Gazebo simulator.\+The demo consists of an environment with buildings and people(not friendly) scaterred around. The drone will take off from a known position and traverse through the area following a rectangular path. During this it will detect the Human objects, draw a bounding box around them, publish the image for viewing and record their position that will be displayed as blocks in rviz. This is accomplished using the onboard monocular camera of resolution 640 x 480. It also uses a Monocular S\+L\+AM package called L\+SD S\+L\+AM to map the area and display a point cloud in a viewer to the user.
+
+Example of Human detection using the camera \+: 
+
+Example of the point cloud generated by L\+SD S\+L\+AM using the monocular slam \+: 
+
+\subsection*{Rosbag}
+
+\#\#\# Record the rostopics using the following command with the launch file\+: 
+\begin{DoxyCode}
+1 roslaunch intelli\_bot demo.launch record:=1
+\end{DoxyCode}
+
+
+recorded bag file will be stored in the results folder and records all except camera topics
+
+To record for a specific time use the following command, as an example records 20 seconds. 
+\begin{DoxyCode}
+1 roslaunch intelli\_bot demo.launch record:=1 seconds:=20
+\end{DoxyCode}
+
+
+\subsubsection*{Running the rosbag files}
+
+Navigate to the results folder and run the following command-\/ 
+\begin{DoxyCode}
+1 rosbag play intelli\_bot\_bag.bag
+\end{DoxyCode}
+
+
+\subsubsection*{Known issues and Bugs}

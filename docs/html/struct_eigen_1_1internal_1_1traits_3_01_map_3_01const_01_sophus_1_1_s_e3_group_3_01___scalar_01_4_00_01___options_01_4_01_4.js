@@ -1,0 +1,6 @@
+var struct_eigen_1_1internal_1_1traits_3_01_map_3_01const_01_sophus_1_1_s_e3_group_3_01___scalar_01_4_00_01___options_01_4_01_4 =
+[
+    [ "Scalar", "struct_eigen_1_1internal_1_1traits_3_01_map_3_01const_01_sophus_1_1_s_e3_group_3_01___scalar_01_4_00_01___options_01_4_01_4.html#a72eaf51cd2fb5a1b7f6bd76aa5ff4920", null ],
+    [ "SO3Type", "struct_eigen_1_1internal_1_1traits_3_01_map_3_01const_01_sophus_1_1_s_e3_group_3_01___scalar_01_4_00_01___options_01_4_01_4.html#ae29eef04d53060702010684a505065d7", null ],
+    [ "TranslationType", "struct_eigen_1_1internal_1_1traits_3_01_map_3_01const_01_sophus_1_1_s_e3_group_3_01___scalar_01_4_00_01___options_01_4_01_4.html#a35acc715bfb4969eb792bee9a8bc679b", null ]
+];

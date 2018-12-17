@@ -1,0 +1,240 @@
+\hypertarget{class_sophus_1_1_s_e3_group}{}\section{Sophus\+:\+:S\+E3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ Class Template Reference}
+\label{class_sophus_1_1_s_e3_group}\index{Sophus\+::\+S\+E3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$@{Sophus\+::\+S\+E3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$}}
+
+
+S\+E3 default type -\/ Constructors and default storage for S\+E3 Type.  
+
+
+
+
+{\ttfamily \#include $<$se3.\+hpp$>$}
+
+
+
+Inheritance diagram for Sophus\+:\+:S\+E3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_sophus_1_1_s_e3_group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sophus\+:\+:S\+E3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_sophus_1_1_s_e3_group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_e3_group}{S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::\hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar} \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar}\hypertarget{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{}\label{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}
+
+\begin{DoxyCompactList}\small\item\em scalar type \end{DoxyCompactList}\item 
+typedef internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_e3_group}{S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::S\+O3\+Type \& \hyperlink{class_sophus_1_1_s_e3_group_ab9e4d2988d5437bca541db659c76e1a1}{S\+O3\+Reference}\hypertarget{class_sophus_1_1_s_e3_group_ab9e4d2988d5437bca541db659c76e1a1}{}\label{class_sophus_1_1_s_e3_group_ab9e4d2988d5437bca541db659c76e1a1}
+
+\begin{DoxyCompactList}\small\item\em S\+O3 reference type. \end{DoxyCompactList}\item 
+typedef const internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_e3_group}{S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::S\+O3\+Type \& \hyperlink{class_sophus_1_1_s_e3_group_a448cfe0c4de4a21fe0993472dfc4b981}{Const\+S\+O3\+Reference}\hypertarget{class_sophus_1_1_s_e3_group_a448cfe0c4de4a21fe0993472dfc4b981}{}\label{class_sophus_1_1_s_e3_group_a448cfe0c4de4a21fe0993472dfc4b981}
+
+\begin{DoxyCompactList}\small\item\em S\+O3 const reference type. \end{DoxyCompactList}\item 
+typedef internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_e3_group}{S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::Translation\+Type \& \hyperlink{class_sophus_1_1_s_e3_group_aecdd5e06df99e50282dbef24632ec622}{Translation\+Reference}\hypertarget{class_sophus_1_1_s_e3_group_aecdd5e06df99e50282dbef24632ec622}{}\label{class_sophus_1_1_s_e3_group_aecdd5e06df99e50282dbef24632ec622}
+
+\begin{DoxyCompactList}\small\item\em translation reference type \end{DoxyCompactList}\item 
+typedef const internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_e3_group}{S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::Translation\+Type \& \hyperlink{class_sophus_1_1_s_e3_group_a285d764bd862286f24c8fcde6063b30f}{Const\+Translation\+Reference}\hypertarget{class_sophus_1_1_s_e3_group_a285d764bd862286f24c8fcde6063b30f}{}\label{class_sophus_1_1_s_e3_group_a285d764bd862286f24c8fcde6063b30f}
+
+\begin{DoxyCompactList}\small\item\em translation const reference type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_s_e3_group_base_a426ebd53f324a4fd6d36c28028f967f1}{Base\+::\+Transformation} \hyperlink{class_sophus_1_1_s_e3_group_a1e2ab900cbb05a8740f6174c57ad0861}{Transformation}\hypertarget{class_sophus_1_1_s_e3_group_a1e2ab900cbb05a8740f6174c57ad0861}{}\label{class_sophus_1_1_s_e3_group_a1e2ab900cbb05a8740f6174c57ad0861}
+
+\begin{DoxyCompactList}\small\item\em group transfomation type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_s_e3_group_base_aca2cf20e857567b74fb399c7ee76c744}{Base\+::\+Point} \hyperlink{class_sophus_1_1_s_e3_group_ab2257f9298559ef83bbeffd386a50e1d}{Point}\hypertarget{class_sophus_1_1_s_e3_group_ab2257f9298559ef83bbeffd386a50e1d}{}\label{class_sophus_1_1_s_e3_group_ab2257f9298559ef83bbeffd386a50e1d}
+
+\begin{DoxyCompactList}\small\item\em point type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_s_e3_group_base_a45f63b562f0614853cef2c04c4cd5f2b}{Base\+::\+Tangent} \hyperlink{class_sophus_1_1_s_e3_group_a9c2c8a80c34481adfd749d9e0375f56d}{Tangent}\hypertarget{class_sophus_1_1_s_e3_group_a9c2c8a80c34481adfd749d9e0375f56d}{}\label{class_sophus_1_1_s_e3_group_a9c2c8a80c34481adfd749d9e0375f56d}
+
+\begin{DoxyCompactList}\small\item\em tangent vector type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_s_e3_group_base_ac2e0179cb3e9490604c417d8e59a92d3}{Base\+::\+Adjoint} \hyperlink{class_sophus_1_1_s_e3_group_a4408133c044df81f3d59397874894a6c}{Adjoint}\hypertarget{class_sophus_1_1_s_e3_group_a4408133c044df81f3d59397874894a6c}{}\label{class_sophus_1_1_s_e3_group_a4408133c044df81f3d59397874894a6c}
+
+\begin{DoxyCompactList}\small\item\em adjoint transformation type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+I\+G\+E\+N\+\_\+\+M\+A\+K\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+N\+EW \hyperlink{class_sophus_1_1_s_e3_group_a80bb686e6bac8f4cc61b77997b0a6f14}{S\+E3\+Group} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\hyperlink{class_sophus_1_1_s_e3_group_a5d0436f003940eb003e7c4c2e93b0fbb}{S\+E3\+Group} (const \hyperlink{class_sophus_1_1_s_e3_group_base}{S\+E3\+Group\+Base}$<$ Other\+Derived $>$ \&other)\hypertarget{class_sophus_1_1_s_e3_group_a5d0436f003940eb003e7c4c2e93b0fbb}{}\label{class_sophus_1_1_s_e3_group_a5d0436f003940eb003e7c4c2e93b0fbb}
+
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\hyperlink{class_sophus_1_1_s_e3_group_a45e971f2159032ba8019a1e082e0ce01}{S\+E3\+Group} (const \hyperlink{class_sophus_1_1_s_o3_group_base}{S\+O3\+Group\+Base}$<$ Other\+Derived $>$ \&\hyperlink{class_sophus_1_1_s_e3_group_a7c397c3a78893feeba4ec2034943b522}{so3}, const \hyperlink{class_sophus_1_1_s_e3_group_ab2257f9298559ef83bbeffd386a50e1d}{Point} \&\hyperlink{class_sophus_1_1_s_e3_group_a1bfd300de4529a2f6ba0ff5baecea98e}{translation})\hypertarget{class_sophus_1_1_s_e3_group_a45e971f2159032ba8019a1e082e0ce01}{}\label{class_sophus_1_1_s_e3_group_a45e971f2159032ba8019a1e082e0ce01}
+
+\begin{DoxyCompactList}\small\item\em Constructor from S\+O3 and translation vector. \end{DoxyCompactList}\item 
+\hyperlink{class_sophus_1_1_s_e3_group_a42189335d07e84cee3cd11edd0be3f51}{S\+E3\+Group} (const Matrix$<$ \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar}, 3, 3 $>$ \&rotation\+\_\+matrix, const \hyperlink{class_sophus_1_1_s_e3_group_ab2257f9298559ef83bbeffd386a50e1d}{Point} \&\hyperlink{class_sophus_1_1_s_e3_group_a1bfd300de4529a2f6ba0ff5baecea98e}{translation})
+\begin{DoxyCompactList}\small\item\em Constructor from rotation matrix and translation vector. \end{DoxyCompactList}\item 
+\hyperlink{class_sophus_1_1_s_e3_group_a6e7a59c8c3a5c6e03cad11523e24f324}{S\+E3\+Group} (const Quaternion$<$ \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar} $>$ \&quaternion, const \hyperlink{class_sophus_1_1_s_e3_group_ab2257f9298559ef83bbeffd386a50e1d}{Point} \&\hyperlink{class_sophus_1_1_s_e3_group_a1bfd300de4529a2f6ba0ff5baecea98e}{translation})
+\begin{DoxyCompactList}\small\item\em Constructor from quaternion and translation vector. \end{DoxyCompactList}\item 
+\hyperlink{class_sophus_1_1_s_e3_group_ac9e36fa0ac86157d295eab03fef14cb1}{S\+E3\+Group} (const Eigen\+::\+Matrix$<$ \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar}, 4, 4 $>$ \&T)
+\begin{DoxyCompactList}\small\item\em Constructor from 4x4 matrix. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar} $\ast$ \hyperlink{class_sophus_1_1_s_e3_group_a52ddbe0bf8383170aeb3eef194f75b73}{data} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE const \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar} $\ast$ \hyperlink{class_sophus_1_1_s_e3_group_a9906f360399d0a02780008d25939a544}{data} () const 
+\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e3_group_ab9e4d2988d5437bca541db659c76e1a1}{S\+O3\+Reference} \hyperlink{class_sophus_1_1_s_e3_group_a7c397c3a78893feeba4ec2034943b522}{so3} ()\hypertarget{class_sophus_1_1_s_e3_group_a7c397c3a78893feeba4ec2034943b522}{}\label{class_sophus_1_1_s_e3_group_a7c397c3a78893feeba4ec2034943b522}
+
+\begin{DoxyCompactList}\small\item\em Accessor of S\+O3. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e3_group_a448cfe0c4de4a21fe0993472dfc4b981}{Const\+S\+O3\+Reference} \hyperlink{class_sophus_1_1_s_e3_group_a3bc39feddabf5114bacfe1198786422a}{so3} () const \hypertarget{class_sophus_1_1_s_e3_group_a3bc39feddabf5114bacfe1198786422a}{}\label{class_sophus_1_1_s_e3_group_a3bc39feddabf5114bacfe1198786422a}
+
+\begin{DoxyCompactList}\small\item\em Mutator of S\+O3. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e3_group_aecdd5e06df99e50282dbef24632ec622}{Translation\+Reference} \hyperlink{class_sophus_1_1_s_e3_group_a1bfd300de4529a2f6ba0ff5baecea98e}{translation} ()\hypertarget{class_sophus_1_1_s_e3_group_a1bfd300de4529a2f6ba0ff5baecea98e}{}\label{class_sophus_1_1_s_e3_group_a1bfd300de4529a2f6ba0ff5baecea98e}
+
+\begin{DoxyCompactList}\small\item\em Mutator of translation vector. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e3_group_a285d764bd862286f24c8fcde6063b30f}{Const\+Translation\+Reference} \hyperlink{class_sophus_1_1_s_e3_group_a73c63d84058cb4b7d4fc4f35d35f9ce7}{translation} () const \hypertarget{class_sophus_1_1_s_e3_group_a73c63d84058cb4b7d4fc4f35d35f9ce7}{}\label{class_sophus_1_1_s_e3_group_a73c63d84058cb4b7d4fc4f35d35f9ce7}
+
+\begin{DoxyCompactList}\small\item\em Accessor of translation vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_sophus_1_1_s_e3_group_a57fa2346b323fb65e4197b4b5740dbed}{DoF} = Base\+::\+DoF\hypertarget{class_sophus_1_1_s_e3_group_a57fa2346b323fb65e4197b4b5740dbed}{}\label{class_sophus_1_1_s_e3_group_a57fa2346b323fb65e4197b4b5740dbed}
+
+\begin{DoxyCompactList}\small\item\em degree of freedom of group \end{DoxyCompactList}\item 
+static const int \hyperlink{class_sophus_1_1_s_e3_group_ad16cb89b7103f0e38b2aa6d61a417eff}{num\+\_\+parameters} = Base\+::num\+\_\+parameters\hypertarget{class_sophus_1_1_s_e3_group_ad16cb89b7103f0e38b2aa6d61a417eff}{}\label{class_sophus_1_1_s_e3_group_ad16cb89b7103f0e38b2aa6d61a417eff}
+
+\begin{DoxyCompactList}\small\item\em number of internal parameters used \end{DoxyCompactList}\item 
+static const int \hyperlink{class_sophus_1_1_s_e3_group_a534097cb22269028a650e47ef1045041}{N} = Base\+::N\hypertarget{class_sophus_1_1_s_e3_group_a534097cb22269028a650e47ef1045041}{}\label{class_sophus_1_1_s_e3_group_a534097cb22269028a650e47ef1045041}
+
+\begin{DoxyCompactList}\small\item\em group transformations are NxN matrices \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sophus_1_1_s_o3_group}{Sophus\+::\+S\+O3\+Group}$<$ \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar} $>$ {\bfseries so3\+\_\+}\hypertarget{class_sophus_1_1_s_e3_group_aa976a598db1641b2a0edc43004096b69}{}\label{class_sophus_1_1_s_e3_group_aa976a598db1641b2a0edc43004096b69}
+
+\item 
+Matrix$<$ \hyperlink{class_sophus_1_1_s_e3_group_a8b19ef5ffe83465341b619047581219e}{Scalar}, 3, 1 $>$ {\bfseries translation\+\_\+}\hypertarget{class_sophus_1_1_s_e3_group_a0c439486ac1add8f98a28ec908a594b1}{}\label{class_sophus_1_1_s_e3_group_a0c439486ac1add8f98a28ec908a594b1}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$\\*
+class Sophus\+::\+S\+E3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$}
+
+S\+E3 default type -\/ Constructors and default storage for S\+E3 Type. 
+
+Definition at line 34 of file se3.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}!S\+E3\+Group@{S\+E3\+Group}}
+\index{S\+E3\+Group@{S\+E3\+Group}!Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}}
+\subsubsection[{\texorpdfstring{S\+E3\+Group()}{SE3Group()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ E\+I\+G\+E\+N\+\_\+\+M\+A\+K\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+N\+EW {\bf Sophus\+::\+S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf S\+E3\+Group} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e3_group_a80bb686e6bac8f4cc61b77997b0a6f14}{}\label{class_sophus_1_1_s_e3_group_a80bb686e6bac8f4cc61b77997b0a6f14}
+
+
+Default constructor. 
+
+Initialize Quaternion to identity rotation and translation to zero. 
+
+Definition at line 655 of file se3.\+hpp.
+
+\index{Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}!S\+E3\+Group@{S\+E3\+Group}}
+\index{S\+E3\+Group@{S\+E3\+Group}!Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}}
+\subsubsection[{\texorpdfstring{S\+E3\+Group(const Matrix$<$ Scalar, 3, 3 $>$ \&rotation\+\_\+matrix, const Point \&translation)}{SE3Group(const Matrix< Scalar, 3, 3 > &rotation_matrix, const Point &translation)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ {\bf Sophus\+::\+S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf S\+E3\+Group} (
+\begin{DoxyParamCaption}
+\item[{const Matrix$<$ {\bf Scalar}, 3, 3 $>$ \&}]{rotation\+\_\+matrix, }
+\item[{const {\bf Point} \&}]{translation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e3_group_a42189335d07e84cee3cd11edd0be3f51}{}\label{class_sophus_1_1_s_e3_group_a42189335d07e84cee3cd11edd0be3f51}
+
+
+Constructor from rotation matrix and translation vector. 
+
+\begin{DoxyPrecond}{Precondition}
+rotation matrix need to be orthogonal with determinant of 1 
+\end{DoxyPrecond}
+
+
+Definition at line 683 of file se3.\+hpp.
+
+\index{Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}!S\+E3\+Group@{S\+E3\+Group}}
+\index{S\+E3\+Group@{S\+E3\+Group}!Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}}
+\subsubsection[{\texorpdfstring{S\+E3\+Group(const Quaternion$<$ Scalar $>$ \&quaternion, const Point \&translation)}{SE3Group(const Quaternion< Scalar > &quaternion, const Point &translation)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ {\bf Sophus\+::\+S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf S\+E3\+Group} (
+\begin{DoxyParamCaption}
+\item[{const Quaternion$<$ {\bf Scalar} $>$ \&}]{quaternion, }
+\item[{const {\bf Point} \&}]{translation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e3_group_a6e7a59c8c3a5c6e03cad11523e24f324}{}\label{class_sophus_1_1_s_e3_group_a6e7a59c8c3a5c6e03cad11523e24f324}
+
+
+Constructor from quaternion and translation vector. 
+
+\begin{DoxyPrecond}{Precondition}
+quaternion must not be zero 
+\end{DoxyPrecond}
+
+
+Definition at line 694 of file se3.\+hpp.
+
+\index{Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}!S\+E3\+Group@{S\+E3\+Group}}
+\index{S\+E3\+Group@{S\+E3\+Group}!Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}}
+\subsubsection[{\texorpdfstring{S\+E3\+Group(const Eigen\+::\+Matrix$<$ Scalar, 4, 4 $>$ \&\+T)}{SE3Group(const Eigen::Matrix< Scalar, 4, 4 > &T)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ {\bf Sophus\+::\+S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf S\+E3\+Group} (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Matrix$<$ {\bf Scalar}, 4, 4 $>$ \&}]{T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{class_sophus_1_1_s_e3_group_ac9e36fa0ac86157d295eab03fef14cb1}{}\label{class_sophus_1_1_s_e3_group_ac9e36fa0ac86157d295eab03fef14cb1}
+
+
+Constructor from 4x4 matrix. 
+
+\begin{DoxyPrecond}{Precondition}
+top-\/left 3x3 sub-\/matrix need to be orthogonal with determinant of 1 
+\end{DoxyPrecond}
+
+
+Definition at line 705 of file se3.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}!data@{data}}
+\index{data@{data}!Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}}
+\subsubsection[{\texorpdfstring{data()}{data()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bf Scalar}$\ast$ {\bf Sophus\+::\+S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e3_group_a52ddbe0bf8383170aeb3eef194f75b73}{}\label{class_sophus_1_1_s_e3_group_a52ddbe0bf8383170aeb3eef194f75b73}
+\begin{DoxyReturn}{Returns}
+pointer to internal data
+\end{DoxyReturn}
+This provides unsafe read/write access to internal data. S\+E3 is represented by a pair of an S\+O3 element (4 parameters) and translation vector (three parameters). The user needs to take care of that the quaternion stays normalized.
+
+Note\+: The first three Scalars represent the imaginary parts, while the forth Scalar represent the real part.
+
+/see \hyperlink{class_sophus_1_1_s_e3_group_base_a14e27b432193b7406753a610ffca6584}{normalize()} 
+
+Definition at line 724 of file se3.\+hpp.
+
+\index{Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}!data@{data}}
+\index{data@{data}!Sophus\+::\+S\+E3\+Group@{Sophus\+::\+S\+E3\+Group}}
+\subsubsection[{\texorpdfstring{data() const }{data() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE const {\bf Scalar}$\ast$ {\bf Sophus\+::\+S\+E3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e3_group_a9906f360399d0a02780008d25939a544}{}\label{class_sophus_1_1_s_e3_group_a9906f360399d0a02780008d25939a544}
+\begin{DoxyReturn}{Returns}
+const pointer to internal data
+\end{DoxyReturn}
+Const version of \hyperlink{class_sophus_1_1_s_e3_group_a52ddbe0bf8383170aeb3eef194f75b73}{data()}. 
+
+Definition at line 735 of file se3.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Sophus/sophus/se3.\+hpp\end{DoxyCompactItemize}

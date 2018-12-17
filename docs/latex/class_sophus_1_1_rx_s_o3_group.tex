@@ -1,0 +1,205 @@
+\hypertarget{class_sophus_1_1_rx_s_o3_group}{}\section{Sophus\+:\+:Rx\+S\+O3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ Class Template Reference}
+\label{class_sophus_1_1_rx_s_o3_group}\index{Sophus\+::\+Rx\+S\+O3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$@{Sophus\+::\+Rx\+S\+O3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$}}
+
+
+Rx\+S\+O3 default type -\/ Constructors and default storage for Rx\+S\+O3 Type.  
+
+
+
+
+{\ttfamily \#include $<$rxso3.\+hpp$>$}
+
+
+
+Inheritance diagram for Sophus\+:\+:Rx\+S\+O3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_sophus_1_1_rx_s_o3_group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sophus\+:\+:Rx\+S\+O3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_sophus_1_1_rx_s_o3_group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_o3_group}{S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::\hyperlink{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{Scalar} \hyperlink{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{Scalar}\hypertarget{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{}\label{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}
+
+\begin{DoxyCompactList}\small\item\em scalar type \end{DoxyCompactList}\item 
+typedef internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_o3_group}{S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::Quaternion\+Type \& \hyperlink{class_sophus_1_1_rx_s_o3_group_a01e579c31ebe7063ef5b737f53cd99cb}{Quaternion\+Reference}\hypertarget{class_sophus_1_1_rx_s_o3_group_a01e579c31ebe7063ef5b737f53cd99cb}{}\label{class_sophus_1_1_rx_s_o3_group_a01e579c31ebe7063ef5b737f53cd99cb}
+
+\begin{DoxyCompactList}\small\item\em quaternion reference type \end{DoxyCompactList}\item 
+typedef const internal\+::traits$<$ \hyperlink{class_sophus_1_1_s_o3_group}{S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$ $>$\+::Quaternion\+Type \& \hyperlink{class_sophus_1_1_rx_s_o3_group_a03c34f6992514111a4fb03a1edce083f}{Const\+Quaternion\+Reference}\hypertarget{class_sophus_1_1_rx_s_o3_group_a03c34f6992514111a4fb03a1edce083f}{}\label{class_sophus_1_1_rx_s_o3_group_a03c34f6992514111a4fb03a1edce083f}
+
+\begin{DoxyCompactList}\small\item\em quaternion const reference type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_rx_s_o3_group_base_a60b2d8cd20692d3d39e5e7c729d95145}{Base\+::\+Transformation} \hyperlink{class_sophus_1_1_rx_s_o3_group_ac8c43cedd9690622ff696fd1473fdfce}{Transformation}\hypertarget{class_sophus_1_1_rx_s_o3_group_ac8c43cedd9690622ff696fd1473fdfce}{}\label{class_sophus_1_1_rx_s_o3_group_ac8c43cedd9690622ff696fd1473fdfce}
+
+\begin{DoxyCompactList}\small\item\em group transfomation type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_rx_s_o3_group_base_ad2d1b35ab03f6e91a80c2e78f07114a0}{Base\+::\+Point} \hyperlink{class_sophus_1_1_rx_s_o3_group_a9f4f8102f5db086c0bd7a5009fd6b611}{Point}\hypertarget{class_sophus_1_1_rx_s_o3_group_a9f4f8102f5db086c0bd7a5009fd6b611}{}\label{class_sophus_1_1_rx_s_o3_group_a9f4f8102f5db086c0bd7a5009fd6b611}
+
+\begin{DoxyCompactList}\small\item\em point type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_rx_s_o3_group_base_aa1c4034b0a69496b28f1e81fdc7510c5}{Base\+::\+Tangent} \hyperlink{class_sophus_1_1_rx_s_o3_group_ad2e6135eac9eeebda0ef8909b974897d}{Tangent}\hypertarget{class_sophus_1_1_rx_s_o3_group_ad2e6135eac9eeebda0ef8909b974897d}{}\label{class_sophus_1_1_rx_s_o3_group_ad2e6135eac9eeebda0ef8909b974897d}
+
+\begin{DoxyCompactList}\small\item\em tangent vector type \end{DoxyCompactList}\item 
+typedef \hyperlink{class_sophus_1_1_rx_s_o3_group_base_a3f7cc9982043bf0082b7946f566a8179}{Base\+::\+Adjoint} \hyperlink{class_sophus_1_1_rx_s_o3_group_aa2a2e8f4047a33bb2ccf8a802878544f}{Adjoint}\hypertarget{class_sophus_1_1_rx_s_o3_group_aa2a2e8f4047a33bb2ccf8a802878544f}{}\label{class_sophus_1_1_rx_s_o3_group_aa2a2e8f4047a33bb2ccf8a802878544f}
+
+\begin{DoxyCompactList}\small\item\em adjoint transformation type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+I\+G\+E\+N\+\_\+\+M\+A\+K\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+N\+EW \hyperlink{class_sophus_1_1_rx_s_o3_group_aa8b27095237070c5cae830e49bb9c196}{Rx\+S\+O3\+Group} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\hyperlink{class_sophus_1_1_rx_s_o3_group_a970f9fc29a915d8036887f2f5991420d}{Rx\+S\+O3\+Group} (const \hyperlink{class_sophus_1_1_rx_s_o3_group_base}{Rx\+S\+O3\+Group\+Base}$<$ Other\+Derived $>$ \&other)\hypertarget{class_sophus_1_1_rx_s_o3_group_a970f9fc29a915d8036887f2f5991420d}{}\label{class_sophus_1_1_rx_s_o3_group_a970f9fc29a915d8036887f2f5991420d}
+
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_sophus_1_1_rx_s_o3_group_ad271361baf1d50722638870defc9e575}{Rx\+S\+O3\+Group} (const \hyperlink{class_sophus_1_1_rx_s_o3_group_ac8c43cedd9690622ff696fd1473fdfce}{Transformation} \&sR)
+\begin{DoxyCompactList}\small\item\em Constructor from scaled rotation matrix. \end{DoxyCompactList}\item 
+\hyperlink{class_sophus_1_1_rx_s_o3_group_a602f7551e896428c8241331ae075416a}{Rx\+S\+O3\+Group} (const \hyperlink{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{Scalar} \&\hyperlink{class_sophus_1_1_rx_s_o3_group_base_a568f5cbdc1a40cd0f6237a91da65cf4a}{scale}, const \hyperlink{class_sophus_1_1_rx_s_o3_group_ac8c43cedd9690622ff696fd1473fdfce}{Transformation} \&R)
+\begin{DoxyCompactList}\small\item\em Constructor from scale factor and rotation matrix. \end{DoxyCompactList}\item 
+\hyperlink{class_sophus_1_1_rx_s_o3_group_a39635b4b1f03eb43bb506b17b1bfe353}{Rx\+S\+O3\+Group} (const \hyperlink{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{Scalar} \&\hyperlink{class_sophus_1_1_rx_s_o3_group_base_a568f5cbdc1a40cd0f6237a91da65cf4a}{scale}, const \hyperlink{class_sophus_1_1_s_o3_group}{S\+O3\+Group}$<$ \hyperlink{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{Scalar} $>$ \&so3)
+\begin{DoxyCompactList}\small\item\em Constructor from scale factor and S\+O3. \end{DoxyCompactList}\item 
+\hyperlink{class_sophus_1_1_rx_s_o3_group_a1c709c4ea5da483f12b968abfdbee68c}{Rx\+S\+O3\+Group} (const Quaternion$<$ \hyperlink{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{Scalar} $>$ \&quat)
+\begin{DoxyCompactList}\small\item\em Constructor from quaternion. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_rx_s_o3_group_a01e579c31ebe7063ef5b737f53cd99cb}{Quaternion\+Reference} \hyperlink{class_sophus_1_1_rx_s_o3_group_add7f349475c8b3c92ebe761b47d62b31}{quaternion} ()\hypertarget{class_sophus_1_1_rx_s_o3_group_add7f349475c8b3c92ebe761b47d62b31}{}\label{class_sophus_1_1_rx_s_o3_group_add7f349475c8b3c92ebe761b47d62b31}
+
+\begin{DoxyCompactList}\small\item\em Mutator of quaternion. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_rx_s_o3_group_a03c34f6992514111a4fb03a1edce083f}{Const\+Quaternion\+Reference} \hyperlink{class_sophus_1_1_rx_s_o3_group_a59656a350e486b5375b1bc5dfae8333a}{quaternion} () const \hypertarget{class_sophus_1_1_rx_s_o3_group_a59656a350e486b5375b1bc5dfae8333a}{}\label{class_sophus_1_1_rx_s_o3_group_a59656a350e486b5375b1bc5dfae8333a}
+
+\begin{DoxyCompactList}\small\item\em Accessor of quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_sophus_1_1_rx_s_o3_group_a4080b614adcd54d45e835b155717f4e7}{DoF} = Base\+::\+DoF\hypertarget{class_sophus_1_1_rx_s_o3_group_a4080b614adcd54d45e835b155717f4e7}{}\label{class_sophus_1_1_rx_s_o3_group_a4080b614adcd54d45e835b155717f4e7}
+
+\begin{DoxyCompactList}\small\item\em degree of freedom of group \end{DoxyCompactList}\item 
+static const int \hyperlink{class_sophus_1_1_rx_s_o3_group_a2338a5de2ec08107613f52f325e8d83c}{num\+\_\+parameters} = Base\+::num\+\_\+parameters\hypertarget{class_sophus_1_1_rx_s_o3_group_a2338a5de2ec08107613f52f325e8d83c}{}\label{class_sophus_1_1_rx_s_o3_group_a2338a5de2ec08107613f52f325e8d83c}
+
+\begin{DoxyCompactList}\small\item\em number of internal parameters used \end{DoxyCompactList}\item 
+static const int \hyperlink{class_sophus_1_1_rx_s_o3_group_a277309f659efc31d66f52a6f04dafcc0}{N} = Base\+::N\hypertarget{class_sophus_1_1_rx_s_o3_group_a277309f659efc31d66f52a6f04dafcc0}{}\label{class_sophus_1_1_rx_s_o3_group_a277309f659efc31d66f52a6f04dafcc0}
+
+\begin{DoxyCompactList}\small\item\em group transformations are NxN matrices \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Quaternion$<$ \hyperlink{class_sophus_1_1_rx_s_o3_group_a0c1248ba4deaab0ef231b74c60f77f87}{Scalar} $>$ {\bfseries quaternion\+\_\+}\hypertarget{class_sophus_1_1_rx_s_o3_group_adcb39c00a0db2de7289a16a4bdf00f44}{}\label{class_sophus_1_1_rx_s_o3_group_adcb39c00a0db2de7289a16a4bdf00f44}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$\\*
+class Sophus\+::\+Rx\+S\+O3\+Group$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$}
+
+Rx\+S\+O3 default type -\/ Constructors and default storage for Rx\+S\+O3 Type. 
+
+Definition at line 34 of file rxso3.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}!Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}}
+\index{Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}!Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}}
+\subsubsection[{\texorpdfstring{Rx\+S\+O3\+Group()}{RxSO3Group()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ E\+I\+G\+E\+N\+\_\+\+M\+A\+K\+E\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+N\+EW {\bf Sophus\+::\+Rx\+S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf Rx\+S\+O3\+Group} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_rx_s_o3_group_aa8b27095237070c5cae830e49bb9c196}{}\label{class_sophus_1_1_rx_s_o3_group_aa8b27095237070c5cae830e49bb9c196}
+
+
+Default constructor. 
+
+Initialize Quaternion to identity rotation and scale. 
+
+Definition at line 623 of file rxso3.\+hpp.
+
+\index{Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}!Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}}
+\index{Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}!Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}}
+\subsubsection[{\texorpdfstring{Rx\+S\+O3\+Group(const Transformation \&s\+R)}{RxSO3Group(const Transformation &sR)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ {\bf Sophus\+::\+Rx\+S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf Rx\+S\+O3\+Group} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{sR}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{class_sophus_1_1_rx_s_o3_group_ad271361baf1d50722638870defc9e575}{}\label{class_sophus_1_1_rx_s_o3_group_ad271361baf1d50722638870defc9e575}
+
+
+Constructor from scaled rotation matrix. 
+
+\begin{DoxyPrecond}{Precondition}
+matrix need to be \char`\"{}scaled orthogonal\char`\"{} with positive determinant 
+\end{DoxyPrecond}
+
+
+Definition at line 642 of file rxso3.\+hpp.
+
+\index{Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}!Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}}
+\index{Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}!Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}}
+\subsubsection[{\texorpdfstring{Rx\+S\+O3\+Group(const Scalar \&scale, const Transformation \&\+R)}{RxSO3Group(const Scalar &scale, const Transformation &R)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ {\bf Sophus\+::\+Rx\+S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf Rx\+S\+O3\+Group} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scalar} \&}]{scale, }
+\item[{const {\bf Transformation} \&}]{R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_rx_s_o3_group_a602f7551e896428c8241331ae075416a}{}\label{class_sophus_1_1_rx_s_o3_group_a602f7551e896428c8241331ae075416a}
+
+
+Constructor from scale factor and rotation matrix. 
+
+\begin{DoxyPrecond}{Precondition}
+rotation matrix need to be orthogonal with determinant of 1 
+
+scale need to be not zero 
+\end{DoxyPrecond}
+
+
+Definition at line 653 of file rxso3.\+hpp.
+
+\index{Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}!Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}}
+\index{Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}!Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}}
+\subsubsection[{\texorpdfstring{Rx\+S\+O3\+Group(const Scalar \&scale, const S\+O3\+Group$<$ Scalar $>$ \&so3)}{RxSO3Group(const Scalar &scale, const SO3Group< Scalar > &so3)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ {\bf Sophus\+::\+Rx\+S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf Rx\+S\+O3\+Group} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scalar} \&}]{scale, }
+\item[{const {\bf S\+O3\+Group}$<$ {\bf Scalar} $>$ \&}]{so3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_rx_s_o3_group_a39635b4b1f03eb43bb506b17b1bfe353}{}\label{class_sophus_1_1_rx_s_o3_group_a39635b4b1f03eb43bb506b17b1bfe353}
+
+
+Constructor from scale factor and S\+O3. 
+
+\begin{DoxyPrecond}{Precondition}
+scale need to be not zero 
+\end{DoxyPrecond}
+
+
+Definition at line 668 of file rxso3.\+hpp.
+
+\index{Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}!Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}}
+\index{Rx\+S\+O3\+Group@{Rx\+S\+O3\+Group}!Sophus\+::\+Rx\+S\+O3\+Group@{Sophus\+::\+Rx\+S\+O3\+Group}}
+\subsubsection[{\texorpdfstring{Rx\+S\+O3\+Group(const Quaternion$<$ Scalar $>$ \&quat)}{RxSO3Group(const Quaternion< Scalar > &quat)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \+\_\+\+Scalar, int \+\_\+\+Options$>$ {\bf Sophus\+::\+Rx\+S\+O3\+Group}$<$ \+\_\+\+Scalar, \+\_\+\+Options $>$\+::{\bf Rx\+S\+O3\+Group} (
+\begin{DoxyParamCaption}
+\item[{const Quaternion$<$ {\bf Scalar} $>$ \&}]{quat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{class_sophus_1_1_rx_s_o3_group_a1c709c4ea5da483f12b968abfdbee68c}{}\label{class_sophus_1_1_rx_s_o3_group_a1c709c4ea5da483f12b968abfdbee68c}
+
+
+Constructor from quaternion. 
+
+\begin{DoxyPrecond}{Precondition}
+quaternion must not be zero 
+\end{DoxyPrecond}
+
+
+Definition at line 683 of file rxso3.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Sophus/sophus/rxso3.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,25 @@
+var class_sophus_1_1_s_o2_group_base =
+[
+    [ "Adjoint", "class_sophus_1_1_s_o2_group_base.html#a02b4843e52df827cf466eacd288697fa", null ],
+    [ "ComplexReference", "class_sophus_1_1_s_o2_group_base.html#adad5730f4c0387415b8dfc3c5aa8b8f2", null ],
+    [ "ConstComplexReference", "class_sophus_1_1_s_o2_group_base.html#a077856f95a5c02933efd03aa1393825f", null ],
+    [ "Point", "class_sophus_1_1_s_o2_group_base.html#acdbb4a45d5f3d826b6bf8462c92c7f54", null ],
+    [ "Scalar", "class_sophus_1_1_s_o2_group_base.html#a075b701502715aecf0bdb3464963d36c", null ],
+    [ "Tangent", "class_sophus_1_1_s_o2_group_base.html#a3701d07bf2791675518a0ceb33ce653b", null ],
+    [ "Transformation", "class_sophus_1_1_s_o2_group_base.html#a8981dccaf65802191e989815046b6a82", null ],
+    [ "Adj", "class_sophus_1_1_s_o2_group_base.html#ada6ac17d59649f2c64ca5582c5e51d92", null ],
+    [ "cast", "class_sophus_1_1_s_o2_group_base.html#aa874d8841828cf62efd7e7c4a4f3b14b", null ],
+    [ "data", "class_sophus_1_1_s_o2_group_base.html#ae9446146654e17b23bd9e0ec497461fb", null ],
+    [ "data", "class_sophus_1_1_s_o2_group_base.html#a2a86a713d9c6bce6aa285ec57d050249", null ],
+    [ "fastMultiply", "class_sophus_1_1_s_o2_group_base.html#ad00a8f66f8fc0814f395d92dcfb9943c", null ],
+    [ "inverse", "class_sophus_1_1_s_o2_group_base.html#aa839d14832740111e954009345c9249b", null ],
+    [ "log", "class_sophus_1_1_s_o2_group_base.html#a4663dc1acc7566b066125c900dc4beb1", null ],
+    [ "matrix", "class_sophus_1_1_s_o2_group_base.html#a60e9726972a837a209cfcf6379ad17bf", null ],
+    [ "normalize", "class_sophus_1_1_s_o2_group_base.html#ab2012323b9b58e90e032ac4663225439", null ],
+    [ "operator*", "class_sophus_1_1_s_o2_group_base.html#a7afe754a865b880bb6f3c69836512e3d", null ],
+    [ "operator*", "class_sophus_1_1_s_o2_group_base.html#a414ff89adc6822ad330a0c9e2694c420", null ],
+    [ "operator*=", "class_sophus_1_1_s_o2_group_base.html#a68b1cf84a0e585432508e5310df677db", null ],
+    [ "operator=", "class_sophus_1_1_s_o2_group_base.html#a1fc0323f31179fb774417605b8296b3d", null ],
+    [ "setComplex", "class_sophus_1_1_s_o2_group_base.html#afc649b78e35d2a7504a88002a978b8b9", null ],
+    [ "unit_complex", "class_sophus_1_1_s_o2_group_base.html#a36a0a9344d5639ddc85a40bc0f4fee8b", null ]
+];

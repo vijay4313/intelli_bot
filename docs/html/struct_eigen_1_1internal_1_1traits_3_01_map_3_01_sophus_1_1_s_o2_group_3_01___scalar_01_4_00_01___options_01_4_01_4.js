@@ -1,0 +1,5 @@
+var struct_eigen_1_1internal_1_1traits_3_01_map_3_01_sophus_1_1_s_o2_group_3_01___scalar_01_4_00_01___options_01_4_01_4 =
+[
+    [ "ComplexType", "struct_eigen_1_1internal_1_1traits_3_01_map_3_01_sophus_1_1_s_o2_group_3_01___scalar_01_4_00_01___options_01_4_01_4.html#a020c05fa1834097b5a4e450d89fc40e0", null ],
+    [ "Scalar", "struct_eigen_1_1internal_1_1traits_3_01_map_3_01_sophus_1_1_s_o2_group_3_01___scalar_01_4_00_01___options_01_4_01_4.html#a439c80ff12c86be62ec6664d13491d8e", null ]
+];

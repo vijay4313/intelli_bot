@@ -1,0 +1,282 @@
+\hypertarget{class_p_i_d}{}\section{P\+ID Class Reference}
+\label{class_p_i_d}\index{P\+ID@{P\+ID}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_i_d_a0311b6f7de348499ce24e53ba353514a}{P\+ID} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_p_i_d_ab7d389fc5b88d881bc25f5dafd360441}{$\sim$\+P\+ID} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_p_i_d}{P\+ID} Destructor. \end{DoxyCompactList}\item 
+double \hyperlink{class_p_i_d_a3e20a1cc8818522f48a66ad8482cb2d3}{compute} (const double \&set\+Point, const double \&current\+Vel)
+\begin{DoxyCompactList}\small\item\em calculate new velocity using setpoint and current velocity \end{DoxyCompactList}\item 
+void \hyperlink{class_p_i_d_a4655b871bfe018f4ea1c5607d91ee74b}{set\+Kp\+Ki\+Kd} (const double \&kp, const double \&ki, const double \&kd)
+\begin{DoxyCompactList}\small\item\em set value of kp \end{DoxyCompactList}\item 
+void \hyperlink{class_p_i_d_a116fdab357eaf0007c80fe2f65bbb7d9}{set\+Dt} (const double \&dt)
+\begin{DoxyCompactList}\small\item\em set the dt value \end{DoxyCompactList}\item 
+double \hyperlink{class_p_i_d_a89dedae29ef5a1359fd438824523bfc5}{get\+Ki} ()
+\begin{DoxyCompactList}\small\item\em get value of ki \end{DoxyCompactList}\item 
+double \hyperlink{class_p_i_d_a52625de61b1b2977b2c26ddb2698f14e}{get\+Kp} ()
+\begin{DoxyCompactList}\small\item\em get value of kp \end{DoxyCompactList}\item 
+double \hyperlink{class_p_i_d_a39997546e8d1025c6c867e31e8b8e916}{get\+Kd} ()
+\begin{DoxyCompactList}\small\item\em get value of kd \end{DoxyCompactList}\item 
+double \hyperlink{class_p_i_d_af8c9c5d64221b59cd56ac2543a33eb48}{get\+Dt} ()
+\begin{DoxyCompactList}\small\item\em get the value of dt \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file P\+I\+D.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{P\+ID@{P\+ID}!P\+ID@{P\+ID}}
+\index{P\+ID@{P\+ID}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{P\+I\+D()}{PID()}}]{\setlength{\rightskip}{0pt plus 5cm}P\+I\+D\+::\+P\+ID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_a0311b6f7de348499ce24e53ba353514a}{}\label{class_p_i_d_a0311b6f7de348499ce24e53ba353514a}
+
+
+Constructor. 
+
+Initialize all values to 0.\+0 if default constructor is called. 
+
+Definition at line 40 of file P\+I\+D.\+cpp.
+
+\index{P\+ID@{P\+ID}!````~P\+ID@{$\sim$\+P\+ID}}
+\index{````~P\+ID@{$\sim$\+P\+ID}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{$\sim$\+P\+I\+D()}{~PID()}}]{\setlength{\rightskip}{0pt plus 5cm}P\+I\+D\+::$\sim$\+P\+ID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_ab7d389fc5b88d881bc25f5dafd360441}{}\label{class_p_i_d_ab7d389fc5b88d881bc25f5dafd360441}
+
+
+\hyperlink{class_p_i_d}{P\+ID} Destructor. 
+
+Default destructor. 
+
+Definition at line 51 of file P\+I\+D.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{P\+ID@{P\+ID}!compute@{compute}}
+\index{compute@{compute}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{compute(const double \&set\+Point, const double \&current\+Vel)}{compute(const double &setPoint, const double &currentVel)}}]{\setlength{\rightskip}{0pt plus 5cm}double P\+I\+D\+::compute (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{set\+Point, }
+\item[{const double \&}]{current\+Vel}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_a3e20a1cc8818522f48a66ad8482cb2d3}{}\label{class_p_i_d_a3e20a1cc8818522f48a66ad8482cb2d3}
+
+
+calculate new velocity using setpoint and current velocity 
+
+Compute method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+Point} & -\/ target velocity \\
+\hline
+{\em current\+Vel} & -\/ current velocity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new velocity
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em required} & setpoint \\
+\hline
+{\em current} & value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+control output 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file P\+I\+D.\+cpp.
+
+\index{P\+ID@{P\+ID}!get\+Dt@{get\+Dt}}
+\index{get\+Dt@{get\+Dt}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{get\+Dt()}{getDt()}}]{\setlength{\rightskip}{0pt plus 5cm}double P\+I\+D\+::get\+Dt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_af8c9c5d64221b59cd56ac2543a33eb48}{}\label{class_p_i_d_af8c9c5d64221b59cd56ac2543a33eb48}
+
+
+get the value of dt 
+
+getting value of dt
+
+\begin{DoxyReturn}{Returns}
+dt value of \hyperlink{class_p_i_d}{P\+ID}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of dt 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file P\+I\+D.\+cpp.
+
+\index{P\+ID@{P\+ID}!get\+Kd@{get\+Kd}}
+\index{get\+Kd@{get\+Kd}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{get\+Kd()}{getKd()}}]{\setlength{\rightskip}{0pt plus 5cm}double P\+I\+D\+::get\+Kd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_a39997546e8d1025c6c867e31e8b8e916}{}\label{class_p_i_d_a39997546e8d1025c6c867e31e8b8e916}
+
+
+get value of kd 
+
+getting value of gain
+
+\begin{DoxyReturn}{Returns}
+kd value of \hyperlink{class_p_i_d}{P\+ID}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of kd 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file P\+I\+D.\+cpp.
+
+\index{P\+ID@{P\+ID}!get\+Ki@{get\+Ki}}
+\index{get\+Ki@{get\+Ki}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{get\+Ki()}{getKi()}}]{\setlength{\rightskip}{0pt plus 5cm}double P\+I\+D\+::get\+Ki (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_a89dedae29ef5a1359fd438824523bfc5}{}\label{class_p_i_d_a89dedae29ef5a1359fd438824523bfc5}
+
+
+get value of ki 
+
+getting value of gain
+
+\begin{DoxyReturn}{Returns}
+Ki value of \hyperlink{class_p_i_d}{P\+ID}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of ki 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file P\+I\+D.\+cpp.
+
+\index{P\+ID@{P\+ID}!get\+Kp@{get\+Kp}}
+\index{get\+Kp@{get\+Kp}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{get\+Kp()}{getKp()}}]{\setlength{\rightskip}{0pt plus 5cm}double P\+I\+D\+::get\+Kp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_a52625de61b1b2977b2c26ddb2698f14e}{}\label{class_p_i_d_a52625de61b1b2977b2c26ddb2698f14e}
+
+
+get value of kp 
+
+getting value of gain
+
+\begin{DoxyReturn}{Returns}
+kp value of \hyperlink{class_p_i_d}{P\+ID}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of kp 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file P\+I\+D.\+cpp.
+
+\index{P\+ID@{P\+ID}!set\+Dt@{set\+Dt}}
+\index{set\+Dt@{set\+Dt}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{set\+Dt(const double \&dt)}{setDt(const double &dt)}}]{\setlength{\rightskip}{0pt plus 5cm}void P\+I\+D\+::set\+Dt (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{dt}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_a116fdab357eaf0007c80fe2f65bbb7d9}{}\label{class_p_i_d_a116fdab357eaf0007c80fe2f65bbb7d9}
+
+
+set the dt value 
+
+setting dt
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & -\/ duration of each time step\\
+\hline
+{\em difference} & in time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file P\+I\+D.\+cpp.
+
+\index{P\+ID@{P\+ID}!set\+Kp\+Ki\+Kd@{set\+Kp\+Ki\+Kd}}
+\index{set\+Kp\+Ki\+Kd@{set\+Kp\+Ki\+Kd}!P\+ID@{P\+ID}}
+\subsubsection[{\texorpdfstring{set\+Kp\+Ki\+Kd(const double \&kp, const double \&ki, const double \&kd)}{setKpKiKd(const double &kp, const double &ki, const double &kd)}}]{\setlength{\rightskip}{0pt plus 5cm}void P\+I\+D\+::set\+Kp\+Ki\+Kd (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{kp, }
+\item[{const double \&}]{ki, }
+\item[{const double \&}]{kd}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_i_d_a4655b871bfe018f4ea1c5607d91ee74b}{}\label{class_p_i_d_a4655b871bfe018f4ea1c5607d91ee74b}
+
+
+set value of kp 
+
+setting gains for \hyperlink{class_p_i_d}{P\+ID}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Kp} & -\/ proportional gain\\
+\hline
+{\em proportional} & gain \\
+\hline
+{\em integral} & gain \\
+\hline
+{\em derivative} & gain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file P\+I\+D.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_p_i_d_8h}{P\+I\+D.\+h}\item 
+src/\hyperlink{_p_i_d_8cpp}{P\+I\+D.\+cpp}\end{DoxyCompactItemize}

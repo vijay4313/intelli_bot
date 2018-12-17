@@ -1,0 +1,128 @@
+\hypertarget{class_image_processor}{}\section{Image\+Processor Class Reference}
+\label{class_image_processor}\index{Image\+Processor@{Image\+Processor}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_image_processor_aa9201a4d14b20ac968919145db3a588b}{Image\+Processor} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_image_processor_a2ff83cf5f0986ed04b7799499fe0defc}{$\sim$\+Image\+Processor} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+intelli\+\_\+bot\+::\+Pedestrians \hyperlink{class_image_processor_a509de78c3ff02a2d6130f74d8a858a33}{b\+Box\+Detects} (cv\+::\+Mat \&im\+B\+GR)
+\begin{DoxyCompactList}\small\item\em gets the bounding box \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_image_processor_a5c1ee13c914c45d1fc0a60f2dae5e945}{get\+Det\+Img} ()
+\begin{DoxyCompactList}\small\item\em gets the detected image \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 44 of file Image\+Processor.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Image\+Processor@{Image\+Processor}!Image\+Processor@{Image\+Processor}}
+\index{Image\+Processor@{Image\+Processor}!Image\+Processor@{Image\+Processor}}
+\subsubsection[{\texorpdfstring{Image\+Processor()}{ImageProcessor()}}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Processor\+::\+Image\+Processor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_image_processor_aa9201a4d14b20ac968919145db3a588b}{}\label{class_image_processor_aa9201a4d14b20ac968919145db3a588b}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file Image\+Processor.\+cpp.
+
+\index{Image\+Processor@{Image\+Processor}!````~Image\+Processor@{$\sim$\+Image\+Processor}}
+\index{````~Image\+Processor@{$\sim$\+Image\+Processor}!Image\+Processor@{Image\+Processor}}
+\subsubsection[{\texorpdfstring{$\sim$\+Image\+Processor()}{~ImageProcessor()}}]{\setlength{\rightskip}{0pt plus 5cm}Image\+Processor\+::$\sim$\+Image\+Processor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_image_processor_a2ff83cf5f0986ed04b7799499fe0defc}{}\label{class_image_processor_a2ff83cf5f0986ed04b7799499fe0defc}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file Image\+Processor.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Image\+Processor@{Image\+Processor}!b\+Box\+Detects@{b\+Box\+Detects}}
+\index{b\+Box\+Detects@{b\+Box\+Detects}!Image\+Processor@{Image\+Processor}}
+\subsubsection[{\texorpdfstring{b\+Box\+Detects(cv\+::\+Mat \&im\+B\+G\+R)}{bBoxDetects(cv::Mat &imBGR)}}]{\setlength{\rightskip}{0pt plus 5cm}intelli\+\_\+bot\+::\+Pedestrians Image\+Processor\+::b\+Box\+Detects (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat \&}]{im\+B\+GR}
+\end{DoxyParamCaption}
+)}\hypertarget{class_image_processor_a509de78c3ff02a2d6130f74d8a858a33}{}\label{class_image_processor_a509de78c3ff02a2d6130f74d8a858a33}
+
+
+gets the bounding box 
+
+Detects human and puts a bounding box around it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Image} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pedestrian message containing the location of the human 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file Image\+Processor.\+cpp.
+
+\index{Image\+Processor@{Image\+Processor}!get\+Det\+Img@{get\+Det\+Img}}
+\index{get\+Det\+Img@{get\+Det\+Img}!Image\+Processor@{Image\+Processor}}
+\subsubsection[{\texorpdfstring{get\+Det\+Img()}{getDetImg()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Image\+Processor\+::get\+Det\+Img (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_image_processor_a5c1ee13c914c45d1fc0a60f2dae5e945}{}\label{class_image_processor_a5c1ee13c914c45d1fc0a60f2dae5e945}
+
+
+gets the detected image 
+
+Get the detected image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+detected image 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Image\+Processor.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_image_processor_8h}{Image\+Processor.\+h}\item 
+src/\hyperlink{_image_processor_8cpp}{Image\+Processor.\+cpp}\end{DoxyCompactItemize}

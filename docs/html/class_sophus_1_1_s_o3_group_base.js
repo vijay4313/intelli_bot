@@ -1,0 +1,25 @@
+var class_sophus_1_1_s_o3_group_base =
+[
+    [ "Adjoint", "class_sophus_1_1_s_o3_group_base.html#a51c46f75563c21fbd223b4a444923306", null ],
+    [ "ConstQuaternionReference", "class_sophus_1_1_s_o3_group_base.html#a8a5a23aee10f2850a5894b7c1f5e6654", null ],
+    [ "Point", "class_sophus_1_1_s_o3_group_base.html#a1cfbc3b3a28e1f70b3e1845716db0a1b", null ],
+    [ "QuaternionReference", "class_sophus_1_1_s_o3_group_base.html#af58920cc70e59d58dcf427a22ebacaeb", null ],
+    [ "Scalar", "class_sophus_1_1_s_o3_group_base.html#a31bf31815c195b7150da8a8e8c6f0189", null ],
+    [ "Tangent", "class_sophus_1_1_s_o3_group_base.html#a11150229b6a471ae96cde974ece5ec7c", null ],
+    [ "Transformation", "class_sophus_1_1_s_o3_group_base.html#aa20fc57bf1b355a6616f5c4b785f1fc5", null ],
+    [ "Adj", "class_sophus_1_1_s_o3_group_base.html#a938f2e50857b65bac1babcee269b9d86", null ],
+    [ "cast", "class_sophus_1_1_s_o3_group_base.html#a2be02c8110c6d160603be88a88336d52", null ],
+    [ "data", "class_sophus_1_1_s_o3_group_base.html#a2fbf1faa2799543e1f42df71bafe3b80", null ],
+    [ "data", "class_sophus_1_1_s_o3_group_base.html#afe2f2724f7df77160f63161c20a245f1", null ],
+    [ "fastMultiply", "class_sophus_1_1_s_o3_group_base.html#aa0ed45f31d37bb97c60c839f680bed44", null ],
+    [ "inverse", "class_sophus_1_1_s_o3_group_base.html#a8b22195a0b01980b2656ed838c39cee9", null ],
+    [ "log", "class_sophus_1_1_s_o3_group_base.html#ae4196d42fc37f6dddb987bfb726575a5", null ],
+    [ "matrix", "class_sophus_1_1_s_o3_group_base.html#adc29d15481f673ccfcae77b065ea38be", null ],
+    [ "normalize", "class_sophus_1_1_s_o3_group_base.html#a10c6863560f5bac15d13d1916c3cda95", null ],
+    [ "operator*", "class_sophus_1_1_s_o3_group_base.html#af3924b64a1a6c45946f80f4e88f04a6d", null ],
+    [ "operator*", "class_sophus_1_1_s_o3_group_base.html#ad627562967215f7bd4ba593925b871bd", null ],
+    [ "operator*=", "class_sophus_1_1_s_o3_group_base.html#aeb9fd0d8089a51a9a0a0ad08eba1a8a0", null ],
+    [ "operator=", "class_sophus_1_1_s_o3_group_base.html#a041893de9d3e7ddb5c0bd12add57319b", null ],
+    [ "setQuaternion", "class_sophus_1_1_s_o3_group_base.html#aacf1cdcbeb6ebff5ab5f86ad015c16f9", null ],
+    [ "unit_quaternion", "class_sophus_1_1_s_o3_group_base.html#ab36e91f1f0ffce4be8a5f26902216832", null ]
+];

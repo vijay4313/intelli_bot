@@ -1,0 +1,210 @@
+\hypertarget{class_control}{}\section{Control Class Reference}
+\label{class_control}\index{Control@{Control}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_control_aa730aeda4517f40bc48ba1e46ebded77}{Control} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_control_aedda1328c4f8b8d49bca8f0812d3bfd1}{$\sim$\+Control} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \hyperlink{class_control_a3e1786f3e1fb35fd812711a8b2d0a81e}{get\+Target\+Pos} ()
+\begin{DoxyCompactList}\small\item\em Gets the index of the target point. \end{DoxyCompactList}\item 
+void \hyperlink{class_control_a7cb8e5afce664ae98bc50e5316bd6a83}{compute\+Step} ()
+\begin{DoxyCompactList}\small\item\em Computing the required \hyperlink{class_p_i_d}{P\+ID} for X,Z and Yaw and publishing. \end{DoxyCompactList}\item 
+void \hyperlink{class_control_af1588f8eee22c58006d23bfedc415db8}{curr\+Pose\+Callback} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em Callback function for Odometry subscription. \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::\+Point \hyperlink{class_control_acfe571f3f78226cd447334d6a7616215}{quat2\+R\+PY} (geometry\+\_\+msgs\+::\+Pose \&quat)
+\begin{DoxyCompactList}\small\item\em Get R\+PY from quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 50 of file Control.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Control@{Control}!Control@{Control}}
+\index{Control@{Control}!Control@{Control}}
+\subsubsection[{\texorpdfstring{Control()}{Control()}}]{\setlength{\rightskip}{0pt plus 5cm}Control\+::\+Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_control_aa730aeda4517f40bc48ba1e46ebded77}{}\label{class_control_aa730aeda4517f40bc48ba1e46ebded77}
+
+
+Constructor. 
+
+Constructor for \hyperlink{class_control}{Control} Class Initializing required variables, publishers and subscribers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file Control.\+cpp.
+
+\index{Control@{Control}!````~Control@{$\sim$\+Control}}
+\index{````~Control@{$\sim$\+Control}!Control@{Control}}
+\subsubsection[{\texorpdfstring{$\sim$\+Control()}{~Control()}}]{\setlength{\rightskip}{0pt plus 5cm}Control\+::$\sim$\+Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_control_aedda1328c4f8b8d49bca8f0812d3bfd1}{}\label{class_control_aedda1328c4f8b8d49bca8f0812d3bfd1}
+
+
+Destructor. 
+
+Destructor for \hyperlink{class_control}{Control} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file Control.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Control@{Control}!compute\+Step@{compute\+Step}}
+\index{compute\+Step@{compute\+Step}!Control@{Control}}
+\subsubsection[{\texorpdfstring{compute\+Step()}{computeStep()}}]{\setlength{\rightskip}{0pt plus 5cm}void Control\+::compute\+Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_control_a7cb8e5afce664ae98bc50e5316bd6a83}{}\label{class_control_a7cb8e5afce664ae98bc50e5316bd6a83}
+
+
+Computing the required \hyperlink{class_p_i_d}{P\+ID} for X,Z and Yaw and publishing. 
+
+Publishes the required velocity after computing using \hyperlink{class_p_i_d}{P\+ID}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file Control.\+cpp.
+
+\index{Control@{Control}!curr\+Pose\+Callback@{curr\+Pose\+Callback}}
+\index{curr\+Pose\+Callback@{curr\+Pose\+Callback}!Control@{Control}}
+\subsubsection[{\texorpdfstring{curr\+Pose\+Callback(const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)}{currPoseCallback(const nav_msgs::Odometry::ConstPtr &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Control\+::curr\+Pose\+Callback (
+\begin{DoxyParamCaption}
+\item[{const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{class_control_af1588f8eee22c58006d23bfedc415db8}{}\label{class_control_af1588f8eee22c58006d23bfedc415db8}
+
+
+Callback function for Odometry subscription. 
+
+Callback function for Odometry subscriber.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Message} & in odometry topic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em Odometry} & data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 315 of file Control.\+cpp.
+
+\index{Control@{Control}!get\+Target\+Pos@{get\+Target\+Pos}}
+\index{get\+Target\+Pos@{get\+Target\+Pos}!Control@{Control}}
+\subsubsection[{\texorpdfstring{get\+Target\+Pos()}{getTargetPos()}}]{\setlength{\rightskip}{0pt plus 5cm}int Control\+::get\+Target\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_control_a3e1786f3e1fb35fd812711a8b2d0a81e}{}\label{class_control_a3e1786f3e1fb35fd812711a8b2d0a81e}
+
+
+Gets the index of the target point. 
+
+gets the target location and pose
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of required target point in path
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of nearest point 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file Control.\+cpp.
+
+\index{Control@{Control}!quat2\+R\+PY@{quat2\+R\+PY}}
+\index{quat2\+R\+PY@{quat2\+R\+PY}!Control@{Control}}
+\subsubsection[{\texorpdfstring{quat2\+R\+P\+Y(geometry\+\_\+msgs\+::\+Pose \&quat)}{quat2RPY(geometry_msgs::Pose &quat)}}]{\setlength{\rightskip}{0pt plus 5cm}geometry\+\_\+msgs\+::\+Point Control\+::quat2\+R\+PY (
+\begin{DoxyParamCaption}
+\item[{geometry\+\_\+msgs\+::\+Pose \&}]{quat}
+\end{DoxyParamCaption}
+)}\hypertarget{class_control_acfe571f3f78226cd447334d6a7616215}{}\label{class_control_acfe571f3f78226cd447334d6a7616215}
+
+
+Get R\+PY from quaternion. 
+
+Converts quaternion to R\+PY.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Quaternion} & pose data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+PY pose data
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em Pose} & data in Quaternion form \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pose data in R\+PY 
+\end{DoxyReturn}
+
+
+Definition at line 293 of file Control.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_control_8h}{Control.\+h}\item 
+src/\hyperlink{_control_8cpp}{Control.\+cpp}\end{DoxyCompactItemize}

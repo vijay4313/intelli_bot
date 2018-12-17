@@ -1,0 +1,602 @@
+\hypertarget{class_sophus_1_1_s_e2_group_base}{}\section{Sophus\+:\+:S\+E2\+Group\+Base$<$ Derived $>$ Class Template Reference}
+\label{class_sophus_1_1_s_e2_group_base}\index{Sophus\+::\+S\+E2\+Group\+Base$<$ Derived $>$@{Sophus\+::\+S\+E2\+Group\+Base$<$ Derived $>$}}
+
+
+S\+E2 base type -\/ implements S\+E2 class but is storage agnostic.  
+
+
+
+
+{\ttfamily \#include $<$se2.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef internal\+::traits$<$ Derived $>$\+::\hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}\hypertarget{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{}\label{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}
+
+\begin{DoxyCompactList}\small\item\em scalar type \end{DoxyCompactList}\item 
+typedef internal\+::traits$<$ Derived $>$\+::Translation\+Type \& \hyperlink{class_sophus_1_1_s_e2_group_base_a971b396ee82cd53a8518bd7d6f216102}{Translation\+Reference}\hypertarget{class_sophus_1_1_s_e2_group_base_a971b396ee82cd53a8518bd7d6f216102}{}\label{class_sophus_1_1_s_e2_group_base_a971b396ee82cd53a8518bd7d6f216102}
+
+\begin{DoxyCompactList}\small\item\em translation reference type \end{DoxyCompactList}\item 
+typedef const internal\+::traits$<$ Derived $>$\+::Translation\+Type \& \hyperlink{class_sophus_1_1_s_e2_group_base_a5fbd917de2097049af437e580f3163a3}{Const\+Translation\+Reference}\hypertarget{class_sophus_1_1_s_e2_group_base_a5fbd917de2097049af437e580f3163a3}{}\label{class_sophus_1_1_s_e2_group_base_a5fbd917de2097049af437e580f3163a3}
+
+\begin{DoxyCompactList}\small\item\em translation const reference type \end{DoxyCompactList}\item 
+typedef internal\+::traits$<$ Derived $>$\+::S\+O2\+Type \& \hyperlink{class_sophus_1_1_s_e2_group_base_a057dc5e957e17fa3357cf1d2ae800c77}{S\+O2\+Reference}\hypertarget{class_sophus_1_1_s_e2_group_base_a057dc5e957e17fa3357cf1d2ae800c77}{}\label{class_sophus_1_1_s_e2_group_base_a057dc5e957e17fa3357cf1d2ae800c77}
+
+\begin{DoxyCompactList}\small\item\em S\+O2 reference type. \end{DoxyCompactList}\item 
+typedef const internal\+::traits$<$ Derived $>$\+::S\+O2\+Type \& \hyperlink{class_sophus_1_1_s_e2_group_base_a261f36c0d0c957dc49ca5f586c32e3a2}{Const\+S\+O2\+Reference}\hypertarget{class_sophus_1_1_s_e2_group_base_a261f36c0d0c957dc49ca5f586c32e3a2}{}\label{class_sophus_1_1_s_e2_group_base_a261f36c0d0c957dc49ca5f586c32e3a2}
+
+\begin{DoxyCompactList}\small\item\em S\+O2 type. \end{DoxyCompactList}\item 
+typedef Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, \hyperlink{class_sophus_1_1_s_e2_group_base_a07b0f26b806ad9cd07184d817bc462a1}{N}, \hyperlink{class_sophus_1_1_s_e2_group_base_a07b0f26b806ad9cd07184d817bc462a1}{N} $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}{Transformation}\hypertarget{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}{}\label{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}
+
+\begin{DoxyCompactList}\small\item\em group transfomation type \end{DoxyCompactList}\item 
+typedef Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, 2, 1 $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_add8b024098bc6fcecdefb42229fa881b}{Point}\hypertarget{class_sophus_1_1_s_e2_group_base_add8b024098bc6fcecdefb42229fa881b}{}\label{class_sophus_1_1_s_e2_group_base_add8b024098bc6fcecdefb42229fa881b}
+
+\begin{DoxyCompactList}\small\item\em point type \end{DoxyCompactList}\item 
+typedef Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, \hyperlink{class_sophus_1_1_s_e2_group_base_ab94ffc7ab0cbd8986e6f2ab35c50dbb1}{DoF}, 1 $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent}\hypertarget{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{}\label{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}
+
+\begin{DoxyCompactList}\small\item\em tangent vector type \end{DoxyCompactList}\item 
+typedef Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, \hyperlink{class_sophus_1_1_s_e2_group_base_ab94ffc7ab0cbd8986e6f2ab35c50dbb1}{DoF}, \hyperlink{class_sophus_1_1_s_e2_group_base_ab94ffc7ab0cbd8986e6f2ab35c50dbb1}{DoF} $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_a6e0785a6f8399456a8bd0b057bae02ee}{Adjoint}\hypertarget{class_sophus_1_1_s_e2_group_base_a6e0785a6f8399456a8bd0b057bae02ee}{}\label{class_sophus_1_1_s_e2_group_base_a6e0785a6f8399456a8bd0b057bae02ee}
+
+\begin{DoxyCompactList}\small\item\em adjoint transformation type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_sophus_1_1_s_e2_group_base_a6e0785a6f8399456a8bd0b057bae02ee}{Adjoint} \hyperlink{class_sophus_1_1_s_e2_group_base_a83dd17e9837363469bbe32ec202cebe5}{Adj} () const 
+\begin{DoxyCompactList}\small\item\em Adjoint transformation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename New\+Scalar\+Type $>$ }\\\hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ New\+Scalar\+Type $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_a84e3ce985f4afb7982c2739e2284a276}{cast} () const 
+\item 
+void \hyperlink{class_sophus_1_1_s_e2_group_base_a51db3eccd7b70627974e9e0f4ba0e0b1}{fast\+Multiply} (const \hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Fast group multiplication. \end{DoxyCompactList}\item 
+const \hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_a5c9d9485f696396266bd7932d38d7c90}{inverse} () const 
+\item 
+const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \hyperlink{class_sophus_1_1_s_e2_group_base_a32855c8b44ed62a108281a99b7589007}{log} () const 
+\begin{DoxyCompactList}\small\item\em Logarithmic map. \end{DoxyCompactList}\item 
+void \hyperlink{class_sophus_1_1_s_e2_group_base_aa53b166d7053572efeb5b77a08834156}{normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize S\+O2 element. \end{DoxyCompactList}\item 
+const \hyperlink{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}{Transformation} \hyperlink{class_sophus_1_1_s_e2_group_base_a3d752d2ffd35f2e7eec1466fa451e774}{matrix} () const 
+\item 
+const Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, 2, 3 $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_a9b312701ec4194c2db4febb83b90c828}{matrix2x3} () const 
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\hyperlink{class_sophus_1_1_s_e2_group_base}{S\+E2\+Group\+Base}$<$ Derived $>$ \& \hyperlink{class_sophus_1_1_s_e2_group_base_abd50c1bef40dc37ac2bc3b707d74d3fc}{operator=} (const \hyperlink{class_sophus_1_1_s_e2_group_base}{S\+E2\+Group\+Base}$<$ Other\+Derived $>$ \&other)\hypertarget{class_sophus_1_1_s_e2_group_base_abd50c1bef40dc37ac2bc3b707d74d3fc}{}\label{class_sophus_1_1_s_e2_group_base_abd50c1bef40dc37ac2bc3b707d74d3fc}
+
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+const \hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_a36f68c8a9630eed4405f1b89210d421e}{operator$\ast$} (const \hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} $>$ \&other) const 
+\begin{DoxyCompactList}\small\item\em Group multiplication. \end{DoxyCompactList}\item 
+const \hyperlink{class_sophus_1_1_s_e2_group_base_add8b024098bc6fcecdefb42229fa881b}{Point} \hyperlink{class_sophus_1_1_s_e2_group_base_aa1313016f17d4ed280446ad3fef35fff}{operator$\ast$} (const \hyperlink{class_sophus_1_1_s_e2_group_base_add8b024098bc6fcecdefb42229fa881b}{Point} \&p) const 
+\begin{DoxyCompactList}\small\item\em Group action on $ \mathbf{R}^2 $. \end{DoxyCompactList}\item 
+void \hyperlink{class_sophus_1_1_s_e2_group_base_a5016208d6f5b02464cb4553984e37f29}{operator$\ast$=} (const \hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} $>$ \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place group multiplication. \end{DoxyCompactList}\item 
+const Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, 2, 2 $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_ae70df20893171b2b96a98fae351d1916}{rotation\+Matrix} () const 
+\item 
+void \hyperlink{class_sophus_1_1_s_e2_group_base_a643d4629d8331be7492b3db74b2bb084}{set\+Complex} (const Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, 2, 1 $>$ \&complex)
+\begin{DoxyCompactList}\small\item\em Setter of internal unit complex number representation. \end{DoxyCompactList}\item 
+void \hyperlink{class_sophus_1_1_s_e2_group_base_a1d428f01714ff3e3f3df348913645c9b}{set\+Rotation\+Matrix} (const Matrix$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar}, 2, 2 $>$ \&R)
+\begin{DoxyCompactList}\small\item\em Setter of unit complex number using rotation matrix. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e2_group_base_a057dc5e957e17fa3357cf1d2ae800c77}{S\+O2\+Reference} \hyperlink{class_sophus_1_1_s_e2_group_base_a7c687ab374c54c578857e3ed03d64e94}{so2} ()\hypertarget{class_sophus_1_1_s_e2_group_base_a7c687ab374c54c578857e3ed03d64e94}{}\label{class_sophus_1_1_s_e2_group_base_a7c687ab374c54c578857e3ed03d64e94}
+
+\begin{DoxyCompactList}\small\item\em Mutator of S\+O2 group. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e2_group_base_a261f36c0d0c957dc49ca5f586c32e3a2}{Const\+S\+O2\+Reference} \hyperlink{class_sophus_1_1_s_e2_group_base_ac644101eacda42115dfb3fecd5bc5eca}{so2} () const \hypertarget{class_sophus_1_1_s_e2_group_base_ac644101eacda42115dfb3fecd5bc5eca}{}\label{class_sophus_1_1_s_e2_group_base_ac644101eacda42115dfb3fecd5bc5eca}
+
+\begin{DoxyCompactList}\small\item\em Accessor of S\+O2 group. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e2_group_base_a971b396ee82cd53a8518bd7d6f216102}{Translation\+Reference} \hyperlink{class_sophus_1_1_s_e2_group_base_aebf12d78f613797ebfbefdd475ca0c6d}{translation} ()\hypertarget{class_sophus_1_1_s_e2_group_base_aebf12d78f613797ebfbefdd475ca0c6d}{}\label{class_sophus_1_1_s_e2_group_base_aebf12d78f613797ebfbefdd475ca0c6d}
+
+\begin{DoxyCompactList}\small\item\em Mutator of translation vector. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \hyperlink{class_sophus_1_1_s_e2_group_base_a5fbd917de2097049af437e580f3163a3}{Const\+Translation\+Reference} \hyperlink{class_sophus_1_1_s_e2_group_base_a5a17942302897237f35657a7133fe8de}{translation} () const \hypertarget{class_sophus_1_1_s_e2_group_base_a5a17942302897237f35657a7133fe8de}{}\label{class_sophus_1_1_s_e2_group_base_a5a17942302897237f35657a7133fe8de}
+
+\begin{DoxyCompactList}\small\item\em Accessor of translation vector. \end{DoxyCompactList}\item 
+internal\+::traits$<$ Derived $>$\+::S\+O2\+Type\+::\+Const\+Complex\+Reference \hyperlink{class_sophus_1_1_s_e2_group_base_ace841824d980bbe39f28241df52d646c}{unit\+\_\+complex} () const 
+\begin{DoxyCompactList}\small\item\em Accessor of unit complex number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}{Transformation} \hyperlink{class_sophus_1_1_s_e2_group_base_abd82580529a773695f83e6768c865c5c}{d\+\_\+lie\+Bracketab\+\_\+by\+\_\+d\+\_\+a} (const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \&b)
+\item 
+static const \hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} $>$ \hyperlink{class_sophus_1_1_s_e2_group_base_ade77e270e09a1719b56e765ee7c8967f}{exp} (const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \&a)
+\begin{DoxyCompactList}\small\item\em Group exponential. \end{DoxyCompactList}\item 
+static const \hyperlink{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}{Transformation} \hyperlink{class_sophus_1_1_s_e2_group_base_a3d255ebf6a3101e2e79ae3dd97af6cbc}{generator} (int i)
+\begin{DoxyCompactList}\small\item\em Generators. \end{DoxyCompactList}\item 
+static const \hyperlink{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}{Transformation} \hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat} (const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \&v)
+\begin{DoxyCompactList}\small\item\em hat-\/operator \end{DoxyCompactList}\item 
+static const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \hyperlink{class_sophus_1_1_s_e2_group_base_ab3de14df064c6d609d1f3855edc065a8}{lie\+Bracket} (const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \&a, const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \&b)
+\begin{DoxyCompactList}\small\item\em Lie bracket. \end{DoxyCompactList}\item 
+static const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \hyperlink{class_sophus_1_1_s_e2_group_base_aecc7909b366aa35b033f6c704441ac70}{log} (const \hyperlink{class_sophus_1_1_s_e2_group}{S\+E2\+Group}$<$ \hyperlink{class_sophus_1_1_s_e2_group_base_a1bad7970c24437df7f4a34281ff147fe}{Scalar} $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Logarithmic map. \end{DoxyCompactList}\item 
+static const \hyperlink{class_sophus_1_1_s_e2_group_base_a71b41e6cde48514241c7bffcbe34923f}{Tangent} \hyperlink{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}{vee} (const \hyperlink{class_sophus_1_1_s_e2_group_base_a82fe531d4b64813525d4ebd131da9bcd}{Transformation} \&Omega)
+\begin{DoxyCompactList}\small\item\em vee-\/operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_sophus_1_1_s_e2_group_base_ab94ffc7ab0cbd8986e6f2ab35c50dbb1}{DoF} = 3\hypertarget{class_sophus_1_1_s_e2_group_base_ab94ffc7ab0cbd8986e6f2ab35c50dbb1}{}\label{class_sophus_1_1_s_e2_group_base_ab94ffc7ab0cbd8986e6f2ab35c50dbb1}
+
+\begin{DoxyCompactList}\small\item\em degree of freedom of group (two for translation, one for in-\/plane rotation) \end{DoxyCompactList}\item 
+static const int \hyperlink{class_sophus_1_1_s_e2_group_base_a304bd88bbf7f60bb7f8982d84fdb9653}{num\+\_\+parameters} = 4\hypertarget{class_sophus_1_1_s_e2_group_base_a304bd88bbf7f60bb7f8982d84fdb9653}{}\label{class_sophus_1_1_s_e2_group_base_a304bd88bbf7f60bb7f8982d84fdb9653}
+
+\begin{DoxyCompactList}\small\item\em number of internal parameters used (unit complex number for rotation + translation 2-\/vector) \end{DoxyCompactList}\item 
+static const int \hyperlink{class_sophus_1_1_s_e2_group_base_a07b0f26b806ad9cd07184d817bc462a1}{N} = 3\hypertarget{class_sophus_1_1_s_e2_group_base_a07b0f26b806ad9cd07184d817bc462a1}{}\label{class_sophus_1_1_s_e2_group_base_a07b0f26b806ad9cd07184d817bc462a1}
+
+\begin{DoxyCompactList}\small\item\em group transformations are NxN matrices \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Derived$>$\\*
+class Sophus\+::\+S\+E2\+Group\+Base$<$ Derived $>$}
+
+S\+E2 base type -\/ implements S\+E2 class but is storage agnostic. 
+
+\mbox{[}add more detailed description/tutorial\mbox{]} 
+
+Definition at line 82 of file se2.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!Adj@{Adj}}
+\index{Adj@{Adj}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{Adj() const }{Adj() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const {\bf Adjoint} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::Adj (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a83dd17e9837363469bbe32ec202cebe5}{}\label{class_sophus_1_1_s_e2_group_base_a83dd17e9837363469bbe32ec202cebe5}
+
+
+Adjoint transformation. 
+
+This function return the adjoint transformation $ Ad $ of the group instance $ A $ such that for all $ x $ it holds that $ \widehat{Ad_A\cdot x} = A\widehat{x}A^{-1} $ with $\ \widehat{\cdot} $ being the \hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()}-\/operator. 
+
+Definition at line 125 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!cast@{cast}}
+\index{cast@{cast}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{cast() const }{cast() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ template$<$typename New\+Scalar\+Type $>$ {\bf S\+E2\+Group}$<$New\+Scalar\+Type$>$ {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::cast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a84e3ce985f4afb7982c2739e2284a276}{}\label{class_sophus_1_1_s_e2_group_base_a84e3ce985f4afb7982c2739e2284a276}
+\begin{DoxyReturn}{Returns}
+copy of instance casted to New\+Scalar\+Type 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!d\+\_\+lie\+Bracketab\+\_\+by\+\_\+d\+\_\+a@{d\+\_\+lie\+Bracketab\+\_\+by\+\_\+d\+\_\+a}}
+\index{d\+\_\+lie\+Bracketab\+\_\+by\+\_\+d\+\_\+a@{d\+\_\+lie\+Bracketab\+\_\+by\+\_\+d\+\_\+a}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{d\+\_\+lie\+Bracketab\+\_\+by\+\_\+d\+\_\+a(const Tangent \&b)}{d_lieBracketab_by_d_a(const Tangent &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ static const {\bf Transformation} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::d\+\_\+lie\+Bracketab\+\_\+by\+\_\+d\+\_\+a (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tangent} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_sophus_1_1_s_e2_group_base_abd82580529a773695f83e6768c865c5c}{}\label{class_sophus_1_1_s_e2_group_base_abd82580529a773695f83e6768c865c5c}
+
+\begin{DoxyParams}{Parameters}
+{\em b} & 3-\/vector representation of Lie algebra element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+derivative of Lie bracket
+\end{DoxyReturn}
+This function returns $ \frac{\partial}{\partial a} [a, b]_{se2} $ with $ [a, b]_{se2} $ being the \hyperlink{class_sophus_1_1_s_e2_group_base_ab3de14df064c6d609d1f3855edc065a8}{lie\+Bracket()} of the Lie algebra se2.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_ab3de14df064c6d609d1f3855edc065a8}{lie\+Bracket()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 359 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!exp@{exp}}
+\index{exp@{exp}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{exp(const Tangent \&a)}{exp(const Tangent &a)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ static const {\bf S\+E2\+Group}$<${\bf Scalar}$>$ {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::exp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tangent} \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_sophus_1_1_s_e2_group_base_ade77e270e09a1719b56e765ee7c8967f}{}\label{class_sophus_1_1_s_e2_group_base_ade77e270e09a1719b56e765ee7c8967f}
+
+
+Group exponential. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & tangent space element (3-\/vector) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+corresponding element of the group S\+E2
+\end{DoxyReturn}
+The first two components of $ a $ represent the translational part $ \upsilon $ in the tangent space of S\+E2, while the last components of $ a $ is the rotation angle $ \theta $.
+
+To be more specific, this function computes $ \exp(\widehat{a}) $ with $ \exp(\cdot) $ being the matrix exponential and $ \widehat{\cdot} $ the \hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()}-\/operator of S\+E2.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()} 
+
+\hyperlink{class_sophus_1_1_s_e2_group_base_a32855c8b44ed62a108281a99b7589007}{log()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 389 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!fast\+Multiply@{fast\+Multiply}}
+\index{fast\+Multiply@{fast\+Multiply}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{fast\+Multiply(const S\+E2\+Group$<$ Scalar $>$ \&other)}{fastMultiply(const SE2Group< Scalar > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ void {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::fast\+Multiply (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\+E2\+Group}$<$ {\bf Scalar} $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a51db3eccd7b70627974e9e0f4ba0e0b1}{}\label{class_sophus_1_1_s_e2_group_base_a51db3eccd7b70627974e9e0f4ba0e0b1}
+
+
+Fast group multiplication. 
+
+This method is a fast version of \hyperlink{class_sophus_1_1_s_e2_group_base_a5016208d6f5b02464cb4553984e37f29}{operator$\ast$=()}, since it does not perform normalization. It is up to the user to call \hyperlink{class_sophus_1_1_s_e2_group_base_aa53b166d7053572efeb5b77a08834156}{normalize()} once in a while.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_a5016208d6f5b02464cb4553984e37f29}{operator$\ast$=()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 154 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!generator@{generator}}
+\index{generator@{generator}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{generator(int i)}{generator(int i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ static const {\bf Transformation} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::generator (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a3d255ebf6a3101e2e79ae3dd97af6cbc}{}\label{class_sophus_1_1_s_e2_group_base_a3d255ebf6a3101e2e79ae3dd97af6cbc}
+
+
+Generators. 
+
+\begin{DoxyPrecond}{Precondition}
+$ i \in \{0,1,2\} $ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+$ i $th generator $ G_i $ of S\+E2
+\end{DoxyReturn}
+The infinitesimal generators of S\+E2 are\+: \[ G_0 = \left( \begin{array}{ccc} 0& 0& 1\\ 0& 0& 0\\ 0& 0& 0\\ \end{array} \right), G_1 = \left( \begin{array}{cccc} 0& 0& 0\\ 0& 0& 1\\ 0& 0& 0\\ \end{array} \right), G_2 = \left( \begin{array}{cccc} 0& 0& 0&\\ 0& 0& -1&\\ 0& 1& 0&\\ \end{array} \right), \] \begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 439 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!hat@{hat}}
+\index{hat@{hat}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{hat(const Tangent \&v)}{hat(const Tangent &v)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ static const {\bf Transformation} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::hat (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tangent} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{}\label{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}
+
+
+hat-\/operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega} & 3-\/vector representation of Lie algebra element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3x3-\/matrix representatin of Lie algebra element
+\end{DoxyReturn}
+Formally, the hat-\/operator of S\+E2 is defined as $ \widehat{\cdot}: \mathbf{R}^3 \rightarrow \mathbf{R}^{2\times 2}, \quad \widehat{\omega} = \sum_{i=0}^2 G_i \omega_i $ with $ G_i $ being the ith infinitesial \hyperlink{class_sophus_1_1_s_e2_group_base_a3d255ebf6a3101e2e79ae3dd97af6cbc}{generator()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_a3d255ebf6a3101e2e79ae3dd97af6cbc}{generator()} 
+
+\hyperlink{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}{vee()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 464 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!inverse@{inverse}}
+\index{inverse@{inverse}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{inverse() const }{inverse() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const {\bf S\+E2\+Group}$<${\bf Scalar}$>$ {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a5c9d9485f696396266bd7932d38d7c90}{}\label{class_sophus_1_1_s_e2_group_base_a5c9d9485f696396266bd7932d38d7c90}
+\begin{DoxyReturn}{Returns}
+Group inverse of instance 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!lie\+Bracket@{lie\+Bracket}}
+\index{lie\+Bracket@{lie\+Bracket}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{lie\+Bracket(const Tangent \&a, const Tangent \&b)}{lieBracket(const Tangent &a, const Tangent &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ static const {\bf Tangent} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::lie\+Bracket (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tangent} \&}]{a, }
+\item[{const {\bf Tangent} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_sophus_1_1_s_e2_group_base_ab3de14df064c6d609d1f3855edc065a8}{}\label{class_sophus_1_1_s_e2_group_base_ab3de14df064c6d609d1f3855edc065a8}
+
+
+Lie bracket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & 3-\/vector representation of Lie algebra element \\
+\hline
+{\em b} & 3-\/vector representation of Lie algebra element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3-\/vector representation of Lie algebra element
+\end{DoxyReturn}
+It computes the bracket of S\+E2. To be more specific, it computes $ [a, b]_{se2} := [\widehat{a_1}, \widehat{b_2}]^\vee $ with $ [A,B] = AB-BA $ being the matrix commutator, $ \widehat{\cdot} $ the \hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()}-\/operator and $ (\cdot)^\vee $ the \hyperlink{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}{vee()}-\/operator of S\+E2.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()} 
+
+\hyperlink{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}{vee()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 490 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!log@{log}}
+\index{log@{log}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{log() const }{log() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const {\bf Tangent} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::log (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a32855c8b44ed62a108281a99b7589007}{}\label{class_sophus_1_1_s_e2_group_base_a32855c8b44ed62a108281a99b7589007}
+
+
+Logarithmic map. 
+
+\begin{DoxyReturn}{Returns}
+tangent space representation (translational part and rotation angle) of instance
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_a32855c8b44ed62a108281a99b7589007}{log()}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 178 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!log@{log}}
+\index{log@{log}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{log(const S\+E2\+Group$<$ Scalar $>$ \&other)}{log(const SE2Group< Scalar > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ static const {\bf Tangent} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::log (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\+E2\+Group}$<$ {\bf Scalar} $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_sophus_1_1_s_e2_group_base_aecc7909b366aa35b033f6c704441ac70}{}\label{class_sophus_1_1_s_e2_group_base_aecc7909b366aa35b033f6c704441ac70}
+
+
+Logarithmic map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & element of the group S\+E2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+corresponding tangent space element (translational part $ \upsilon $ and rotation vector $ \omega $)
+\end{DoxyReturn}
+Computes the logarithmic, the inverse of the group exponential. To be specific, this function computes $ \log({\cdot})^\vee $ with $ \vee(\cdot) $ being the matrix logarithm and $ \vee{\cdot} $ the \hyperlink{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}{vee()}-\/operator of S\+E2.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_ade77e270e09a1719b56e765ee7c8967f}{exp()} 
+
+\hyperlink{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}{vee()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 519 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!matrix@{matrix}}
+\index{matrix@{matrix}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{matrix() const }{matrix() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const {\bf Transformation} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a3d752d2ffd35f2e7eec1466fa451e774}{}\label{class_sophus_1_1_s_e2_group_base_a3d752d2ffd35f2e7eec1466fa451e774}
+\begin{DoxyReturn}{Returns}
+3x3 matrix representation of instance 
+\end{DoxyReturn}
+
+
+Definition at line 197 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!matrix2x3@{matrix2x3}}
+\index{matrix2x3@{matrix2x3}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{matrix2x3() const }{matrix2x3() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const Matrix$<${\bf Scalar},2,3$>$ {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::matrix2x3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a9b312701ec4194c2db4febb83b90c828}{}\label{class_sophus_1_1_s_e2_group_base_a9b312701ec4194c2db4febb83b90c828}
+\begin{DoxyReturn}{Returns}
+2x3 matrix representation of instance
+\end{DoxyReturn}
+It returns the three first row of \hyperlink{class_sophus_1_1_s_e2_group_base_a3d752d2ffd35f2e7eec1466fa451e774}{matrix()}. 
+
+Definition at line 211 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!normalize@{normalize}}
+\index{normalize@{normalize}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{normalize()}{normalize()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ void {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_aa53b166d7053572efeb5b77a08834156}{}\label{class_sophus_1_1_s_e2_group_base_aa53b166d7053572efeb5b77a08834156}
+
+
+Normalize S\+O2 element. 
+
+It re-\/normalizes the S\+O2 element. This method only needs to be called in conjunction with \hyperlink{class_sophus_1_1_s_e2_group_base_a51db3eccd7b70627974e9e0f4ba0e0b1}{fast\+Multiply()} or data() write access. 
+
+Definition at line 189 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const S\+E2\+Group$<$ Scalar $>$ \&other) const }{operator*(const SE2Group< Scalar > &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const {\bf S\+E2\+Group}$<${\bf Scalar}$>$ {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\+E2\+Group}$<$ {\bf Scalar} $>$ \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a36f68c8a9630eed4405f1b89210d421e}{}\label{class_sophus_1_1_s_e2_group_base_a36f68c8a9630eed4405f1b89210d421e}
+
+
+Group multiplication. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_a5016208d6f5b02464cb4553984e37f29}{operator$\ast$=()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 233 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Point \&p) const }{operator*(const Point &p) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const {\bf Point} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{p}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_aa1313016f17d4ed280446ad3fef35fff}{}\label{class_sophus_1_1_s_e2_group_base_aa1313016f17d4ed280446ad3fef35fff}
+
+
+Group action on $ \mathbf{R}^2 $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & point $p \in \mathbf{R}^2 $ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point $p' \in \mathbf{R}^2 $, rotated and translated version of $p$
+\end{DoxyReturn}
+This function rotates and translates point $ p $ in $ \mathbf{R}^2 $ by the S\+E2 transformation $R,t$ (=rotation matrix, translation vector)\+: $ p' = R\cdot p + t $. 
+
+Definition at line 251 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{operator$\ast$=(const S\+E2\+Group$<$ Scalar $>$ \&other)}{operator*=(const SE2Group< Scalar > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ void {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\+E2\+Group}$<$ {\bf Scalar} $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a5016208d6f5b02464cb4553984e37f29}{}\label{class_sophus_1_1_s_e2_group_base_a5016208d6f5b02464cb4553984e37f29}
+
+
+In-\/place group multiplication. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_a51db3eccd7b70627974e9e0f4ba0e0b1}{fast\+Multiply()} 
+
+\hyperlink{class_sophus_1_1_s_e2_group_base_a36f68c8a9630eed4405f1b89210d421e}{operator$\ast$()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 262 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!rotation\+Matrix@{rotation\+Matrix}}
+\index{rotation\+Matrix@{rotation\+Matrix}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{rotation\+Matrix() const }{rotationMatrix() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ const Matrix$<${\bf Scalar},2,2$>$ {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::rotation\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_ae70df20893171b2b96a98fae351d1916}{}\label{class_sophus_1_1_s_e2_group_base_ae70df20893171b2b96a98fae351d1916}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+
+
+Definition at line 272 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!set\+Complex@{set\+Complex}}
+\index{set\+Complex@{set\+Complex}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{set\+Complex(const Matrix$<$ Scalar, 2, 1 $>$ \&complex)}{setComplex(const Matrix< Scalar, 2, 1 > &complex)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ void {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::set\+Complex (
+\begin{DoxyParamCaption}
+\item[{const Matrix$<$ {\bf Scalar}, 2, 1 $>$ \&}]{complex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a643d4629d8331be7492b3db74b2bb084}{}\label{class_sophus_1_1_s_e2_group_base_a643d4629d8331be7492b3db74b2bb084}
+
+
+Setter of internal unit complex number representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em complex} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+the complex number must not be zero
+\end{DoxyPrecond}
+The complex number is normalized to unit length. 
+
+Definition at line 285 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!set\+Rotation\+Matrix@{set\+Rotation\+Matrix}}
+\index{set\+Rotation\+Matrix@{set\+Rotation\+Matrix}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{set\+Rotation\+Matrix(const Matrix$<$ Scalar, 2, 2 $>$ \&\+R)}{setRotationMatrix(const Matrix< Scalar, 2, 2 > &R)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ void {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::set\+Rotation\+Matrix (
+\begin{DoxyParamCaption}
+\item[{const Matrix$<$ {\bf Scalar}, 2, 2 $>$ \&}]{R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a1d428f01714ff3e3f3df348913645c9b}{}\label{class_sophus_1_1_s_e2_group_base_a1d428f01714ff3e3f3df348913645c9b}
+
+
+Setter of unit complex number using rotation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & a 2x2 matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+the 2x2 matrix should be orthogonal and have a determinant of 1 
+\end{DoxyPrecond}
+
+
+Definition at line 296 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!unit\+\_\+complex@{unit\+\_\+complex}}
+\index{unit\+\_\+complex@{unit\+\_\+complex}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{unit\+\_\+complex() const }{unit_complex() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ internal\+::traits$<$Derived$>$\+::S\+O2\+Type\+::\+Const\+Complex\+Reference {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::unit\+\_\+complex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_sophus_1_1_s_e2_group_base_ace841824d980bbe39f28241df52d646c}{}\label{class_sophus_1_1_s_e2_group_base_ace841824d980bbe39f28241df52d646c}
+
+
+Accessor of unit complex number. 
+
+No direct write access is given to ensure the complex number stays normalized. 
+
+Definition at line 341 of file se2.\+hpp.
+
+\index{Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}!vee@{vee}}
+\index{vee@{vee}!Sophus\+::\+S\+E2\+Group\+Base@{Sophus\+::\+S\+E2\+Group\+Base}}
+\subsubsection[{\texorpdfstring{vee(const Transformation \&\+Omega)}{vee(const Transformation &Omega)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Derived$>$ static const {\bf Tangent} {\bf Sophus\+::\+S\+E2\+Group\+Base}$<$ Derived $>$\+::vee (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{Omega}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}{}\label{class_sophus_1_1_s_e2_group_base_a7d4d4cab49ee63e2e2592f3637cdac34}
+
+
+vee-\/operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Omega} & 3x3-\/matrix representation of Lie algebra element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3-\/vector representatin of Lie algebra element
+\end{DoxyReturn}
+This is the inverse of the \hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()}-\/operator.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_sophus_1_1_s_e2_group_base_aa5d381596ee614e1b32a36515c67287a}{hat()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 555 of file se2.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Sophus/sophus/se2.\+hpp\end{DoxyCompactItemize}

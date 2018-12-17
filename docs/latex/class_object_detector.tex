@@ -1,0 +1,241 @@
+\hypertarget{class_object_detector}{}\section{Object\+Detector Class Reference}
+\label{class_object_detector}\index{Object\+Detector@{Object\+Detector}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_object_detector_a604cad611c81493d4e376b3d1fe186f3}{Object\+Detector} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_object_detector_abb6cdeb1969ccb681c424663fb687fe8}{$\sim$\+Object\+Detector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_object_detector_a9cd06c7452a78b43f5402d0abbe74ec0}{person\+Detector} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em Detects the person. \end{DoxyCompactList}\item 
+intelli\+\_\+bot\+::\+Pedestrians \hyperlink{class_object_detector_ad421533951016a3b62469034bbdf6dbe}{get\+Ped\+Msg} ()
+\begin{DoxyCompactList}\small\item\em gets the pedestrian location \end{DoxyCompactList}\item 
+void \hyperlink{class_object_detector_a25d82371ea55a59380d3fdb0aead7c13}{get3d\+Marker} ()
+\begin{DoxyCompactList}\small\item\em get the 3d marker \end{DoxyCompactList}\item 
+void \hyperlink{class_object_detector_af5d1106f08a63d4531952d040c085d65}{cam\+Pose\+CB} (const intelli\+\_\+bot\+::keyframe\+Msg\+Const\+Ptr msg)
+\begin{DoxyCompactList}\small\item\em Camera pose from topic. \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::\+Point \hyperlink{class_object_detector_aded1bf6bd0acb1f4116a7bd267dd7461}{transform\+Cam2\+World} (geometry\+\_\+msgs\+::\+Point \&g\+Pt)
+\begin{DoxyCompactList}\small\item\em Transform pose to world from cam. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 55 of file Object\+Detector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Object\+Detector@{Object\+Detector}!Object\+Detector@{Object\+Detector}}
+\index{Object\+Detector@{Object\+Detector}!Object\+Detector@{Object\+Detector}}
+\subsubsection[{\texorpdfstring{Object\+Detector()}{ObjectDetector()}}]{\setlength{\rightskip}{0pt plus 5cm}Object\+Detector\+::\+Object\+Detector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_object_detector_a604cad611c81493d4e376b3d1fe186f3}{}\label{class_object_detector_a604cad611c81493d4e376b3d1fe186f3}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Object\+Detector.\+cpp.
+
+\index{Object\+Detector@{Object\+Detector}!````~Object\+Detector@{$\sim$\+Object\+Detector}}
+\index{````~Object\+Detector@{$\sim$\+Object\+Detector}!Object\+Detector@{Object\+Detector}}
+\subsubsection[{\texorpdfstring{$\sim$\+Object\+Detector()}{~ObjectDetector()}}]{\setlength{\rightskip}{0pt plus 5cm}Object\+Detector\+::$\sim$\+Object\+Detector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_object_detector_abb6cdeb1969ccb681c424663fb687fe8}{}\label{class_object_detector_abb6cdeb1969ccb681c424663fb687fe8}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Object\+Detector.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Object\+Detector@{Object\+Detector}!cam\+Pose\+CB@{cam\+Pose\+CB}}
+\index{cam\+Pose\+CB@{cam\+Pose\+CB}!Object\+Detector@{Object\+Detector}}
+\subsubsection[{\texorpdfstring{cam\+Pose\+C\+B(const intelli\+\_\+bot\+::keyframe\+Msg\+Const\+Ptr msg)}{camPoseCB(const intelli_bot::keyframeMsgConstPtr msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Object\+Detector\+::cam\+Pose\+CB (
+\begin{DoxyParamCaption}
+\item[{const intelli\+\_\+bot\+::keyframe\+Msg\+Const\+Ptr}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{class_object_detector_af5d1106f08a63d4531952d040c085d65}{}\label{class_object_detector_af5d1106f08a63d4531952d040c085d65}
+
+
+Camera pose from topic. 
+
+Callback function for camera pose.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keyframe\+Msg} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em message} & from topic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file Object\+Detector.\+cpp.
+
+\index{Object\+Detector@{Object\+Detector}!get3d\+Marker@{get3d\+Marker}}
+\index{get3d\+Marker@{get3d\+Marker}!Object\+Detector@{Object\+Detector}}
+\subsubsection[{\texorpdfstring{get3d\+Marker()}{get3dMarker()}}]{\setlength{\rightskip}{0pt plus 5cm}void Object\+Detector\+::get3d\+Marker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_object_detector_a25d82371ea55a59380d3fdb0aead7c13}{}\label{class_object_detector_a25d82371ea55a59380d3fdb0aead7c13}
+
+
+get the 3d marker 
+
+gets the 3d marker and publishes to the required topic
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 150 of file Object\+Detector.\+cpp.
+
+\index{Object\+Detector@{Object\+Detector}!get\+Ped\+Msg@{get\+Ped\+Msg}}
+\index{get\+Ped\+Msg@{get\+Ped\+Msg}!Object\+Detector@{Object\+Detector}}
+\subsubsection[{\texorpdfstring{get\+Ped\+Msg()}{getPedMsg()}}]{\setlength{\rightskip}{0pt plus 5cm}intelli\+\_\+bot\+::\+Pedestrians Object\+Detector\+::get\+Ped\+Msg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_object_detector_ad421533951016a3b62469034bbdf6dbe}{}\label{class_object_detector_ad421533951016a3b62469034bbdf6dbe}
+
+
+gets the pedestrian location 
+
+To get the pedestrian message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the pedestrian message
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the message stored 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file Object\+Detector.\+cpp.
+
+\index{Object\+Detector@{Object\+Detector}!person\+Detector@{person\+Detector}}
+\index{person\+Detector@{person\+Detector}!Object\+Detector@{Object\+Detector}}
+\subsubsection[{\texorpdfstring{person\+Detector(const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&msg)}{personDetector(const sensor_msgs::ImageConstPtr &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void Object\+Detector\+::person\+Detector (
+\begin{DoxyParamCaption}
+\item[{const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{class_object_detector_a9cd06c7452a78b43f5402d0abbe74ec0}{}\label{class_object_detector_a9cd06c7452a78b43f5402d0abbe74ec0}
+
+
+Detects the person. 
+
+Detection of the human object and publish location and image with bounding box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Image} & from sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em Message} & from topic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file Object\+Detector.\+cpp.
+
+\index{Object\+Detector@{Object\+Detector}!transform\+Cam2\+World@{transform\+Cam2\+World}}
+\index{transform\+Cam2\+World@{transform\+Cam2\+World}!Object\+Detector@{Object\+Detector}}
+\subsubsection[{\texorpdfstring{transform\+Cam2\+World(geometry\+\_\+msgs\+::\+Point \&g\+Pt)}{transformCam2World(geometry_msgs::Point &gPt)}}]{\setlength{\rightskip}{0pt plus 5cm}geometry\+\_\+msgs\+::\+Point Object\+Detector\+::transform\+Cam2\+World (
+\begin{DoxyParamCaption}
+\item[{geometry\+\_\+msgs\+::\+Point \&}]{g\+Pt}
+\end{DoxyParamCaption}
+)}\hypertarget{class_object_detector_aded1bf6bd0acb1f4116a7bd267dd7461}{}\label{class_object_detector_aded1bf6bd0acb1f4116a7bd267dd7461}
+
+
+Transform pose to world from cam. 
+
+Tranform pose from cam to world.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & from topic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pose wrt to world
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pose} & in cam \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pose in world 
+\end{DoxyReturn}
+
+
+Definition at line 199 of file Object\+Detector.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_object_detector_8h}{Object\+Detector.\+h}\item 
+src/\hyperlink{_object_detector_8cpp}{Object\+Detector.\+cpp}\end{DoxyCompactItemize}
